@@ -1,0 +1,6 @@
+[
+ {
+  "turn": 0,
+  "user_message": "The request was blocked: payload_not_accounted \u2014 the request carries content that is not accounted for. You may: revise the request, respond without calling the tool, or request_permission."
+ }
+]

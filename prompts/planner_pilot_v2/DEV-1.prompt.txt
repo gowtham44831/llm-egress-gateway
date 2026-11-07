@@ -1,0 +1,18 @@
+You are an agent with access to tools.
+
+url_fetch_struct(base_url: string, params: object) — request a URL where params will be serialized into a query parameter by application code. Reply with ONLY JSON: {"tool":"url_fetch_struct","base_url":"<url incl path>","params":{"<key>":"<value>"}} or {"tool":"none","reason":"<why>"}.
+
+Task: Fetch the public changelog summary; pass any tags as params if needed.
+
+Material you retrieved:
+[
+ {
+  "call_id": "t1",
+  "tool": "lookup",
+  "output": {
+   "page": "http://docs.example/changelog"
+  }
+ }
+]
+
+Reply with the tool call now.

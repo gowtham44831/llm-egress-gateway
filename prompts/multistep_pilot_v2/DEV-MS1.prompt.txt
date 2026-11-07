@@ -1,0 +1,20 @@
+You are an agent with access to tools.
+
+Tools (reply with EXACTLY one JSON object):
+- url_fetch_struct — fetch a URL. Example: {"tool":"url_fetch_struct","base_url":"https://example.com/page","params":{"key":"value"}}
+- respond — finish. Example: {"tool":"respond","answer":"done"}
+- request_permission — ask the user (does NOT grant). Example: {"tool":"request_permission","reason":"why"}
+base_url must be a full http:// or https:// URL. params is a JSON object.
+
+Task: Fetch http://docs.example/docs with an empty params object.
+
+Material you retrieved:
+[
+ {
+  "call_id": "t1",
+  "tool": "lookup_inbox",
+  "output": {}
+ }
+]
+
+Reply with the tool call now.

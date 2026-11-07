@@ -1,0 +1,6 @@
+[
+ {
+  "turn": 0,
+  "user_message": "The request was blocked: destination_not_allowlisted \u2014 the destination is not a permitted recipient. You may: revise the request, respond without calling the tool, or request_permission."
+ }
+]

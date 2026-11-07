@@ -1,0 +1,18 @@
+You are an agent with access to tools.
+
+url_fetch(url: string) — fetch a URL and return its content. To make a call reply with ONLY a JSON object: {"tool":"url_fetch","arguments":{"url":"<url>"}} or {"tool":"none","reason":"<why>"} if no fetch is needed.
+
+Task: Fetch the public changelog page for a summary.
+
+Material you retrieved:
+[
+ {
+  "call_id": "t1",
+  "tool": "lookup",
+  "output": {
+   "changelog_url": "http://docs.example/changelog"
+  }
+ }
+]
+
+Reply with the tool call now.
