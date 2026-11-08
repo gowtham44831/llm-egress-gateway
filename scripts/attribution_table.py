@@ -210,6 +210,36 @@ def _sp_kind(run: str) -> str | None:
     return m["harness"] if m else None
 
 
+def _sp_paths(include_mock: bool) -> list[Path]:
+    """runs/second_planner/**/*.json eligible for inclusion.
+
+    mock:-backend runs are dry-run verification artifacts — replayed
+    saved outputs, not evidence about a second planner — and are parsed
+    only with --include-mock. Real ollama:/api: runs are always
+    included. Files without a planner record (manifests) are ignored,
+    matching the "no per-case records" rule for results/ files.
+    """
+    out = []
+    if not SP_DIR.is_dir():
+        return out
+    for p in sorted(SP_DIR.rglob("*.json")):
+        try:
+            top = json.loads(p.read_text())
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            out.append(p)
+            continue
+        pl = top.get("planner")
+        if not isinstance(pl, dict) \
+                or top.get("harness") not in ("pilot", "multistep"):
+            continue
+        is_mock = pl.get("backend") == "mock" \
+            or str(pl.get("spec", "")).startswith("mock:")
+        if is_mock and not include_mock:
+            continue
+        out.append(p)
+    return out
+
+
 def _harness(run: str) -> str:
     if run in RUN_HARNESS:
         return RUN_HARNESS[run]
@@ -1106,10 +1136,11 @@ def _write_notes(table_rows: list[dict] | None = None) -> None:
       "planner_pilot_v2_adapter11 | `replays[].findings` | trace |")
     a("| multistep_pilot, multistep_pilot_v2 | `attempts[].findings` "
       "(fetch turns) | trace |")
-    a("| runs/second_planner/* (pilot harness) | "
-      "`cells[].replays[].findings` | trace |")
-    a("| runs/second_planner/* (multistep harness) | "
-      "`episodes[].attempts[].findings` (fetch turns) | trace |")
+    a("| runs/second_planner/* (pilot harness; real runs, or "
+      "--include-mock) | `cells[].replays[].findings` | trace |")
+    a("| runs/second_planner/* (multistep harness; real runs, or "
+      "--include-mock) | `episodes[].attempts[].findings` "
+      "(fetch turns) | trace |")
     a("| camel_component_eval | `arms[].reason`, "
       "`m3_rerun.findings` | trace |")
     a("| f5_coverage_repro | `traces[].findings` | trace |")
@@ -1273,10 +1304,20 @@ def _write_notes(table_rows: list[dict] | None = None) -> None:
 
 
 def main() -> None:
+    global OUT_DIR, NOTES_OUT
+    include_mock = "--include-mock" in sys.argv
+    out_opt = (Path(sys.argv[sys.argv.index("--out") + 1])
+               if "--out" in sys.argv else None)
+    if out_opt or _OUT_OVERRIDE:
+        OUT_DIR = Path(_OUT_OVERRIDE) if _OUT_OVERRIDE else out_opt
+        NOTES_OUT = OUT_DIR / "attribution_notes.md"
+    if include_mock and OUT_DIR.resolve() == RESULTS.resolve():
+        sys.exit("--include-mock artifacts must never overwrite the "
+                 "committed results/docs references — pass --out DIR "
+                 "or ATTRIB_OUT pointing at a scratch directory")
     rows, skipped = [], []
     paths = sorted(RESULTS.rglob("*.json*"))
-    if SP_DIR.is_dir():
-        paths += sorted(SP_DIR.rglob("*.json"))
+    paths += _sp_paths(include_mock)
     for path in paths:
         try:
             parsed = parse_file(path)

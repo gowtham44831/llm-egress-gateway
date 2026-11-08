@@ -62,6 +62,36 @@ ATTRIB_TABLE="$SCRATCH/attrib/attribution_table.csv" \
   || { echo "second_planner_report.py FAILED"; cat "$SCRATCH/sp_report.log"; fail=1; }
 cmp_file "$SCRATCH/docs/second_planner_report.md" "docs/second_planner_report.md"
 
+step "2c. second-planner pipeline smoke test (--include-mock -> scratch only; never diffed)"
+# The mock replay is a pipeline verification artifact, not planner
+# evidence: --include-mock runs all three generators end-to-end into
+# $SCRATCH/mock/ and only checks that the wiring works. Nothing is
+# compared against the committed results/ or docs/ outputs.
+mkdir -p "$SCRATCH/mock/attrib" "$SCRATCH/mock/docs"
+smoke=0
+"$PY" scripts/attribution_table.py --include-mock \
+  --out "$SCRATCH/mock/attrib" >"$SCRATCH/mock_attrib.log" 2>&1 \
+  && smoke=$((smoke+1)) || { echo "SMOKE FAIL: attribution_table.py --include-mock"; cat "$SCRATCH/mock_attrib.log"; fail=1; }
+ATTRIB_TABLE="$SCRATCH/mock/attrib/attribution_table.csv" \
+  "$PY" scripts/paper_counts.py --include-mock \
+  --out "$SCRATCH/mock/docs/paper_counts_mock.md" >"$SCRATCH/mock_pc.log" 2>&1 \
+  && smoke=$((smoke+1)) || { echo "SMOKE FAIL: paper_counts.py --include-mock"; cat "$SCRATCH/mock_pc.log"; fail=1; }
+ATTRIB_TABLE="$SCRATCH/mock/attrib/attribution_table.csv" \
+  "$PY" scripts/second_planner_report.py --include-mock \
+  --out "$SCRATCH/mock/docs/second_planner_report_mock.md" >"$SCRATCH/mock_rep.log" 2>&1 \
+  && smoke=$((smoke+1)) || { echo "SMOKE FAIL: second_planner_report.py --include-mock"; cat "$SCRATCH/mock_rep.log"; fail=1; }
+if [ "$smoke" -eq 3 ] && grep -rl '"spec": "mock:' runs/second_planner/*/traces.json 2>/dev/null | grep -q .; then
+  grep -q "pilot_v2_mock" "$SCRATCH/mock/attrib/attribution_table.csv" \
+    || { echo "SMOKE FAIL: pilot_v2_mock harness_run missing"; fail=1; }
+  grep -q "mock(replay of" "$SCRATCH/mock/docs/paper_counts_mock.md" \
+    || { echo "SMOKE FAIL: mock planner column missing"; fail=1; }
+  grep -q "mock(replay of" "$SCRATCH/mock/docs/second_planner_report_mock.md" \
+    || { echo "SMOKE FAIL: mock run missing from report"; fail=1; }
+  echo "smoke ok: mock dry-run rows flowed through all three generators"
+else
+  echo "smoke ok: generators ran (no mock traces under runs/second_planner/)"
+fi
+
 step "3. make_labeling_packet.py -> labels/{packet,key,diagnostic_packet,recovery_packet}.csv, excluded.md"
 LABELS_OUT="$SCRATCH/labels" "$PY" scripts/make_labeling_packet.py >"$SCRATCH/labels.log" 2>&1 \
   || { echo "make_labeling_packet.py FAILED"; cat "$SCRATCH/labels.log"; fail=1; }

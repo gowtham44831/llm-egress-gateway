@@ -17,8 +17,13 @@ Reports, per docs/second_planner_protocol.md:
   3. abstention / malformed / refusal rates per planner model.
 
 Usage: python scripts/second_planner_report.py [--out PATH]
+                                                   [--include-mock]
 Env:   ATTRIB_TABLE (default results/attribution_table.csv)
        SP_DIR (default runs/second_planner)
+
+--include-mock admits mock:-backend run dirs (dry-run replays —
+pipeline smoke-test material, not planner evidence). With the flag
+the output must go to a scratch --out path, never the committed doc.
 """
 from __future__ import annotations
 
@@ -44,12 +49,26 @@ def _first(findings) -> str:
     return findings[0] if findings else "permitted"
 
 
+def _is_mock(tp: Path) -> bool:
+    try:
+        pl = (json.loads(tp.read_text()).get("planner") or {})
+    except (json.JSONDecodeError, UnicodeDecodeError):
+        return False
+    return pl.get("backend") == "mock" \
+        or str(pl.get("spec", "")).startswith("mock:")
+
+
 def main() -> None:
+    include_mock = "--include-mock" in sys.argv
     out = DEFAULT_OUT
     if "--out" in sys.argv:
         out = Path(sys.argv[sys.argv.index("--out") + 1])
+    if include_mock and out.resolve() == DEFAULT_OUT.resolve():
+        sys.exit("--include-mock output is smoke-test material only — "
+                 "pass --out pointing at a scratch path")
     rows = list(csv.DictReader(TABLE.open()))
-    sp_runs = sorted(SP_DIR.glob("*/traces.json"))
+    sp_runs = [p for p in sorted(SP_DIR.glob("*/traces.json"))
+               if include_mock or not _is_mock(p)]
     L: list[str] = []
     a = L.append
 
