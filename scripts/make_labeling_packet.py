@@ -9,8 +9,9 @@ Outputs (deterministic, no model calls):
     * question=B_receipt: one row per distinct receiver receipt
       (delivered content) across non-diagnostic in-scope runs.
     Columns: item_id, question, task_prompt, permission_context,
-    retrieved_summary, model_output, receiver_observed. No arm, gateway
-    decision, deciding rule, case_id, or expected outcome.
+    retrieved_summary, model_output, decoded_payload,
+    receiver_observed. No arm, gateway decision, deciding rule,
+    case_id, or expected outcome.
 - labels/recovery_packet.csv — turn>=1 model outputs (post-feedback
   turns). Unblinded: carries run/case/arm/outcome columns.
 - labels/diagnostic_packet.csv — receiver receipts from the
@@ -31,6 +32,7 @@ match the generated attribution table.
 
 from __future__ import annotations
 
+import base64
 import csv
 import hashlib
 import json
@@ -38,6 +40,7 @@ import os
 import random
 import re
 import sys
+import urllib.parse
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -218,6 +221,60 @@ def _observed_from_url(url: str) -> str:
 
 def _observed_from_path(path: str) -> str:
     return _observed_from_url("http://x" + path)
+
+
+# ---------------------------------------------------------------------
+# decoded_payload column — PLAIN decoding only, no gateway code, no
+# value matching: URL-decode each query param of every URL found in the
+# field(s); when a value is strict base64/base64url that decodes to
+# UTF-8, show the decoded text. Code outputs (e.g. JSON containing
+# btoa()/encodeURIComponent concatenations) contribute nothing — the
+# URL fragment ends at the quote, leaving an empty param, which decodes
+# to nothing.
+# ---------------------------------------------------------------------
+
+_URL_RE = re.compile(r"https?://[^\s'\"<>\[\]{}|\\^`]+")
+_B64_SHAPED = re.compile(r"^[A-Za-z0-9+/=_-]+$")
+# outputs that are code rather than a URL are left blank — never evaluated
+_CODE_MARK = re.compile(r"btoa|encodeURI|JSON\.stringify|=>|function|"
+                        r"eval\(|\$\{")
+
+
+def _b64_text(v: str) -> str | None:
+    """v is strict base64/base64url decoding to UTF-8 -> decoded text."""
+    if not _B64_SHAPED.match(v) or len(v) % 4:
+        return None
+    for alt in (None, b"-_"):
+        try:
+            raw = base64.b64decode(v.encode(), altchars=alt,
+                                   validate=True)
+        except Exception:
+            continue
+        try:
+            return raw.decode("utf-8")
+        except UnicodeDecodeError:
+            continue
+    return None
+
+
+def _decode_payload(*texts: str) -> str:
+    """param=decoded_value pairs joined by | ; '' when nothing decodes."""
+    pairs: list[str] = []
+    for text in texts:
+        if not text or _CODE_MARK.search(text):
+            continue  # blank for code outputs; never evaluate code
+        for url in _URL_RE.findall(text):
+            try:
+                params = urllib.parse.parse_qsl(
+                    urllib.parse.urlsplit(url).query,
+                    keep_blank_values=True)
+            except Exception:  # noqa: BLE001
+                continue
+            for k, v in params:
+                if not v:
+                    continue
+                pairs.append(f"{k}={_b64_text(v) or v}")
+    return "|".join(dict.fromkeys(pairs))  # dedupe, keep order
 
 
 _V2URL: dict | None = None
@@ -456,12 +513,18 @@ def main() -> None:
                       "receiver_receipt": g["receiver_receipt"],
                       "expected": _expected(rec, g["arm"])}])
 
-    # ---- blinding scan: gateway-reason phrasing in outputs ----
+    # ---- blinding scan: gateway-reason phrasing in outputs and in
+    # the decoded_payload column (a decoded value echoing a reason
+    # code would be the same leak) ----
     leaked = []
     for store, fname in ((items, "packet"), (diag_items, "diagnostic")):
         for sig, it in list(store.items()):
-            m = REASON_PHRASES.search(it["output"])
-            if m and it["kind"] == "A_planner_output":
+            if it["kind"] != "A_planner_output":
+                continue
+            m = REASON_PHRASES.search(it["output"]) or \
+                REASON_PHRASES.search(
+                    _decode_payload(it["output"], it["observed"]))
+            if m:
                 del store[sig]
                 for s in it["srcs"]:
                     leaked.append(dict(s, reason="model output contains"
@@ -487,14 +550,18 @@ def main() -> None:
             w = csv.writer(f)
             w.writerow(["item_id", "question", "task_prompt",
                         "permission_context", "retrieved_summary",
-                        "model_output", "receiver_observed"])
+                        "model_output", "decoded_payload",
+                        "receiver_observed"])
             for i, sig in enumerate(sigs, 1):
                 it = store[sig]
                 iid = prefix.format(i)
                 w.writerow([iid, it["kind"], it["task"],
                             _ctx_line(it, it["output"],
                                       it["observed"]),
-                            it["retr"], it["output"], it["observed"]])
+                            it["retr"], it["output"],
+                            _decode_payload(it["output"],
+                                            it["observed"]),
+                            it["observed"]])
                 for s in it["srcs"]:
                     keyrows.append((iid, it["kind"], s))
         return keyrows
@@ -564,7 +631,14 @@ def main() -> None:
           f"excluded: {len(excluded)}")
     phrase_hits = sum(1 for r in recovery if r.get("phrase_note"))
     print(f"blinding scan: {len(leaked)} packet items removed for "
-          f"gateway phrasing; {phrase_hits} recovery rows flagged")
+          f"gateway phrasing (model_output + decoded_payload); "
+          f"{phrase_hits} recovery rows flagged")
+    dec = sum(1 for it in items.values()
+              if _decode_payload(it["output"], it["observed"]))
+    ddec = sum(1 for it in diag_items.values()
+               if _decode_payload(it["output"], it["observed"]))
+    print(f"decoded_payload: {dec} non-empty packet cells, "
+          f"{ddec} diagnostic cells")
     print(f"key check: {len(issues)} item_ids span multiple cases "
           f"or receiver_receipt values")
     for iid, cases, receipts in issues:
