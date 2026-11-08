@@ -114,6 +114,25 @@ in `docs/draft_consistency_report.md`).
 | outputs | `prompts/<run>/<CASE>.prompt.txt`, `.injection.txt` / `.email_body.txt`, `<CASE>.<arm>.feedback.json`; `prompts/INDEX.md` |
 | regen | **D** — traces did not store prompt text; reconstruction is byte-identical because runner scripts and fixtures hash-match FREEZE.md (caveats in `prompts/INDEX.md`) |
 
+## 9. Second-planner replication harness (mock-verified; no real planner run yet)
+
+| | |
+|---|---|
+| protocol | `docs/second_planner_protocol.md` (**FROZEN**; sha256 pinned in `docs/second_planner_FREEZE.md`, re-checked by the runner at startup) |
+| runner | `scripts/run_second_planner.py` — `--harness pilot\|multistep`, `--planner ollama:<m>\|api:<provider>:<m>\|mock:<traces>`, `--f5 legacy\|strict` (default legacy = url-gw-1.0 as evaluated) |
+| planner client | `src/tool_routing/argverify/planner_client.py` — per-call record: model id, digest/version string, every sampling param sent, UTC timestamp, latency; API keys come from `*_API_KEY` env vars and only the env-var NAME is ever recorded |
+| dry run | `… --planner mock:results/planner_pilot_v2/traces.json` (pilot), `… mock:results/multistep_pilot_v2/traces.json` (multistep); outputs under `runs/second_planner/` (git-ignored, never under `results/`) |
+| verify | `python scripts/verify_second_planner_dryrun.py --pilot runs/second_planner/pilot_dryrun --multistep runs/second_planner/multistep_dryrun` — 967 checks: per-cell/per-turn decisions vs frozen references + counts + `paper_counts.md` regeneration |
+| last verify | `ALL 967 CHECKS PASS` (pilot vs adapter-1.1 cells; multistep vs v2 episodes; new-run counts equal frozen-reference counts) |
+
+Deliberate differences from the frozen v1-trace format: **full** raw
+planner output on every turn (incl. binding/adapter/malformed rejects —
+closes the R5 gap), per-call provenance, `deciding_check`,
+`receiver_receipt`, and `legitimate_delivery_episode` fields.
+Everything else is byte-identical (prompts hash-verified against
+`prompts/`, same arms/receiver/CLOCK, block-feedback-1.0, seeds,
+temperature 0.7, num_predict 512).
+
 ---
 
 ## What cannot be reproduced from this repo, and why
@@ -174,5 +193,6 @@ hash-verifiable** in the paper's limitations.
      PROTOCOL-DRIFT  docs/journal_research_plan.md      frozen=a1215d79b300 current=fbb092b251aa  (url_eval_v1)
      PROTOCOL-DRIFT  docs/security_eval_v4_protocol.md  frozen=cbc0307bb8df current=5e6faf505b5d  (eval_v4)
      (versioned-drift: url_fetch_gateway 1.0→1.1, planner_adapter →1.3, run_multistep_pilot v1→v1.1)
+== 6. second-planner freeze         ok ×14 (protocol + runner + client + verifier + 10 frozen inputs)
 reproduce-tables: ALL OUTPUTS MATCH      exit 0
 ```

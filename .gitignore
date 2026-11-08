@@ -16,6 +16,7 @@ data/.hf_cache/
 # Large outputs
 results/
 !results/.gitkeep
+runs/
 
 .DS_Store
 

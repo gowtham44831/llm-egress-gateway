@@ -122,6 +122,34 @@ if proto:
 sys.exit(1 if bad else 0)
 EOF
 
+step "6. second-planner freeze (sha256 vs docs/second_planner_FREEZE.md)"
+"$PY" - <<'EOF' || fail=1
+import hashlib, re, sys, pathlib
+root = pathlib.Path(".")
+fz = root / "docs/second_planner_FREEZE.md"
+if not fz.exists():
+    print("no docs/second_planner_FREEZE.md"); sys.exit(0)
+bad = 0
+for m in re.finditer(
+        r'`([0-9a-f]{64})`\s+([\w./-]+\.(?:py|json|md))', fz.read_text()):
+    h, p = m.group(1), m.group(2)
+    f = root / p
+    if not f.exists():
+        print(f"MISSING          {p}"); bad += 1; continue
+    cur = hashlib.sha256(f.read_bytes()).hexdigest()
+    if cur == h:
+        print(f"ok               {p}")
+    else:
+        tag = "PROTOCOL-DRIFT" if p.endswith("second_planner_protocol.md") \
+            else "DRIFT"
+        print(f"{tag:15} {p}  frozen={h[:12]} current={cur[:12]}")
+        bad += 1
+print("second-planner freeze:", "ok" if not bad
+      else f"{bad} drift(s) — run_second_planner.py refuses to run on "
+           "protocol drift")
+sys.exit(1 if bad else 0)
+EOF
+
 echo
 if [ "$fail" -eq 0 ]; then
   echo "reproduce-tables: ALL OUTPUTS MATCH"
