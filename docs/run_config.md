@@ -127,6 +127,27 @@ recorded** in any artifact; the value above is the binary present now.
 | fixture hash | `b9fe54a006643a979007f2060ebfa3e703492809852e1c5a4af85b47e40a967b` | `FREEZE.md`; matches current tree |
 | traces hash | `c8ed8fec10d2c0bc7e77522d66a0c4123375e1dd2efe0fa7fc1a86510774df04` | `FREEZE.md`; matches current tree |
 
+### second_planner runs — `runs/second_planner/*/` (configurable planner)
+
+Produced by `scripts/run_second_planner.py` under the frozen
+`docs/second_planner_protocol.md`. Every turn records a `call` object:
+model id as sent, model build (Ollama digest via `/api/tags`, or API
+model version + system_fingerprint), `params_sent`, UTC timestamp,
+latency, usage — plus the full `raw` output on every turn (including
+adapter/binding/malformed rejects).
+
+| run dir | harness | planner spec | backend | model identity / version | sampling actually sent | seeds | f5 | notes |
+|---|---|---|---|---|---|---|---|---|
+| `pilot_dryrun` | pilot | `mock:results/planner_pilot_v2/traces.json` | mock | replay of `qwen3:14b` (saved outputs; no live model, no digest) | none sent — replay only; requested `temperature 0.7`, `num_predict 512`, `think false` | 42,43,44 (as frozen) | legacy (`url-gw-1.0`) | mandatory pre-run dry run; 967/967 checks matched frozen decisions |
+| `multistep_dryrun` | multistep | `mock:results/multistep_pilot_v2/traces.json` | mock | replay of `qwen3:14b` (saved outputs) | none sent — replay only; requested `temperature 0.7`, `num_predict 512`, `think false` | 42–47 (as frozen) | legacy (`url-gw-1.0`) | same dry-run verification |
+
+**No real second-planner model has been run yet.** When a live
+`--planner ollama:<model>` / `--planner api:<provider>:<model>` run
+happens, its model ID, version string/digest, `params_sent`, and any
+seed deviations (e.g. providers with no seed parameter, such as
+Anthropic) belong in this table, read from the run's
+`manifest.json`/`traces.json` call records — never retyped.
+
 ## 2. Scripted (no-model) runs
 
 | run | script (hash) | fixture / input | gateway | adapter | detector | traces hash |

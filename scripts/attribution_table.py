@@ -61,6 +61,9 @@ from pathlib import Path
 import os
 
 RESULTS = Path(__file__).resolve().parent.parent / "results"
+# second-planner replication runs (run_second_planner.py): same schema
+# family as the frozen traces, read-only inputs, never under results/.
+SP_DIR = Path(__file__).resolve().parent.parent / "runs" / "second_planner"
 ROOT = Path(__file__).resolve().parent.parent
 FIXTURES = ROOT / "src/tool_routing/argverify/fixtures"
 SCRIPTS = ROOT / "scripts"
@@ -195,9 +198,25 @@ RUN_HARNESS = {
 }
 
 
+# run -> second-planner trace metadata, filled during parse_file:
+# {"harness": "pilot"|"multistep", "slug": <model slug for
+#  harness_run>, "planner": <display identity for the planner column>,
+#  "f5_mode": "legacy"|"strict"}
+SP_META: dict[str, dict] = {}
+
+
+def _sp_kind(run: str) -> str | None:
+    m = SP_META.get(run)
+    return m["harness"] if m else None
+
+
 def _harness(run: str) -> str:
     if run in RUN_HARNESS:
         return RUN_HARNESS[run]
+    if _sp_kind(run) == "pilot":
+        return "url_fetch_gateway"
+    if _sp_kind(run) == "multistep":
+        return "multistep_loop"
     base = run.split("/")[0]
     if run.endswith("traces_smoke") and base.startswith("multistep_pilot"):
         return "multistep_loop"
@@ -320,11 +339,19 @@ V2_AUTHORIZED = {("LC-1", "M0_no_gateway"), ("LC-1", "M1_allowlist"),
 
 
 def _harness_run(run: str) -> str:
+    m = SP_META.get(run)
+    if m:
+        base = "pilot_v2" if m["harness"] == "pilot" else "multistep_v2"
+        return f"{base}_{m['slug']}"
     return HARNESS_RUN.get(run, UNRECORDED)
 
 
 def _gateway_version(run: str, rec: dict) -> str:
     base = run.split("/")[0]
+    if run in SP_META:
+        mode = rec.get("f5_mode") or SP_META[run].get("f5_mode")
+        return "url-gw-1.1 (strict)" if mode == "strict" \
+            else "url-gw-1.0"
     if base in ("interface_dev",):
         return "n/a (no gateway)"
     if base == "camel_component_eval":
@@ -375,7 +402,8 @@ def _receipt(run: str, rec: dict) -> str:
         return ("authorized" if rec.get("case") in ("U2",
                                                     "preserved_benign")
                 else "unauthorized")
-    if base == "multistep_pilot_v2" or base == "multistep_pilot":
+    if base in ("multistep_pilot_v2", "multistep_pilot") \
+            or _sp_kind(run) == "multistep":
         if rec.get("decision") == "allow" and rec.get("secrets_received"):
             return "unauthorized"  # all MS secrets went to wrong hosts
         return "none"
@@ -417,6 +445,11 @@ def _view_for(run: str, case_id: str, rec: dict):
     arm fns see identical inputs. Returns None when not reconstructable
     from the case definition files."""
     base = run.split("/")[0]
+    if run in SP_META:
+        # second-planner runs reuse the frozen v2 fixtures/arms — map
+        # onto the corresponding frozen-view builders unchanged.
+        base = ("planner_pilot_v2" if SP_META[run]["harness"] == "pilot"
+                else "multistep_pilot_v2")
     url = rec.get("checked_url")
     try:
         if base == "url_eval_v2":
@@ -515,7 +548,9 @@ def _view_for(run: str, case_id: str, rec: dict):
             pv = case["policy_view"]
             ser = {"tool": "url_fetch", "arguments": {"url": url},
                    "payload_fields": rec.get("payload_fields") or [],
-                   "stated_purpose": rec.get("stated_purpose") or ""}
+                   "stated_purpose": rec.get("stated_purpose")
+                   or (rec.get("generated") or {}).get("stated_purpose")
+                   or ""}
             return {"acting_principal": "vic.tim",
                     "policy": {"fetch_allowlist": pv["allowlist"]},
                     "directory": pv["directory"],
@@ -598,7 +633,10 @@ def _arm_fn(run: str, arm: str):
         iso = _mod("run_url_fetch_isolation")
         return iso.METHODS.get(arm)
     f5 = "strict" if (run.endswith("traces_strict")
-                      or arm in ("strict",)) else "legacy"
+                      or arm in ("strict",)
+                      or (run in SP_META
+                          and SP_META[run].get("f5_mode") == "strict")
+                      ) else "legacy"
     if arm in ("M0_no_gateway",):
         return lambda v: {"execution": "allow", "findings": []}
     if arm == "M1_allowlist":
@@ -684,7 +722,8 @@ def _call_key(row: dict, rec: dict):
     # Only multistep has multiple distinct calls per case (per turn);
     # elsewhere (run, case, attempt) already identifies the call.
     url = (rec.get("checked_url") or ""
-           if run.split("/")[0].startswith("multistep_pilot") else "")
+           if (run.split("/")[0].startswith("multistep_pilot")
+               or _sp_kind(run) == "multistep") else "")
     return (run, row["case_id"], row["attempt_id"], row["turn"], url)
 
 
@@ -802,6 +841,11 @@ def _model_origin_file(top) -> bool:
     if isinstance(top, dict):
         if top.get("planner_config"):
             return True
+        if isinstance(top.get("planner"), dict) and \
+                top["planner"].get("spec"):
+            # second-planner runs; the calls are model-produced —
+            # mock runs replay recorded model outputs
+            return True
         note = str(top.get("note", "")).upper()
         if "SCRIPTED" in note:
             return False
@@ -856,6 +900,61 @@ def _run_id(path: Path) -> str:
     if path.stem not in ("traces", "results"):
         run = f"{run}/{path.stem}"
     return run
+
+
+def _slug(s: str) -> str:
+    return re.sub(r"[^A-Za-z0-9._-]+", "_", str(s)).strip("_") or "model"
+
+
+def _register_sp(run: str, top: dict) -> None:
+    """Second-planner trace: record planner identity/f5 so the run gets
+    the same columns as frozen runs plus a planner label."""
+    pl = top.get("planner") or {}
+    spec = pl.get("spec", "")
+    backend = pl.get("backend")
+    model = pl.get("model") or "unknown"
+    if backend == "mock" or spec.startswith("mock:"):
+        src_model = pl.get("source_model")
+        if not src_model:
+            # older mock traces: recover the replayed model from the
+            # recorded replay-source file itself (read-only)
+            try:
+                src = json.loads(
+                    Path(pl.get("replay_source", "")).read_text())
+                src_model = (
+                    src.get("planner_config", {}).get("model")
+                    or ((src.get("episodes") or [{}])[0]
+                        .get("model_settings_effective") or {})
+                    .get("model_returned"))
+            except Exception:  # noqa: BLE001
+                src_model = None
+        display = f"mock(replay of {src_model or 'saved outputs'})"
+        slug = "mock"
+    elif spec.startswith("api:"):
+        provider = spec.split(":")[1] if spec.count(":") >= 2 else "api"
+        display = f"{provider}/{model}"
+        slug = f"{provider}_{_slug(model)}"
+    else:
+        display = model  # ollama:<model> -> the model id as sent
+        slug = _slug(model)
+    SP_META[run] = {"harness": top.get("harness", ""),
+                    "slug": slug, "planner": display,
+                    "f5_mode": top.get("f5_mode"),
+                    "spec": spec, "gateway": top.get("gateway_version")}
+
+
+# frozen runs whose planner was qwen3:14b (fixture planner_config.model)
+QWEN_RUNS = ("planner_pilot_v1", "planner_pilot_v2",
+             "planner_pilot_v2_adapter11",
+             "multistep_pilot", "multistep_pilot_v2")
+
+
+def _planner_col(run: str) -> str:
+    if run in SP_META:
+        return SP_META[run]["planner"]
+    if run.split("/")[0] in QWEN_RUNS:
+        return "qwen3:14b"
+    return "n/a"
 
 
 def _parse_cells(rows, run, cell, origin):
@@ -913,6 +1012,10 @@ def parse_file(path: Path) -> list[dict]:
     if not isinstance(top, dict):
         return []
 
+    if isinstance(top.get("planner"), dict) and top.get("harness") \
+            in ("pilot", "multistep"):
+        _register_sp(run, top)
+
     origin = "model-generated" if file_model else "scripted"
 
     if isinstance(top.get("scenes"), list):
@@ -950,6 +1053,8 @@ def parse_file(path: Path) -> list[dict]:
                                      extra={
                                       "_ep_unauth": ep.get(
                                           "unauthorized_receipt_episode"),
+                                      "f5_mode": ep.get("f5_mode")
+                                          or top.get("f5_mode"),
                                       "case": ep.get("case")}))
             else:  # disclosure flat episode list; condition is an
                    # episode axis, not an arm
@@ -1001,6 +1106,10 @@ def _write_notes(table_rows: list[dict] | None = None) -> None:
       "planner_pilot_v2_adapter11 | `replays[].findings` | trace |")
     a("| multistep_pilot, multistep_pilot_v2 | `attempts[].findings` "
       "(fetch turns) | trace |")
+    a("| runs/second_planner/* (pilot harness) | "
+      "`cells[].replays[].findings` | trace |")
+    a("| runs/second_planner/* (multistep harness) | "
+      "`episodes[].attempts[].findings` (fetch turns) | trace |")
     a("| camel_component_eval | `arms[].reason`, "
       "`m3_rerun.findings` | trace |")
     a("| f5_coverage_repro | `traces[].findings` | trace |")
@@ -1165,17 +1274,26 @@ def _write_notes(table_rows: list[dict] | None = None) -> None:
 
 def main() -> None:
     rows, skipped = [], []
-    for path in sorted(RESULTS.rglob("*.json*")):
+    paths = sorted(RESULTS.rglob("*.json*"))
+    if SP_DIR.is_dir():
+        paths += sorted(SP_DIR.rglob("*.json"))
+    for path in paths:
         try:
             parsed = parse_file(path)
         except (json.JSONDecodeError, UnicodeDecodeError) as e:
             parsed = []
-            print(f"unparseable: {path.relative_to(RESULTS)} ({e})",
-                  file=sys.stderr)
+            try:
+                rel = str(path.relative_to(RESULTS))
+            except ValueError:
+                rel = str(path)
+            print(f"unparseable: {rel} ({e})", file=sys.stderr)
         if parsed:
             rows.extend(parsed)
         else:
-            skipped.append(str(path.relative_to(RESULTS)))
+            try:
+                skipped.append(str(path.relative_to(RESULTS)))
+            except ValueError:
+                skipped.append(str(path))
 
     case_defs = _load_case_defs()
     for r in rows:
@@ -1186,6 +1304,7 @@ def main() -> None:
         r["scenario"] = _scenario(r["case_id"], rec, case_defs)
         r["harness"] = _harness(r["run"])
         r["harness_run"] = _harness_run(r["run"])
+        r["planner"] = _planner_col(r["run"])
         r["run_tag"] = _run_tag(r["run"])
         r["gateway_version"] = _gateway_version(r["run"], rec)
         r["receiver_receipt"] = _receipt(r["run"], rec)
@@ -1234,7 +1353,7 @@ def main() -> None:
               "scenario_family", "task_class", "arm", "outcome",
               "deciding_rule", "rule_source", "minimal_blocking_arm",
               "call_origin", "attempt_id", "turn", "gateway_version",
-              "receiver_receipt", "harness", "run_tag"]
+              "receiver_receipt", "harness", "run_tag", "planner"]
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     out = OUT_DIR / "attribution_table.csv"
     with out.open("w", newline="") as f:
@@ -1274,12 +1393,19 @@ def main() -> None:
 
     # scenario_matrix: rows = scenario_family, cols = harness,
     # cells = distinct case_ids exercised in that (family, harness).
+    # second-planner runs additionally get their own harness_run column
+    # (e.g. pilot_v2_<model>, multistep_v2_<model>) so Figure 1 shows
+    # the replication separately without disturbing harness columns.
     matrix: dict[str, dict[str, set]] = {}
     harnesses = set()
     for r in rows:
         matrix.setdefault(r["scenario_family"], {}).setdefault(
             r["harness"], set()).add(r["case_id"])
         harnesses.add(r["harness"])
+        if r["run"] in SP_META:
+            matrix[r["scenario_family"]].setdefault(
+                r["harness_run"], set()).add(r["case_id"])
+            harnesses.add(r["harness_run"])
     cols = sorted(harnesses)
     mx_out = OUT_DIR / "scenario_matrix.csv"
     with mx_out.open("w", newline="") as f:

@@ -54,6 +54,14 @@ pc.main()
 EOF
 cmp_file "$SCRATCH/docs/paper_counts.md" "docs/paper_counts.md"
 
+# second-planner report reads the same freshly regenerated table
+step "2b. second_planner_report.py -> docs/second_planner_report.md (unauthorized M3 receipts, deciding-check diffs, per-planner rates)"
+ATTRIB_TABLE="$SCRATCH/attrib/attribution_table.csv" \
+  "$PY" scripts/second_planner_report.py --out "$SCRATCH/docs/second_planner_report.md" \
+  >"$SCRATCH/sp_report.log" 2>&1 \
+  || { echo "second_planner_report.py FAILED"; cat "$SCRATCH/sp_report.log"; fail=1; }
+cmp_file "$SCRATCH/docs/second_planner_report.md" "docs/second_planner_report.md"
+
 step "3. make_labeling_packet.py -> labels/{packet,key,diagnostic_packet,recovery_packet}.csv, excluded.md"
 LABELS_OUT="$SCRATCH/labels" "$PY" scripts/make_labeling_packet.py >"$SCRATCH/labels.log" 2>&1 \
   || { echo "make_labeling_packet.py FAILED"; cat "$SCRATCH/labels.log"; fail=1; }

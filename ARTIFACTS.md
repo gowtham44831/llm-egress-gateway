@@ -32,7 +32,7 @@ Legend — *Regen class*:
 | command | `PYTHONPATH=src python scripts/attribution_table.py` |
 | script | `scripts/attribution_table.py` (`main()` → matrix block) |
 | inputs | every `results/**/*.json*`; case definitions from `src/tool_routing/argverify/fixtures/{url_eval_cases_v2,planner_pilot_cases_v1,planner_pilot_cases_v2,multistep_cases_v1,multistep_cases_v2,interface_dev_cases_v1}.json`, `scripts/run_eval_v4.py::CASES`, `scripts/run_url_fetch_isolation.py::controls()` |
-| output | `results/scenario_matrix.csv` — rows = `scenario_family`, cols = harness, cells = case IDs |
+| output | `results/scenario_matrix.csv` — rows = `scenario_family`, cols = harness (plus `pilot_v2_<planner>` / `multistep_v2_<planner>` for second-planner runs), cells = case IDs |
 | regen | **D** |
 | note | The draft contains **no rendered figure**; this CSV is the figure data. No plotting script exists for it. |
 
@@ -41,8 +41,8 @@ Legend — *Regen class*:
 | | |
 |---|---|
 | command | `python scripts/paper_counts.py` |
-| script | `scripts/paper_counts.py` — counting rule in the docstring |
-| inputs | `results/attribution_table.csv` |
+| script | `scripts/paper_counts.py` — counting rule in the docstring; one column per `planner` identity, never pooled across models |
+| inputs | `results/attribution_table.csv` (incl. `runs/second_planner/*` rows) |
 | output | `docs/paper_counts.md` |
 | regen | **D** — reproduces exactly: host 5, auth 3, F5 2, other 0; prohibited 3; missing-purpose 3 (+3 corrected by adapter-1.1) |
 | rule | model-generated, evaluation-run, M3 rows, turn 0, one unit per `(run, case, attempt)`; `planner_pilot_v2_adapter11` excluded from call counts (replays the same saved calls). host = `fetch_host_offlist*`, auth = `no_authorization*`, F5 = `unaccounted_payload*`. Prohibited proposals = blocked MS-LC1/2/3 calls. Missing-purpose = `planner_pilot_v2` P2-LC1 M3 `no_authorization` blocks. |
@@ -90,8 +90,8 @@ in `docs/draft_consistency_report.md`).
 |---|---|
 | command | `PYTHONPATH=src python scripts/attribution_table.py` |
 | script | `scripts/attribution_table.py` |
-| inputs | as §1; deterministic gateway replay for rows whose deciding rule is not in the trace (`rule_source=replay` vs `trace`) |
-| outputs | `results/attribution_table.csv` (348 rows, in-scope harnesses), `results/attribution_table_other.csv` (3,904 rows), `results/case_inventory.csv` (52 cases), `results/scenario_matrix.csv`, `docs/attribution_notes.md` |
+| inputs | as §1 **plus** `runs/second_planner/*/traces.json` (read-only; §9) — same columns, plus a `planner` column (`qwen3:14b` for frozen model runs, the recorded planner identity for second-planner runs); deterministic gateway replay for rows whose deciding rule is not in the trace (`rule_source=replay` vs `trace`) |
+| outputs | `results/attribution_table.csv` (428 rows, in-scope harnesses incl. 80 second-planner rows), `results/attribution_table_other.csv` (3,904 rows), `results/case_inventory.csv` (52 cases), `results/scenario_matrix.csv` (harness columns **plus** per-second-planner-run `pilot_v2_<planner>` / `multistep_v2_<planner>` columns), `docs/attribution_notes.md` |
 | regen | **D** |
 | note | `results/` is git-ignored (`.gitignore:17`), so these CSVs are **not committed**; `make reproduce-tables` diffs against the on-disk copies and prints a note. To make them a committed reference: `git add -f results/attribution_table.csv results/attribution_table_other.csv results/case_inventory.csv results/scenario_matrix.csv` (or relocate). |
 
@@ -124,6 +124,9 @@ in `docs/draft_consistency_report.md`).
 | dry run | `… --planner mock:results/planner_pilot_v2/traces.json` (pilot), `… mock:results/multistep_pilot_v2/traces.json` (multistep); outputs under `runs/second_planner/` (git-ignored, never under `results/`) |
 | verify | `python scripts/verify_second_planner_dryrun.py --pilot runs/second_planner/pilot_dryrun --multistep runs/second_planner/multistep_dryrun` — 967 checks: per-cell/per-turn decisions vs frozen references + counts + `paper_counts.md` regeneration |
 | last verify | `ALL 967 CHECKS PASS` (pilot vs adapter-1.1 cells; multistep vs v2 episodes; new-run counts equal frozen-reference counts) |
+| attribution | `scripts/attribution_table.py` ingests `runs/second_planner/*/traces.json` as `pilot_v2_<planner>` / `multistep_v2_<planner>` harness_runs — same columns (`deciding_rule`, `minimal_blocking_arm`, `receiver_receipt`, `call_origin`, `attempt_id`, `turn`, `gateway_version`) + `planner` |
+| counts | `scripts/paper_counts.py` → `docs/paper_counts.md`: identical counting rule per planner model, separate columns, never pooled |
+| report | `scripts/second_planner_report.py` → `docs/second_planner_report.md`: unauthorized M3 receipts, deciding-check diffs vs qwen3:14b (same-scenario, split planner vs interface/mechanism), abstain/malformed/refusal rates |
 
 Deliberate differences from the frozen v1-trace format: **full** raw
 planner output on every turn (incl. binding/adapter/malformed rejects —
@@ -185,8 +188,9 @@ hash-verifiable** in the paper's limitations.
 ## Last run of `make reproduce-tables`
 
 ```
-== 1. attribution_table.py          ok ×5 (4 CSVs + docs/attribution_notes.md)
-== 2. paper_counts.py               ok   host 5 / auth 3 / F5 2 / other 0; prohibited 3; missing-purpose 3
+== 1. attribution_table.py          ok ×5 (4 CSVs + docs/attribution_notes.md; includes runs/second_planner/*)
+== 2. paper_counts.py               ok   qwen3:14b host 5 / auth 3 / F5 2 / other 0; prohibited 3; missing-purpose 3 | +1 column per second-planner run
+== 2b. second_planner_report.py     ok   docs/second_planner_report.md
 == 3. make_labeling_packet.py       ok ×5
 == 4. export_prompts.py             ok   prompts/ (53 files)
 == 5. frozen-input integrity        ok   runner scripts, fixtures, traces all match FREEZE.md
