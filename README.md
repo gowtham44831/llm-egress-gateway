@@ -27,6 +27,8 @@ What the artifact supports:
 ## Install
 
 ```bash
+git clone https://github.com/gowtham44831/llm-egress-gateway
+cd llm-egress-gateway
 python3.12 -m venv .venv
 source .venv/bin/activate
 pip install -e .        # core; ".[data]" only needed to download ToolRet

@@ -7,7 +7,7 @@ authors:
 year: 2026
 version: 1.0.0
 license: MIT
-repository-code: "https://github.com/gowtham44831/reliable-tool-routing"
+repository-code: "https://github.com/gowtham44831/llm-egress-gateway"
 abstract: >
   A bounded laboratory evaluation of a pre-dispatch egress gateway for
   LLM tool calls: host filtering, bounded payload decoding, field-level
