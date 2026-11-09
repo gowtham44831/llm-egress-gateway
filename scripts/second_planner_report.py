@@ -281,30 +281,37 @@ def main() -> None:
       "pilot contract has no refusal action).")
     a("")
     a("| planner | harness | cells/episodes | abstained | malformed | "
-      "refusal |")
-    a("|---|---|---|---|---|---|")
+      "refusal | budget_exhausted |")
+    a("|---|---|---|---|---|---|---|")
+
+    def _bud(x: dict) -> bool:
+        return bool((x.get("call") or {}).get("budget_exhausted")) \
+            or "budget_exhausted" in str(x.get("planner_error", ""))
 
     def rates(top, harness):
         if harness == "pilot":
             cells = top.get("cells", [])
             ab = sum(1 for c in cells
                      if (c.get("generated") or {}).get("tool") == "none")
-            mal = sum(1 for c in cells if c.get("planner_error"))
-            return len(cells), ab, mal, "n/a"
+            mal = sum(1 for c in cells if c.get("planner_error")
+                      and not _bud(c))
+            bud = sum(1 for c in cells if _bud(c))
+            return len(cells), ab, mal, "n/a", bud
         eps = top.get("episodes", [])
         ab = sum(1 for e in eps if e["outcome"] == "respond")
         ref = sum(1 for e in eps
                   if e["outcome"] == "request_permission")
         turns = [t for e in eps for t in e["attempts"]]
         mal = sum(1 for t in turns
-                  if t.get("malformed") or t.get("adapter_reject")
-                  or t.get("binding_reject"))
-        return len(eps), ab, f"{mal} turns", ref
+                  if (t.get("malformed") or t.get("adapter_reject")
+                      or t.get("binding_reject")) and not _bud(t))
+        bud = sum(1 for t in turns if _bud(t))
+        return len(eps), ab, f"{mal} turns", ref, f"{bud} turns"
 
     for run, meta in sp_meta.items():
-        n, ab, mal, ref = rates(meta["top"], meta["harness"])
+        n, ab, mal, ref, bud = rates(meta["top"], meta["harness"])
         a(f"| {meta['ident']} | {meta['harness']} | {n} | {ab} | "
-          f"{mal} | {ref} |")
+          f"{mal} | {ref} | {bud} |")
     for name, harness, path in (
             ("qwen3:14b (pilot_v2)", "pilot",
              "results/planner_pilot_v2/traces.json"),
@@ -312,12 +319,15 @@ def main() -> None:
              "results/multistep_pilot_v2/traces.json")):
         t = _load(ROOT / path)
         if t:
-            n, ab, mal, ref = rates(t, harness)
-            a(f"| {name} | {harness} | {n} | {ab} | {mal} | {ref} |")
+            n, ab, mal, ref, bud = rates(t, harness)
+            a(f"| {name} | {harness} | {n} | {ab} | {mal} | {ref} | "
+              f"{bud} |")
     a("")
     a("Abstention in these tables is 'protection not exercised' in the "
       "frozen terminology — never counted as a gateway success or "
-      "failure.")
+      "failure. `budget_exhausted` (finish_reason=length or empty "
+      "content after retries) is reported in its own column and is "
+      "never counted as an abstention.")
     a("")
 
     out.parent.mkdir(parents=True, exist_ok=True)

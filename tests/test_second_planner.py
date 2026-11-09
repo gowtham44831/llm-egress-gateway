@@ -66,9 +66,144 @@ def test_api_record_has_env_name_not_key(monkeypatch):
     assert secret not in blob
     assert rec["api_key_env"] == "OPENAI_API_KEY"
     assert rec["model_version"] == "gpt-4o-2026-01-01"
-    assert rec["params_sent"]["temperature"] == 0.7
     assert rec["params_sent"]["seed"] == 42
     assert "timestamp_utc" in rec
+
+
+# ------------------------------------------------ planner-client-1.1
+# (Amendment 1, api:openai only)
+
+import io  # noqa: E402
+import urllib.error  # noqa: E402
+
+
+def _http_err(code, body=b'{"error": {"message": "bad"}}'):
+    return urllib.error.HTTPError("u", code, "m", {}, io.BytesIO(body))
+
+
+def _ok_resp(content="resp", finish="stop"):
+    return {"model": "m-v1", "id": "r1",
+            "usage": {"completion_tokens": 7,
+                      "completion_tokens_details":
+                          {"reasoning_tokens": 3}},
+            "choices": [{"message": {"content": content},
+                         "finish_reason": finish}]}
+
+
+def test_openai_params_and_effort_probe(monkeypatch):
+    """1.1: max_completion_tokens=2048, no temperature, seed kept,
+    reasoning_effort = first accepted of none/minimal/low."""
+    probe_seen, chat_seen = [], []
+    monkeypatch.setenv("OPENAI_API_KEY", "k")
+
+    def fake(url, body, headers, timeout=180):
+        if body.get("max_completion_tokens") == 16:
+            probe_seen.append(body.get("reasoning_effort"))
+        else:
+            chat_seen.append(dict(body))
+        return _ok_resp()
+
+    monkeypatch.setattr(pc, "_post_json", fake)
+    cl = make_planner("api:openai:gpt-x")
+    res = cl.chat([{"role": "user", "content": "hi"}], Sampling(seed=7))
+    assert res.ok
+    rec = res.call_record
+    p = rec["params_sent"]
+    assert "temperature" not in p
+    assert p["max_completion_tokens"] == 2048
+    assert p["seed"] == 7
+    assert p["reasoning_effort"] == "none"
+    assert probe_seen == ["none"]          # probed once, cached
+    assert rec["reasoning_tokens"] == 3
+    assert rec["completion_tokens"] == 7
+    cl.chat([{"role": "user", "content": "again"}], Sampling(seed=8))
+    assert probe_seen == ["none"]          # no second probe
+
+
+def test_openai_effort_probe_fallback(monkeypatch):
+    """none/minimal rejected -> low sent; probe results recorded."""
+    monkeypatch.setenv("OPENAI_API_KEY", "k")
+
+    def fake(url, body, headers, timeout=180):
+        if body.get("max_completion_tokens") == 16:
+            eff = body["reasoning_effort"]
+            if eff in ("none", "minimal"):
+                raise _http_err(400)
+        return _ok_resp()
+
+    monkeypatch.setattr(pc, "_post_json", fake)
+    cl = make_planner("api:openai:gpt-x")
+    rec = cl.chat([], Sampling(seed=1)).call_record
+    assert rec["params_sent"]["reasoning_effort"] == "low"
+    statuses = [p.get("status") for p in rec["reasoning_effort_probe"]]
+    assert statuses == [400, 400, "accepted"]
+    assert rec["reasoning_effort_probe"][0]["error_body"]
+
+
+def test_openai_retry_429_then_ok(monkeypatch):
+    """HTTP 429 retried with exponential backoff; every try recorded."""
+    monkeypatch.setenv("OPENAI_API_KEY", "k")
+    sleeps, calls = [], []
+    monkeypatch.setattr(pc.time, "sleep", lambda s: sleeps.append(s))
+    monkeypatch.setattr(pc, "_post_json", lambda *a, **k: _ok_resp())
+
+    def fake(url, body, headers, timeout=180):
+        if body.get("max_completion_tokens") == 16:
+            return _ok_resp()          # probe accepted immediately
+        calls.append(1)
+        if len(calls) <= 2:
+            raise _http_err(429)
+        return _ok_resp()
+
+    monkeypatch.setattr(pc, "_post_json", fake)
+    cl = make_planner("api:openai:gpt-x")
+    rec = cl.chat([], Sampling(seed=1)).call_record
+    assert [t["status"] for t in rec["retries"]] == [429, 429]
+    assert rec["retries"][0]["error_body"]
+    assert sleeps == [1.0, 2.0]
+
+
+def test_openai_error_body_and_no_retry_on_400(monkeypatch):
+    monkeypatch.setenv("OPENAI_API_KEY", "k")
+    monkeypatch.setattr(pc.time, "sleep", lambda s: None)
+    calls = []
+    monkeypatch.setattr(pc, "_post_json",
+                        lambda *a, **k: calls.append(1)
+                        or _ok_resp())
+
+    def fake(url, body, headers, timeout=180):
+        if body.get("max_completion_tokens") == 16:
+            return _ok_resp()          # probe accepts
+        calls.append(1)
+        raise _http_err(400, b'{"error":{"param":"max_tokens"}}')
+
+    monkeypatch.setattr(pc, "_post_json", fake)
+    cl = make_planner("api:openai:gpt-x")
+    res = cl.chat([], Sampling(seed=1))
+    assert not res.ok and res.error == "HTTP 400"
+    assert res.call_record["error_body"] == \
+        '{"error":{"param":"max_tokens"}}'
+    assert len(calls) == 1             # 400 is not retried
+
+
+def test_openai_budget_exhausted(monkeypatch):
+    """finish_reason=length or empty content -> budget_exhausted,
+    never an abstention (flagged on the call record)."""
+    monkeypatch.setenv("OPENAI_API_KEY", "k")
+
+    def stub(resp):
+        def fake(url, body, headers, timeout=180):
+            return resp
+        monkeypatch.setattr(pc, "_post_json", fake)
+
+    cl = make_planner("api:openai:gpt-x")
+    stub(_ok_resp("partial", "length"))
+    rec = cl.chat([], Sampling(seed=1)).call_record
+    assert rec["budget_exhausted"] is True
+    stub(_ok_resp("", "length"))
+    res = cl.chat([], Sampling(seed=1))
+    assert not res.ok and "budget_exhausted" in res.error
+    assert res.call_record["budget_exhausted"] is True
 
 
 # ---------------------------------------------------------------- mock

@@ -113,3 +113,46 @@ planner spec; they are never merged with the frozen qwen runs.
    semantics — otherwise no real run may start.
 4. A real run is then started only by explicit human choice of
    `--planner`.
+
+## Amendment 1 — 2026-11-08 (planner-client-1.1, api:openai only)
+
+Written **before any second-planner model output exists** — no real
+planner has produced a single cell. Two failed attempts are preserved
+under `runs/second_planner_failed/` and their causes drove this
+amendment:
+
+- `pilot_gpt-6.1-sol_http429_2026-11-08` — every call HTTP 429
+  (account out of quota). No model output; the run produced only
+  error records.
+- `pilot_gpt-6.1-sol_http400_2026-11-08` — every call HTTP 400:
+  `max_tokens` is an unsupported parameter for the model. No model
+  output; error records only.
+
+API probing on `gpt-6.1-sol` the same day established: `max_tokens`
+is rejected (`max_completion_tokens` required); `temperature` accepts
+only the default 1 (0.7 rejected); `seed` is accepted;
+`reasoning_effort` is accepted (`"low"` tested).
+
+**Deviations from the qwen settings, each forced by the provider API
+and each fixed before any model output existed:**
+
+| setting | qwen3:14b (frozen) | api:openai per this amendment |
+|---|---|---|
+| temperature | 0.7 | omitted — provider default **1** (0.7 rejected) |
+| token budget | num_predict 512 (visible text; think=false) | `max_completion_tokens` **2048**, covering hidden reasoning tokens + visible answer, so reasoning cannot starve the answer |
+| seed | 42+i per case/arm | sent unchanged |
+| thinking | `think=false` | `reasoning_effort` = lowest value the model accepts, probed once at startup in order `none` → `minimal` → `low`; the value used is recorded in the manifest (`describe()`) and every call record |
+
+Per call the record adds `params_sent` (exact), `finish_reason`,
+`reasoning_tokens`, `completion_tokens`, the full response body on any
+HTTP error, and a `retries` log (HTTP 429/5xx retried with exponential
+backoff, max 5 tries). `finish_reason="length"` or empty content is
+flagged `budget_exhausted` — reported in its own column, **never
+counted as a model abstention**.
+
+**Reporting consequence:** the new model's results are reported
+*with these deviations alongside* — temperature 1 vs 0.7, a 2048-token
+budget that includes hidden reasoning vs 512 visible tokens, and the
+recorded reasoning_effort level. They are an approximate replication
+under provider-imposed parameter changes, **not an exact replication**
+of the frozen sampling settings.

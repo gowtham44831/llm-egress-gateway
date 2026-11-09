@@ -23,6 +23,17 @@ Providers (``api:``):
                  OpenAI-compatible endpoint)
     anthropic    ANTHROPIC_API_KEY    https://api.anthropic.com/v1/messages
                  (no ``seed`` parameter — recorded as unsupported)
+
+planner-client-1.1 (Amendment 1, 2026-11-08 — written before any
+second-planner model output existed): ``api:openai`` sends
+``max_completion_tokens`` (2048) instead of ``max_tokens``, omits
+``temperature`` (provider accepts only the default 1), keeps ``seed``,
+and probes ``reasoning_effort`` once at startup in order
+none -> minimal -> low, sending the lowest accepted. All API backends
+retry HTTP 429/5xx with exponential backoff (max 5 tries, recorded per
+call) and store the full error body on failure. ``finish_reason=
+"length"`` or empty content is flagged ``budget_exhausted`` — never
+an abstention.
 """
 from __future__ import annotations
 
@@ -35,7 +46,7 @@ import urllib.request
 from dataclasses import dataclass, field
 from pathlib import Path
 
-PLANNER_CLIENT_VERSION = "planner-client-1.0"
+PLANNER_CLIENT_VERSION = "planner-client-1.1"
 
 _OPENAI_COMPAT = {
     "openai": ("OPENAI_API_KEY", "https://api.openai.com/v1"),
@@ -75,6 +86,45 @@ def _post_json(url: str, body: dict, headers: dict, timeout: int = 180):
                                           **headers})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return json.loads(r.read())
+
+
+class _HTTPFailure(Exception):
+    """HTTP error after the retry policy gave up (or a non-retryable
+    status). Carries status, full error body, and the retry log."""
+    def __init__(self, code: int, body: str, attempts: list):
+        self.code, self.body, self.attempts = code, body, attempts
+        super().__init__(f"HTTP {code}")
+
+
+def _post_json_retry(url: str, body: dict, headers: dict,
+                     tries: int = 5, timeout: int = 180):
+    """POST json; exponential backoff on HTTP 429 and 5xx (max ``tries``
+    attempts). Returns (resp, retry_log). Raises _HTTPFailure with the
+    full error body and the complete retry log."""
+    log, delay = [], 1.0
+    for i in range(tries):
+        try:
+            return _post_json(url, body, headers, timeout), log
+        except urllib.error.HTTPError as e:
+            text = e.read().decode("utf-8", "replace")[:16000]
+            log.append({"try": i + 1, "status": e.code,
+                        "error_body": text})
+            if (e.code == 429 or e.code >= 500) and i + 1 < tries:
+                retry_after = e.headers.get("Retry-After")
+                time.sleep(float(retry_after) if retry_after
+                           else delay)
+                delay *= 2
+                continue
+            raise _HTTPFailure(e.code, text, log)
+    raise _HTTPFailure(log[-1]["status"], log[-1]["error_body"], log)
+
+
+# planner-client-1.1 — Amendment 1 (2026-11-08), for OpenAI models:
+# probed on api:openai:gpt-6.1-sol after two failed attempts
+# (runs/second_planner_failed/).
+_OPENAI_MAX_COMPLETION_TOKENS = 2048  # hidden reasoning must not
+                                     # starve the visible answer
+_REASONING_EFFORT_ORDER = ("none", "minimal", "low")
 
 
 class PlannerClient:
@@ -176,51 +226,142 @@ class OpenAICompatPlanner(PlannerClient):
             raise ValueError("compat provider needs OPENAI_COMPAT_BASE_URL")
         if not os.environ.get(env):
             raise ValueError(f"missing API key env var {env}")
+        self._effort = None       # str once probed, False if all failed
+        self._effort_probe = None
+
+    def _headers(self) -> dict:
+        return {"Authorization": f"Bearer {os.environ[self.env]}"}
+
+    def _probe_effort(self) -> None:
+        """planner-client-1.1: one startup probe for the lowest
+        reasoning_effort the model accepts, trying the parameter in
+        order none -> minimal -> low (closest to qwen's think=false).
+        Non-400 failures (network/auth) abort the probe rather than
+        burn quota."""
+        if self._effort_probe is not None:
+            return
+        self._effort_probe = []
+        for cand in _REASONING_EFFORT_ORDER:
+            try:
+                _post_json_retry(
+                    f"{self.base}/chat/completions",
+                    {"model": self.model,
+                     "messages": [{"role": "user", "content": "ping"}],
+                     "max_completion_tokens": 16,
+                     "reasoning_effort": cand},
+                    self._headers())
+                self._effort = cand
+                self._effort_probe.append({"reasoning_effort": cand,
+                                           "status": "accepted"})
+                return
+            except _HTTPFailure as e:
+                self._effort_probe.append(
+                    {"reasoning_effort": cand, "status": e.code,
+                     "error_body": e.body[:2000]})
+                if not (400 <= e.code < 500):
+                    self._effort = False
+                    return
+            except Exception as e:  # noqa: BLE001
+                self._effort_probe.append(
+                    {"reasoning_effort": cand,
+                     "error": type(e).__name__})
+                self._effort = False
+                return
+        self._effort = False  # all candidates rejected -> omit param
 
     def describe(self) -> dict:
-        return {**super().describe(), "provider": self.provider,
-                "base_url": self.base, "api_key_env": self.env}
+        d = {**super().describe(), "provider": self.provider,
+             "base_url": self.base, "api_key_env": self.env}
+        if self.provider == "openai":
+            d.update({"client_params": "planner-client-1.1: "
+                      "temperature omitted (default 1); "
+                      f"max_completion_tokens="
+                      f"{_OPENAI_MAX_COMPLETION_TOKENS}; seed kept; "
+                      "reasoning_effort probed none->minimal->low",
+                      "reasoning_effort_sent":
+                          self._effort if self._effort else
+                          "not sent (probe pending or all rejected)",
+                      "reasoning_effort_probe": self._effort_probe})
+        return d
+
+    def _params(self, sampling: Sampling) -> tuple[dict, list]:
+        """(params actually sent, deviation notes)."""
+        if self.provider == "openai":
+            self._probe_effort()
+            p = {"max_completion_tokens": _OPENAI_MAX_COMPLETION_TOKENS}
+            if sampling.seed is not None:
+                p["seed"] = sampling.seed
+            if self._effort:
+                p["reasoning_effort"] = self._effort
+            dev = ["temperature omitted — provider accepts only the "
+                   "default 1 (0.7 rejected; forced by API)",
+                   "token budget 2048 via max_completion_tokens "
+                   "(requested 512; max_tokens rejected; 2048 covers "
+                   "hidden reasoning + visible answer)",
+                   f"reasoning_effort="
+                   f"{self._effort if self._effort else 'not sent'}"
+                   " (startup probe: lowest accepted of none/minimal/"
+                   "low — closest to think=false)"]
+        else:
+            p = {"temperature": sampling.temperature,
+                 "max_tokens": sampling.max_tokens}
+            if sampling.seed is not None:
+                p["seed"] = sampling.seed  # best-effort on compat
+            dev = ["non-OpenAI compat provider — planner-client-1.0 "
+                   "params retained (temperature, max_tokens)"]
+        return p, dev
 
     def chat(self, messages, sampling, replay_key=None) -> ChatResult:
-        body = {"model": self.model, "messages": messages,
-                "temperature": sampling.temperature,
-                "max_tokens": sampling.max_tokens}
-        if sampling.seed is not None:
-            body["seed"] = sampling.seed  # best-effort on OpenAI-compat
-        params = {k: v for k, v in body.items()
-                  if k not in ("model", "messages")}
+        params, dev = self._params(sampling)
+        body = {"model": self.model, "messages": messages, **params}
         rec = {"backend": "api", "provider": self.provider,
                "model_id": self.model, "api_key_env": self.env,
-               "params_sent": params,
-               "think_note": "no reasoning/thinking flag sent; provider "
-                             "default applies",
+               "params_sent": dict(params),
+               "deviations": dev,
                "timestamp_utc": _now()}
+        if self.provider == "openai":
+            rec["reasoning_effort_probe"] = self._effort_probe
         t0 = time.time()
         try:
-            resp = _post_json(
-                f"{self.base}/chat/completions", body,
-                {"Authorization": f"Bearer {os.environ[self.env]}"})
-        except urllib.error.HTTPError as e:
-            rec["latency_ms"] = int((time.time() - t0) * 1000)
+            resp, rec["retries"] = _post_json_retry(
+                f"{self.base}/chat/completions", body, self._headers())
+        except _HTTPFailure as e:
+            rec.update({"latency_ms": int((time.time() - t0) * 1000),
+                        "retries": e.attempts,
+                        "error_body": e.body})
             return ChatResult(False, error=f"HTTP {e.code}",
                               call_record=rec)
         except Exception as e:  # noqa: BLE001
             rec["latency_ms"] = int((time.time() - t0) * 1000)
             return ChatResult(False, error=type(e).__name__,
                               call_record=rec)
+        choice = (resp.get("choices") or [{}])[0]
+        usage = resp.get("usage") or {}
+        fin = choice.get("finish_reason")
         rec.update({"latency_ms": int((time.time() - t0) * 1000),
                     "model_version": resp.get("model"),
                     "system_fingerprint": resp.get("system_fingerprint"),
                     "response_id": resp.get("id"),
-                    "usage": resp.get("usage"),
-                    "finish_reason": (resp.get("choices") or [{}])[0]
-                    .get("finish_reason")})
-        msg = (resp.get("choices") or [{}])[0].get("message", {})
+                    "usage": usage,
+                    "finish_reason": fin,
+                    "completion_tokens": usage.get("completion_tokens"),
+                    "reasoning_tokens": (usage.get(
+                        "completion_tokens_details") or {})
+                    .get("reasoning_tokens")})
+        msg = choice.get("message", {})
         raw = msg.get("content") or ""
-        # reasoning models may return content=None with reasoning
-        # elsewhere; keep whatever text exists, record that it happened
-        if not raw and msg.get("reasoning_content"):
-            rec["note"] = "content empty; reasoning_content present"
+        # a reasoning model can burn the whole budget on hidden tokens:
+        # finish_reason=length or empty visible content is
+        # budget_exhausted — NEVER counted as a model abstention.
+        if fin == "length" or not raw:
+            rec["budget_exhausted"] = True
+        if not raw:
+            if msg.get("reasoning_content"):
+                rec["note"] = "content empty; reasoning_content present"
+            return ChatResult(
+                False, error=f"budget_exhausted: empty content "
+                             f"(finish_reason={fin})",
+                call_record=rec)
         return ChatResult(True, raw=raw, call_record=rec)
 
 
@@ -256,12 +397,14 @@ class AnthropicPlanner(PlannerClient):
                "timestamp_utc": _now()}
         t0 = time.time()
         try:
-            resp = _post_json(
+            resp, rec["retries"] = _post_json_retry(
                 "https://api.anthropic.com/v1/messages", body,
                 {"x-api-key": os.environ[self.env],
                  "anthropic-version": "2023-06-01"})
-        except urllib.error.HTTPError as e:
-            rec["latency_ms"] = int((time.time() - t0) * 1000)
+        except _HTTPFailure as e:
+            rec.update({"latency_ms": int((time.time() - t0) * 1000),
+                        "retries": e.attempts,
+                        "error_body": e.body})
             return ChatResult(False, error=f"HTTP {e.code}",
                               call_record=rec)
         except Exception as e:  # noqa: BLE001

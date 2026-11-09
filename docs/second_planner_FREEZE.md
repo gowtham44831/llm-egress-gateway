@@ -7,12 +7,12 @@ run if it differs from the hash below.
 
 ## Protocol
 
-- `8a469dffa33a44c2a2358bd6b90c71377e55e33ae1f4375dc784ab5b010fd835`  docs/second_planner_protocol.md
+- `2aa6ea846710e3f56db079477ed5fd2878c150dab0c59e08794df8f019d3a7a7`  docs/second_planner_protocol.md (with Amendment 1, 2026-11-08 — before any model output; prior pin `8a469dff…`)
 
 ## New runner code (second-planner harness)
 
 - `f23260c1a880ad47f9ddf8be354a7ba4e4f4c81a1532cc7bdd0325ee1f8839b8`  scripts/run_second_planner.py
-- `80ea5cb008a0f3865baba8e1ce690c458e08bdcb9ac48a1bb868152eae58e794`  src/tool_routing/argverify/planner_client.py
+- `dc8bf6e12b0268932308bc900cd471be87272153d33fcbfacf23a3111200a5c5`  src/tool_routing/argverify/planner_client.py (planner-client-1.1; prior pin `80ea5cb0…`)
 - `9c9a04134a5a288dc9933683a585471a1d3521808ce88ee388021166c7f36c3c`  scripts/verify_second_planner_dryrun.py
 
 ## Frozen inputs reused unchanged (hashes match their original freezes)
@@ -38,3 +38,8 @@ Notes:
   `runs/second_planner/`.
 - A real planner run records model id + full digest or provider
   version string at call time; nothing real has been run yet.
+- Amendment 1 (2026-11-08): two failed `api:openai:gpt-6.1-sol`
+  attempts preserved read-only under `runs/second_planner_failed/`
+  (HTTP 429 quota; HTTP 400 `max_tokens` unsupported) — no model
+  output in either. planner-client-1.1 deviations are in the
+  protocol's Amendment 1 table.

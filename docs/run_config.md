@@ -148,6 +148,25 @@ seed deviations (e.g. providers with no seed parameter, such as
 Anthropic) belong in this table, read from the run's
 `manifest.json`/`traces.json` call records — never retyped.
 
+#### Failed attempts — `runs/second_planner_failed/` (preserved, read-only)
+
+| run dir | planner spec | date | failure |
+|---|---|---|---|
+| `pilot_gpt-6.1-sol_http429_2026-11-08` | `api:openai:gpt-6.1-sol` | 2026-11-08 | every call HTTP 429 (no quota); error records only, no model output |
+| `pilot_gpt-6.1-sol_http400_2026-11-08` | `api:openai:gpt-6.1-sol` | 2026-11-08 | every call HTTP 400 (`max_tokens` unsupported); error records only |
+
+**planner-client-1.1 (Amendment 1, 2026-11-08)** applies to
+`api:openai` only — provider-forced deviations from the qwen settings,
+all fixed before any model output: `max_completion_tokens=2048`
+(max_tokens rejected; covers hidden reasoning + visible answer),
+temperature omitted (only default 1 accepted; qwen used 0.7), seed
+kept, `reasoning_effort` = lowest accepted of none/minimal/low probed
+once at startup. Per call also records `finish_reason`,
+`reasoning_tokens`, `completion_tokens`, full error body, and a
+`retries` log (429/5xx, backoff, max 5). `finish_reason=length`/empty
+content is flagged `budget_exhausted`, never an abstention. See
+`docs/second_planner_protocol.md` Amendment 1.
+
 ## 2. Scripted (no-model) runs
 
 | run | script (hash) | fixture / input | gateway | adapter | detector | traces hash |
