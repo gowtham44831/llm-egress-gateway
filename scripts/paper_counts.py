@@ -216,6 +216,9 @@ def main() -> None:
               "have minimal_blocking_arm = M2 (protected_match) — see "
               "docs/attribution_notes.md §4."]
     else:
+        qcol = (f"{planners[0]} (all model-in-loop runs — "
+                "planner_pilot_v1 + pilot_v2, multistep_pilot "
+                "v1 + v2)")
         md = ["# Live-call attribution counts (generated)", "",
               "Source: `results/attribution_table.csv` via "
               "`scripts/paper_counts.py` (counting rule in the script "
@@ -227,7 +230,8 @@ def main() -> None:
               "multistep_pilot v1/v2); second-planner runs get their "
               "own column(s).",
               "",
-              "| quantity | " + " | ".join(planners) + " |",
+              "| quantity | " + qcol + " | "
+              + " | ".join(planners[1:]) + " |",
               "|---|" + "---|" * len(planners)]
         for label, key in QUANT:
             md.append(f"| {label} | " +
@@ -253,6 +257,37 @@ def main() -> None:
                 if rs:
                     md.append(f"- {label} ({len(rs)}): {_lst(rs)}")
             md.append("")
+
+        # ---- comparable denominators: shared harnesses only ----
+        # Restrict qwen3:14b to the v2-equivalent runs so the
+        # denominators match the second-planner runs; second planners
+        # only have v2-equivalent cases anyway.
+        V2_RUNS = {"planner_pilot_v2", "planner_pilot_v2_adapter11",
+                   "multistep_pilot_v2"}
+        sp_by_pl = {p: {r["run"] for r in rows if r["planner"] == p}
+                    for p in planners[1:]}
+        per2 = {}
+        for p in planners:
+            runs_ok = (V2_RUNS if p == planners[0]
+                       else sp_by_pl[p])
+            per2[p] = counts_for(
+                p, [r for r in rows if r["run"] in runs_ok])
+        md += ["## Comparable denominators (v2 harnesses only)", "",
+               "qwen3:14b counts restricted to `planner_pilot_v2` "
+               "(+ adapter-1.1 correction reference) and "
+               "`multistep_pilot_v2` — planner_pilot_v1 and "
+               "multistep_pilot v1 are excluded here so the "
+               "denominators match the second-planner runs. Full "
+               "totals above.", "",
+               "| quantity | " + " | ".join(
+                   f"{p} (v2 only)" if p == planners[0] else p
+                   for p in planners) + " |",
+               "|---|" + "---|" * len(planners)]
+        for label, key in QUANT:
+            md.append(f"| {label} | " +
+                      " | ".join(str(len(per2[p][key]))
+                                for p in planners) + " |")
+        md.append("")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text("\n".join(md) + "\n")
     q = planners[0]

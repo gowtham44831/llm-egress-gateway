@@ -757,6 +757,20 @@ def _call_key(row: dict, rec: dict):
     return (run, row["case_id"], row["attempt_id"], row["turn"], url)
 
 
+NO_FETCH = "n/a (no fetch)"
+_NO_FETCH_OUTCOMES = ("respond", "request_permission", "abstained",
+                    "malformed", "emitted:none", "emitted:unknown",
+                    "skipped (no generated call)")
+
+
+def _no_fetch(outcome: str) -> bool:
+    """True when the planner proposed no fetch call on this turn/cell —
+    no gateway decision exists to attribute. (A binding/adapter reject
+    DID propose a fetch and is not covered.)"""
+    return outcome in _NO_FETCH_OUTCOMES \
+        or outcome.startswith("planner_error")
+
+
 def _resolve_rule(run: str, rec: dict, outcome: str, arm: str) -> str:
     rule = _trace_rule(rec)
     if rule != UNRECORDED:
@@ -794,7 +808,7 @@ def _resolve_rule(run: str, rec: dict, outcome: str, arm: str) -> str:
                          "reason": "view/arm not reconstructable"})
         return UNRECORDED
     rec["rule_source"] = "n/a"
-    return UNRECORDED
+    return NO_FETCH if _no_fetch(outcome) else UNRECORDED
 
 
 def _legacy_check(row: dict, rec: dict) -> None:
