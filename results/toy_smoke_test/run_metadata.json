@@ -1,0 +1,46 @@
+{
+  "config": {
+    "catalog": {
+      "n_distractors": 2
+    },
+    "dataset": "toy",
+    "embedding": {
+      "device": "cpu",
+      "model_name": "sentence-transformers/all-MiniLM-L6-v2"
+    },
+    "output_dir": "results/toy_smoke_test",
+    "pilot": {
+      "dev_frac": 0.6,
+      "max_total_queries": 500,
+      "val_frac": 0.2
+    },
+    "run_name": "toy_smoke_test",
+    "seed": 42,
+    "thresholds": {
+      "max_risk": 0.1
+    }
+  },
+  "dependency_versions": {
+    "PyYAML": "6.0.3",
+    "datasets": "3.0.2",
+    "huggingface-hub": "0.26.5",
+    "matplotlib": "3.9.4",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "pytest": "8.3.5",
+    "rank-bm25": "0.2.2",
+    "scikit-learn": "1.5.2",
+    "sentence-transformers": "3.3.1",
+    "torch": "2.14.1"
+  },
+  "device_info": {
+    "platform": "macOS-26.0-arm64-arm-64bit",
+    "processor": "arm",
+    "python_version": "3.12.15 (main, Sep 30 2026, 22:04:19) [Clang 21.0.0 (clang-2100.3.34.2)]",
+    "torch_cuda_available": false,
+    "torch_mps_available": true
+  },
+  "generated_at_utc": "2026-10-19T18:03:49.401165+00:00",
+  "git_commit": "9ce515dd79bcad38f898015187c6520905d1d424",
+  "seed": 42
+}

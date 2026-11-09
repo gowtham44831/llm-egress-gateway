@@ -1,9 +1,10 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-title: "Reliable Tool Routing — Egress Gateway Showcase"
+title: "Which check stopped it? Evaluating egress defenses for LLM agents"
 authors:
   - family-names: "Reddi"
     given-names: "Sai Gowtham"
+year: 2026
 version: 1.0.0
 license: MIT
 repository-code: "https://github.com/gowtham44831/reliable-tool-routing"
@@ -11,8 +12,9 @@ abstract: >
   A bounded laboratory evaluation of a pre-dispatch egress gateway for
   LLM tool calls: host filtering, bounded payload decoding, field-level
   authorization against permission records, and identity-bound task
-  context — plus a CaMeL policy-component compatibility comparison and
-  a claim-to-evidence methodology. Fictional data, mock receivers, and
-  a local model only; not a production system or a novel security
-  mechanism.
+  context — evaluated with a local planner (qwen3:14b) and a second
+  planner (gpt-6.1-sol) under a frozen protocol, with per-call deciding-
+  check attribution and independent receiver ground truth. Fictional
+  data, mock receivers; a laboratory experience report, not an efficacy
+  claim or a novel security mechanism.
 date-released: 2026-10-20

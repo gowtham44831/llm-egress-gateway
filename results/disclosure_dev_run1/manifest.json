@@ -1,0 +1,12 @@
+{
+ "run_id": "disclosure_dev_run1",
+ "method": "deterministic_checker (block-only arm)",
+ "fixture_sha256": "b7970750a5ae5c76868c9226a5b149575acfa6f3b420a7cb6e529513953dfd54",
+ "checker_sha256": "a25c6bf7da42d207031bfa6814d7537bbe5bc5387b86aa448dcbe2822758a4fb",
+ "runner_sha256": "8a6f9240e735404479fd2c39d87e68bf85fc99e6b569790ef6afa1435e9a25fc",
+ "policy_version": "disc-pol-1.0",
+ "git_commit": "9ce515dd79bcad38f898015187c6520905d1d424",
+ "git_dirty": true,
+ "python": "3.12.15",
+ "expected_recovery_labels": "pending \u2014 not used"
+}

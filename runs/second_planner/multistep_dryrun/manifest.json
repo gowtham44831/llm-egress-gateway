@@ -1,0 +1,45 @@
+{
+  "runner": "second-planner-runner-1.0",
+  "harness": "multistep",
+  "manifest": "multistep-cases-2.0",
+  "planner": {
+    "spec": "mock:results/multistep_pilot_v2/traces.json",
+    "backend": "mock",
+    "model": "replay of saved outputs",
+    "client": "planner-client-1.0",
+    "replay_source": "results/multistep_pilot_v2/traces.json",
+    "replay_entries": 38,
+    "source_meta": {
+      "adapter": "planner-adapter-1.3",
+      "feedback": "block-feedback-1.0",
+      "manifest": "multistep-cases-2.0"
+    }
+  },
+  "f5_mode": "legacy",
+  "gateway_version": "url-gw-1.0",
+  "adapter": "planner-adapter-1.3",
+  "feedback": "block-feedback-1.0",
+  "planner_client": "planner-client-1.0",
+  "clock": "2026-10-21T09:00:00",
+  "sampling_requested": {
+    "temperature": 0.7,
+    "num_predict": 512,
+    "think": false,
+    "seed_base": 42
+  },
+  "mock_source": "results/multistep_pilot_v2/traces.json",
+  "decision_reference": "results/multistep_pilot_v2/traces.json",
+  "input_hashes": {
+    "src/tool_routing/argverify/fixtures/multistep_cases_v2.json": "b9fe54a006643a979007f2060ebfa3e703492809852e1c5a4af85b47e40a967b",
+    "scripts/run_url_eval_v2.py": "3c3c75114e810298f0e6334f6265074e2f6b60e277dc8ae778874dfd3c8162f4",
+    "scripts/run_planner_pilot_v1.py": "e88fad0d8df55b707878e3b0c23636069da4fe351987e4703d952990e6347f47",
+    "scripts/run_planner_pilot_v2.py": "66acb1423eef8e8583e36887c9698f9959ffe95747058e5752f93d020299cb75",
+    "scripts/run_multistep_pilot.py": "088fa6b13079a0d99de713928bf57e01eab51b9a689de6da141b9e9f448b6de5",
+    "src/tool_routing/argverify/url_fetch_gateway.py": "f3dd7f8a6e203e3dd0d10919ff394dbaba462f392d6cbfcd03856b9fc9d1e27a",
+    "src/tool_routing/argverify/planner_adapter.py": "435e932b59fda0de6a2c2a1b6dd960a2eb01bfb11756d644e6d0acc67df6e48e",
+    "src/tool_routing/argverify/block_feedback.py": "3bb0b741145f9b7178fde738baf5273e3c33765783de36b4957c81a05a7ac6e7",
+    "src/tool_routing/argverify/planner_client.py": "80ea5cb008a0f3865baba8e1ce690c458e08bdcb9ac48a1bb868152eae58e794",
+    "scripts/run_second_planner.py": "b63a5323687cd56a0585749f0573ca03a7fba569c9f7e9f2bf87a91cce3989b5",
+    "docs/second_planner_protocol.md": "8a469dffa33a44c2a2358bd6b90c71377e55e33ae1f4375dc784ab5b010fd835"
+  }
+}

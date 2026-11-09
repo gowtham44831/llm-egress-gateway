@@ -1,0 +1,6 @@
+case_id,guide_version,A_grounding,A_citation,B_compliance,C_execution,D_recovery_actions,underspecified,reasoning,reviewer_id,ai_assistance,prior_exposure
+NV-19b,2.1,,,,,,,,,,
+NV-01b,2.1,,,,,,,,,,
+NV-14b,2.1,,,,,,,,,,
+NV-12b,2.1,,,,,,,,,,
+NV-17b,2.1,,,,,,,,,,

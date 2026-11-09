@@ -1,0 +1,8 @@
+tools=6750 requests=1895
+duplicate_tool_ids=0
+duplicate_query_ids=0
+tools_missing_fields=0
+requests_missing_fields=0
+dangling_tool_refs=0
+requests_without_any_valid_tool=0
+conflicting_labels=0

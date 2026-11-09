@@ -1,0 +1,30 @@
+{
+  "bm25": {
+    "always_top1": {
+      "kind": "always_top1",
+      "threshold": 0.0
+    },
+    "score_threshold": {
+      "kind": "score_threshold",
+      "threshold": 3.0014419727098725
+    },
+    "margin_threshold": {
+      "kind": "margin_threshold",
+      "threshold": 2.0794154245820358
+    }
+  },
+  "embedding": {
+    "always_top1": {
+      "kind": "always_top1",
+      "threshold": 0.0
+    },
+    "score_threshold": {
+      "kind": "score_threshold",
+      "threshold": 0.4584745764732361
+    },
+    "margin_threshold": {
+      "kind": "margin_threshold",
+      "threshold": 0.0656699538230896
+    }
+  }
+}

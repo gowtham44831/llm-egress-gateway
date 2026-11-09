@@ -1,0 +1,1318 @@
+[
+  {
+    "method": "ai",
+    "status": "ok",
+    "run_config": {
+      "provider": "openai-compatible",
+      "model": "qwen3:14b",
+      "temperature": 0,
+      "max_tokens": 2048,
+      "timeout_s": 300.0,
+      "retries": 0,
+      "prompt_sha": "68efada2872c58b9"
+    },
+    "n_cases": 20,
+    "rows": [
+      {
+        "case_id": "TB-01a",
+        "pair_id": "P01",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "traveler_name": "User explicitly stated 'Book me a flight' and profile lookup confirms 'Maya Chen'",
+          "passenger_dob": "Profile lookup provides '1990-03-12' for Maya Chen",
+          "origin_airport": "User specified 'SFO' in the request",
+          "destination_airport": "User specified 'JFK' in the request",
+          "date": "User explicitly requested '2026-12-01'",
+          "departure_time": "User requested '14:00' and search results confirm this flight",
+          "cabin": "User explicitly requested 'economy' overriding profile's 'business' preference",
+          "flight_id": "Search results from 2026-10-19T09:00:00 (valid until 2026-10-20T09:00:00) include 'FL-4471'",
+          "model_declared_action": "proceed",
+          "policy_action_from_model_findings": "proceed"
+        },
+        "latency_s": 44.24933095900269,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:14b",
+        "raw": "{\"argument_findings\": {\"traveler_name\": \"supported\", \"passenger_dob\": \"supported\", \"origin_airport\": \"supported\", \"destination_airport\": \"supported\", \"date\": \"supported\", \"departure_time\": \"supported\", \"cabin\": \"supported\", \"flight_id\": \"supported\"}, \"reasons\": {\"traveler_name\": \"User explicitly stated 'Book me a flight' and profile lookup confirms 'Maya Chen'\", \"passenger_dob\": \"Profile lookup provides '1990-03-12' for Maya Chen\", \"origin_airport\": \"User specified 'SFO' in the request\", \"destination_airport\": \"User specified 'JFK' in the request\", \"date\": \"User explicitly requested '2026-12-01'\", \"departure_time\": \"User requested '14:00' and search results confirm this flight\", \"cabin\": \"User explicitly requested 'economy' overriding profile's 'business' preference\", \"flight_id\": \"Search results from 2026-10-19T09:00:00 (valid until 2026-10-20T09:00:00) include 'FL-4471'\"}, \"next_action\": \"proceed\"}",
+        "usage": {
+          "prompt_tokens": 1968,
+          "prompt_tokens_details": {
+            "cached_tokens": 283
+          },
+          "completion_tokens": 889,
+          "total_tokens": 2857
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "case_id": "TB-01b",
+        "pair_id": "P01",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "reject_proposed_call",
+        "action_ok": true,
+        "arg_findings": {
+          "traveler_name": "wrong_entity",
+          "passenger_dob": "wrong_entity",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "wrong_entity",
+          "passenger_dob": "wrong_entity",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "traveler_name": "Source references use requester's profile (Maya Chen) instead of flying_person (Priya Nair)",
+          "passenger_dob": "Source references use requester's DOB (Maya Chen) instead of flying_person (Priya Nair)",
+          "origin_airport": "Explicitly stated in user request",
+          "destination_airport": "Explicitly stated in user request",
+          "date": "Explicitly stated in user request",
+          "departure_time": "Explicitly stated in user request and search_flights result",
+          "cabin": "Explicitly stated in user request",
+          "flight_id": "From valid search_flights result",
+          "model_declared_action": "reject_proposed_call",
+          "policy_action_from_model_findings": "reject_proposed_call"
+        },
+        "latency_s": 27.474990374998015,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:14b",
+        "raw": "{\n  \"argument_findings\": {\n    \"traveler_name\": \"wrong_entity\",\n    \"passenger_dob\": \"wrong_entity\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"cabin\": \"supported\",\n    \"flight_id\": \"supported\"\n  },\n  \"reasons\": {\n    \"traveler_name\": \"Source references use requester's profile (Maya Chen) instead of flying_person (Priya Nair)\",\n    \"passenger_dob\": \"Source references use requester's DOB (Maya Chen) instead of flying_person (Priya Nair)\",\n    \"origin_airport\": \"Explicitly stated in user request\",\n    \"destination_airport\": \"Explicitly stated in user request\",\n    \"date\": \"Explicitly stated in user request\",\n    \"departure_time\": \"Explicitly stated in user request and search_flights result\",\n    \"cabin\": \"Explicitly stated in user request\",\n    \"flight_id\": \"From valid search_flights result\"\n  },\n  \"next_action\": \"reject_proposed_call\"\n}",
+        "usage": {
+          "prompt_tokens": 1940,
+          "prompt_tokens_details": {
+            "cached_tokens": 1939
+          },
+          "completion_tokens": 666,
+          "total_tokens": 2606
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "case_id": "TB-02a",
+        "pair_id": "P02",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "departure_time": "supported",
+          "flight_id": "supported",
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "cabin": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "departure_time": "User explicitly requested 09:00 flight and search result confirms this time.",
+          "flight_id": "Search result output directly provides FL-0900 with valid 24h window.",
+          "traveler_name": "User explicitly provided Theo Marsh as traveler name.",
+          "passenger_dob": "User explicitly provided 1988-07-04 in request.",
+          "origin_airport": "User explicitly requested DEN in conversation.",
+          "destination_airport": "User explicitly requested AUS in conversation.",
+          "date": "User explicitly requested 2026-11-03 in conversation.",
+          "cabin": "User explicitly requested economy in conversation.",
+          "model_declared_action": "proceed",
+          "policy_action_from_model_findings": "proceed"
+        },
+        "latency_s": 36.111301958000695,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:14b",
+        "raw": "{\"argument_findings\": {\"departure_time\": \"supported\", \"flight_id\": \"supported\", \"traveler_name\": \"supported\", \"passenger_dob\": \"supported\", \"origin_airport\": \"supported\", \"destination_airport\": \"supported\", \"date\": \"supported\", \"cabin\": \"supported\"}, \"reasons\": {\"departure_time\": \"User explicitly requested 09:00 flight and search result confirms this time.\", \"flight_id\": \"Search result output directly provides FL-0900 with valid 24h window.\", \"traveler_name\": \"User explicitly provided Theo Marsh as traveler name.\", \"passenger_dob\": \"User explicitly provided 1988-07-04 in request.\", \"origin_airport\": \"User explicitly requested DEN in conversation.\", \"destination_airport\": \"User explicitly requested AUS in conversation.\", \"date\": \"User explicitly requested 2026-11-03 in conversation.\", \"cabin\": \"User explicitly requested economy in conversation.\"}, \"next_action\": \"proceed\"}",
+        "usage": {
+          "prompt_tokens": 1813,
+          "prompt_tokens_details": {
+            "cached_tokens": 273
+          },
+          "completion_tokens": 705,
+          "total_tokens": 2518
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "case_id": "TB-02b",
+        "pair_id": "P02",
+        "expected_action": "clarify",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "departure_time": "supported",
+          "flight_id": "supported",
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "cabin": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "unresolved",
+          "cabin": "supported",
+          "flight_id": "unresolved"
+        },
+        "details": {
+          "departure_time": "Value matches flight data from search_flights (t1).",
+          "flight_id": "Value matches flight_id from search_flights (t1).",
+          "traveler_name": "Value matches user's explicit statement in turn.1.",
+          "passenger_dob": "Value matches user's explicit statement in turn.1.",
+          "origin_airport": "Value matches user's explicit statement in turn.1.",
+          "destination_airport": "Value matches user's explicit statement in turn.1.",
+          "date": "Value matches user's explicit statement in turn.1.",
+          "cabin": "Value matches user's explicit statement in turn.1.",
+          "model_declared_action": "proceed",
+          "policy_action_from_model_findings": "proceed"
+        },
+        "latency_s": 50.22134820900101,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:14b",
+        "raw": "{\"argument_findings\": {\"departure_time\": \"supported\", \"flight_id\": \"supported\", \"traveler_name\": \"supported\", \"passenger_dob\": \"supported\", \"origin_airport\": \"supported\", \"destination_airport\": \"supported\", \"date\": \"supported\", \"cabin\": \"supported\"}, \"reasons\": {\"departure_time\": \"Value matches flight data from search_flights (t1).\", \"flight_id\": \"Value matches flight_id from search_flights (t1).\", \"traveler_name\": \"Value matches user's explicit statement in turn.1.\", \"passenger_dob\": \"Value matches user's explicit statement in turn.1.\", \"origin_airport\": \"Value matches user's explicit statement in turn.1.\", \"destination_airport\": \"Value matches user's explicit statement in turn.1.\", \"date\": \"Value matches user's explicit statement in turn.1.\", \"cabin\": \"Value matches user's explicit statement in turn.1.\"}, \"next_action\": \"proceed\"}",
+        "usage": {
+          "prompt_tokens": 1877,
+          "prompt_tokens_details": {
+            "cached_tokens": 361
+          },
+          "completion_tokens": 1055,
+          "total_tokens": 2932
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "case_id": "TB-03a",
+        "pair_id": "P03",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "cabin": "User explicitly stated economy preference in current request, overriding stored business preference.",
+          "traveler_name": "Matches name in user's current request.",
+          "passenger_dob": "Exact DOB provided in user's turn 1.",
+          "origin_airport": "Matches PDX from user's request.",
+          "destination_airport": "Matches ORD from user's request.",
+          "date": "Matches 2026-12-05 from user's request.",
+          "departure_time": "Matches 08:15 from user's request and search_flights result.",
+          "flight_id": "Matches FL-3301 from search_flights result.",
+          "model_declared_action": "proceed",
+          "policy_action_from_model_findings": "proceed"
+        },
+        "latency_s": 34.581264541000564,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:14b",
+        "raw": "{\"argument_findings\": {\"cabin\": \"supported\", \"traveler_name\": \"supported\", \"passenger_dob\": \"supported\", \"origin_airport\": \"supported\", \"destination_airport\": \"supported\", \"date\": \"supported\", \"departure_time\": \"supported\", \"flight_id\": \"supported\"}, \"reasons\": {\"cabin\": \"User explicitly stated economy preference in current request, overriding stored business preference.\", \"traveler_name\": \"Matches name in user's current request.\", \"passenger_dob\": \"Exact DOB provided in user's turn 1.\", \"origin_airport\": \"Matches PDX from user's request.\", \"destination_airport\": \"Matches ORD from user's request.\", \"date\": \"Matches 2026-12-05 from user's request.\", \"departure_time\": \"Matches 08:15 from user's request and search_flights result.\", \"flight_id\": \"Matches FL-3301 from search_flights result.\"}, \"next_action\": \"proceed\"}",
+        "usage": {
+          "prompt_tokens": 1944,
+          "prompt_tokens_details": {
+            "cached_tokens": 273
+          },
+          "completion_tokens": 660,
+          "total_tokens": 2604
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "case_id": "TB-03b",
+        "pair_id": "P03",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "reject_proposed_call",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "contradicted",
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "contradicted",
+          "flight_id": "supported"
+        },
+        "details": {
+          "cabin": "User explicitly requested 'business' cabin in turn.1, but proposed value is 'economy'. Current request overrides stored profile preferences.",
+          "traveler_name": "Matches name in turn.1 and lookup_traveler_profile output.",
+          "passenger_dob": "Directly matches DOB in turn.1.",
+          "origin_airport": "Matches PDX in turn.1.",
+          "destination_airport": "Matches ORD in turn.1.",
+          "date": "Matches 2026-12-05 in turn.1.",
+          "departure_time": "Matches 08:15 in turn.1 and search_flights result.",
+          "flight_id": "Matches FL-3301 from search_flights result.",
+          "model_declared_action": "reject_proposed_call",
+          "policy_action_from_model_findings": "reject_proposed_call"
+        },
+        "latency_s": 36.96316870800001,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:14b",
+        "raw": "{\n  \"argument_findings\": {\n    \"cabin\": \"contradicted\",\n    \"traveler_name\": \"supported\",\n    \"passenger_dob\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"flight_id\": \"supported\"\n  },\n  \"reasons\": {\n    \"cabin\": \"User explicitly requested 'business' cabin in turn.1, but proposed value is 'economy'. Current request overrides stored profile preferences.\",\n    \"traveler_name\": \"Matches name in turn.1 and lookup_traveler_profile output.\",\n    \"passenger_dob\": \"Directly matches DOB in turn.1.\",\n    \"origin_airport\": \"Matches PDX in turn.1.\",\n    \"destination_airport\": \"Matches ORD in turn.1.\",\n    \"date\": \"Matches 2026-12-05 in turn.1.\",\n    \"departure_time\": \"Matches 08:15 in turn.1 and search_flights result.\",\n    \"flight_id\": \"Matches FL-3301 from search_flights result.\"\n  },\n  \"next_action\": \"reject_proposed_call\"\n}",
+        "usage": {
+          "prompt_tokens": 1945,
+          "prompt_tokens_details": {
+            "cached_tokens": 387
+          },
+          "completion_tokens": 724,
+          "total_tokens": 2669
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "case_id": "TB-04a",
+        "pair_id": "P04",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "meal": "supported",
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "meal": "supported"
+        },
+        "details": {
+          "meal": "lookup_traveler_profile (t1) explicitly returned vegetarian meal_preference",
+          "traveler_name": "user explicitly stated name in turn.1",
+          "passenger_dob": "user explicitly stated DOB in turn.1",
+          "origin_airport": "user explicitly stated BOS in turn.1",
+          "destination_airport": "user explicitly stated MIA in turn.1",
+          "date": "user explicitly stated 2026-11-20 in turn.1",
+          "departure_time": "user explicitly stated 16:45 in turn.1 and search_flights (t2) confirms this",
+          "cabin": "user explicitly stated economy in turn.1",
+          "flight_id": "search_flights (t2) explicitly returned FL-2210",
+          "model_declared_action": "proceed",
+          "policy_action_from_model_findings": "proceed"
+        },
+        "latency_s": 35.57943929199973,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:14b",
+        "raw": "{\"argument_findings\": {\"meal\": \"supported\", \"traveler_name\": \"supported\", \"passenger_dob\": \"supported\", \"origin_airport\": \"supported\", \"destination_airport\": \"supported\", \"date\": \"supported\", \"departure_time\": \"supported\", \"cabin\": \"supported\", \"flight_id\": \"supported\"}, \"reasons\": {\"meal\": \"lookup_traveler_profile (t1) explicitly returned vegetarian meal_preference\", \"traveler_name\": \"user explicitly stated name in turn.1\", \"passenger_dob\": \"user explicitly stated DOB in turn.1\", \"origin_airport\": \"user explicitly stated BOS in turn.1\", \"destination_airport\": \"user explicitly stated MIA in turn.1\", \"date\": \"user explicitly stated 2026-11-20 in turn.1\", \"departure_time\": \"user explicitly stated 16:45 in turn.1 and search_flights (t2) confirms this\", \"cabin\": \"user explicitly stated economy in turn.1\", \"flight_id\": \"search_flights (t2) explicitly returned FL-2210\"}, \"next_action\": \"proceed\"}",
+        "usage": {
+          "prompt_tokens": 1975,
+          "prompt_tokens_details": {
+            "cached_tokens": 273
+          },
+          "completion_tokens": 664,
+          "total_tokens": 2639
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "case_id": "TB-04b",
+        "pair_id": "P04",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "reject_proposed_call",
+        "action_ok": true,
+        "arg_findings": {
+          "meal": "missing",
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "meal": "missing"
+        },
+        "details": {
+          "meal": "tool.t1.output.meal_preference does not exist in the profile lookup result",
+          "traveler_name": "explicitly provided in turn.1",
+          "passenger_dob": "explicitly provided in turn.1",
+          "origin_airport": "explicitly provided in turn.1",
+          "destination_airport": "explicitly provided in turn.1",
+          "date": "explicitly provided in turn.1",
+          "departure_time": "matches both user input and tool.t2 output",
+          "cabin": "explicitly provided in turn.1",
+          "flight_id": "matches tool.t2 output",
+          "model_declared_action": "reject_proposed_call",
+          "policy_action_from_model_findings": "reject_proposed_call"
+        },
+        "latency_s": 65.77810037499876,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:14b",
+        "raw": "{\n  \"argument_findings\": {\n    \"meal\": \"missing\",\n    \"traveler_name\": \"supported\",\n    \"passenger_dob\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"cabin\": \"supported\",\n    \"flight_id\": \"supported\"\n  },\n  \"reasons\": {\n    \"meal\": \"tool.t1.output.meal_preference does not exist in the profile lookup result\",\n    \"traveler_name\": \"explicitly provided in turn.1\",\n    \"passenger_dob\": \"explicitly provided in turn.1\",\n    \"origin_airport\": \"explicitly provided in turn.1\",\n    \"destination_airport\": \"explicitly provided in turn.1\",\n    \"date\": \"explicitly provided in turn.1\",\n    \"departure_time\": \"matches both user input and tool.t2 output\",\n    \"cabin\": \"explicitly provided in turn.1\",\n    \"flight_id\": \"matches tool.t2 output\"\n  },\n  \"next_action\": \"reject_proposed_call\"\n}",
+        "usage": {
+          "prompt_tokens": 1967,
+          "prompt_tokens_details": {
+            "cached_tokens": 1023
+          },
+          "completion_tokens": 1497,
+          "total_tokens": 3464
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "case_id": "TB-05a",
+        "pair_id": "P05",
+        "expected_action": "retrieve",
+        "pred_action": "retrieve",
+        "action_ok": true,
+        "arg_findings": {
+          "passenger_dob": "missing",
+          "traveler_name": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "passenger_dob": "missing"
+        },
+        "details": {
+          "passenger_dob": "No resolved source provides the passenger's date of birth; profile lookup not executed.",
+          "traveler_name": "Explicitly provided in user's turn 1 statement.",
+          "origin_airport": "Explicitly specified in user's request (ATL).",
+          "destination_airport": "Explicitly specified in user's request (SEA).",
+          "date": "Explicitly specified in user's request (2026-12-12).",
+          "departure_time": "Explicitly specified in user's request (10:30) and matches search result.",
+          "cabin": "Explicitly specified in user's request (premium).",
+          "flight_id": "Retrieved from prior search_flights result (FL-6100).",
+          "model_declared_action": "retrieve",
+          "policy_action_from_model_findings": "retrieve"
+        },
+        "latency_s": 31.427141750002193,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:14b",
+        "raw": "{\n  \"argument_findings\": {\n    \"passenger_dob\": \"missing\",\n    \"traveler_name\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"cabin\": \"supported\",\n    \"flight_id\": \"supported\"\n  },\n  \"reasons\": {\n    \"passenger_dob\": \"No resolved source provides the passenger's date of birth; profile lookup not executed.\",\n    \"traveler_name\": \"Explicitly provided in user's turn 1 statement.\",\n    \"origin_airport\": \"Explicitly specified in user's request (ATL).\",\n    \"destination_airport\": \"Explicitly specified in user's request (SEA).\",\n    \"date\": \"Explicitly specified in user's request (2026-12-12).\",\n    \"departure_time\": \"Explicitly specified in user's request (10:30) and matches search result.\",\n    \"cabin\": \"Explicitly specified in user's request (premium).\",\n    \"flight_id\": \"Retrieved from prior search_flights result (FL-6100).\"\n  },\n  \"next_action\": \"retrieve\"\n}",
+        "usage": {
+          "prompt_tokens": 1764,
+          "prompt_tokens_details": {
+            "cached_tokens": 273
+          },
+          "completion_tokens": 630,
+          "total_tokens": 2394
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "case_id": "TB-05b",
+        "pair_id": "P05",
+        "expected_action": "clarify",
+        "pred_action": "clarify",
+        "action_ok": true,
+        "arg_findings": {
+          "passenger_dob": "missing",
+          "traveler_name": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "passenger_dob": "missing"
+        },
+        "details": {
+          "passenger_dob": "No source reference provides Ines Vidal's date of birth, and profile lookup is unauthorized.",
+          "traveler_name": "Explicitly stated in turn.1 by the user.",
+          "origin_airport": "Explicitly stated in turn.1 by the user.",
+          "destination_airport": "Explicitly stated in turn.1 by the user.",
+          "date": "Explicitly stated in turn.1 by the user.",
+          "departure_time": "Explicitly stated in turn.1 and confirmed by search_flights result.",
+          "cabin": "Explicitly stated in turn.1 by the user.",
+          "flight_id": "Provided by search_flights result (t1).",
+          "model_declared_action": "clarify",
+          "policy_action_from_model_findings": "clarify"
+        },
+        "latency_s": 29.080499957999564,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:14b",
+        "raw": "{\n  \"argument_findings\": {\n    \"passenger_dob\": \"missing\",\n    \"traveler_name\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"cabin\": \"supported\",\n    \"flight_id\": \"supported\"\n  },\n  \"reasons\": {\n    \"passenger_dob\": \"No source reference provides Ines Vidal's date of birth, and profile lookup is unauthorized.\",\n    \"traveler_name\": \"Explicitly stated in turn.1 by the user.\",\n    \"origin_airport\": \"Explicitly stated in turn.1 by the user.\",\n    \"destination_airport\": \"Explicitly stated in turn.1 by the user.\",\n    \"date\": \"Explicitly stated in turn.1 by the user.\",\n    \"departure_time\": \"Explicitly stated in turn.1 and confirmed by search_flights result.\",\n    \"cabin\": \"Explicitly stated in turn.1 by the user.\",\n    \"flight_id\": \"Provided by search_flights result (t1).\"\n  },\n  \"next_action\": \"clarify\"\n}",
+        "usage": {
+          "prompt_tokens": 1721,
+          "prompt_tokens_details": {
+            "cached_tokens": 294
+          },
+          "completion_tokens": 581,
+          "total_tokens": 2302
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "case_id": "TB-06a",
+        "pair_id": "P06",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "destination_airport": "supported",
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "destination_airport": "tool.t1.output.flights contains SPI",
+          "traveler_name": "turn.1 explicitly states Dev Rao",
+          "passenger_dob": "turn.1 explicitly states 1991-05-17",
+          "origin_airport": "turn.1 explicitly states LAX",
+          "date": "turn.1 explicitly states 2026-11-08",
+          "departure_time": "turn.1 explicitly states 12:20",
+          "cabin": "user explicitly requested economy",
+          "flight_id": "tool.t1.output.flights contains FL-7700",
+          "model_declared_action": "proceed",
+          "policy_action_from_model_findings": "proceed"
+        },
+        "latency_s": 38.06245979199957,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:14b",
+        "raw": "{\"argument_findings\": {\"destination_airport\": \"supported\", \"traveler_name\": \"supported\", \"passenger_dob\": \"supported\", \"origin_airport\": \"supported\", \"date\": \"supported\", \"departure_time\": \"supported\", \"cabin\": \"supported\", \"flight_id\": \"supported\"}, \"reasons\": {\"destination_airport\": \"tool.t1.output.flights contains SPI\", \"traveler_name\": \"turn.1 explicitly states Dev Rao\", \"passenger_dob\": \"turn.1 explicitly states 1991-05-17\", \"origin_airport\": \"turn.1 explicitly states LAX\", \"date\": \"turn.1 explicitly states 2026-11-08\", \"departure_time\": \"turn.1 explicitly states 12:20\", \"cabin\": \"user explicitly requested economy\", \"flight_id\": \"tool.t1.output.flights contains FL-7700\"}, \"next_action\": \"proceed\"}",
+        "usage": {
+          "prompt_tokens": 1820,
+          "prompt_tokens_details": {
+            "cached_tokens": 273
+          },
+          "completion_tokens": 782,
+          "total_tokens": 2602
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "case_id": "TB-06b",
+        "pair_id": "P06",
+        "expected_action": "clarify",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "unresolved",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "unresolved"
+        },
+        "details": {
+          "traveler_name": "User explicitly provided name in turn.1",
+          "passenger_dob": "User explicitly provided DOB in turn.1",
+          "origin_airport": "User explicitly provided LAX in turn.1",
+          "destination_airport": "SPI is present in search_flights result (tool.t1)",
+          "date": "User explicitly provided 2026-11-08 in turn.1",
+          "departure_time": "User explicitly provided 12:20 in turn.1 and confirmed in search_flights result",
+          "cabin": "User explicitly requested economy in turn.1",
+          "flight_id": "FL-7700 is present in search_flights result (tool.t1)",
+          "model_declared_action": "proceed",
+          "policy_action_from_model_findings": "proceed"
+        },
+        "latency_s": 42.451702000002115,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:14b",
+        "raw": "{\"argument_findings\": {\"traveler_name\": \"supported\", \"passenger_dob\": \"supported\", \"origin_airport\": \"supported\", \"destination_airport\": \"supported\", \"date\": \"supported\", \"departure_time\": \"supported\", \"cabin\": \"supported\", \"flight_id\": \"supported\"}, \"reasons\": {\"traveler_name\": \"User explicitly provided name in turn.1\", \"passenger_dob\": \"User explicitly provided DOB in turn.1\", \"origin_airport\": \"User explicitly provided LAX in turn.1\", \"destination_airport\": \"SPI is present in search_flights result (tool.t1)\", \"date\": \"User explicitly provided 2026-11-08 in turn.1\", \"departure_time\": \"User explicitly provided 12:20 in turn.1 and confirmed in search_flights result\", \"cabin\": \"User explicitly requested economy in turn.1\", \"flight_id\": \"FL-7700 is present in search_flights result (tool.t1)\"}, \"next_action\": \"proceed\"}",
+        "usage": {
+          "prompt_tokens": 1870,
+          "prompt_tokens_details": {
+            "cached_tokens": 353
+          },
+          "completion_tokens": 901,
+          "total_tokens": 2771
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "case_id": "TB-07a",
+        "pair_id": "P07",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "flight_id": "supported",
+          "departure_time": "supported",
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "cabin": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "flight_id": "flight_id 'FL-8811' exists in search_flights result (t1)",
+          "departure_time": "user explicitly stated '13:10' in turn.1 and it matches search_flights output",
+          "traveler_name": "user explicitly provided 'Lou Amara' in turn.1",
+          "passenger_dob": "user explicitly stated '1979-12-02' in turn.1",
+          "origin_airport": "user explicitly stated 'SEA' in turn.1",
+          "destination_airport": "user explicitly stated 'DFW' in turn.1",
+          "date": "user explicitly stated '2026-11-25' in turn.1",
+          "cabin": "user explicitly requested 'economy' in turn.1",
+          "model_declared_action": "proceed",
+          "policy_action_from_model_findings": "proceed"
+        },
+        "latency_s": 35.27623795799809,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:14b",
+        "raw": "{\"argument_findings\": {\"flight_id\": \"supported\", \"departure_time\": \"supported\", \"traveler_name\": \"supported\", \"passenger_dob\": \"supported\", \"origin_airport\": \"supported\", \"destination_airport\": \"supported\", \"date\": \"supported\", \"cabin\": \"supported\"}, \"reasons\": {\"flight_id\": \"flight_id 'FL-8811' exists in search_flights result (t1)\", \"departure_time\": \"user explicitly stated '13:10' in turn.1 and it matches search_flights output\", \"traveler_name\": \"user explicitly provided 'Lou Amara' in turn.1\", \"passenger_dob\": \"user explicitly stated '1979-12-02' in turn.1\", \"origin_airport\": \"user explicitly stated 'SEA' in turn.1\", \"destination_airport\": \"user explicitly stated 'DFW' in turn.1\", \"date\": \"user explicitly stated '2026-11-25' in turn.1\", \"cabin\": \"user explicitly requested 'economy' in turn.1\"}, \"next_action\": \"proceed\"}",
+        "usage": {
+          "prompt_tokens": 1809,
+          "prompt_tokens_details": {
+            "cached_tokens": 273
+          },
+          "completion_tokens": 723,
+          "total_tokens": 2532
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "case_id": "TB-07b",
+        "pair_id": "P07",
+        "expected_action": "retrieve",
+        "pred_action": "retrieve",
+        "action_ok": true,
+        "arg_findings": {
+          "flight_id": "unresolved",
+          "departure_time": "supported",
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "cabin": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "unresolved"
+        },
+        "details": {
+          "flight_id": "Flight ID 'FL-8811' was generated on 2026-09-15 and expired 24h later (2026-09-16), but current time is 2026-10-19.",
+          "departure_time": "User explicitly stated '13:10' in turn.1 and tool.t1 output confirms this.",
+          "traveler_name": "User explicitly provided 'Lou Amara' in turn.1.",
+          "passenger_dob": "User explicitly stated '1979-12-02' in turn.1.",
+          "origin_airport": "User explicitly stated 'SEA' in turn.1.",
+          "destination_airport": "User explicitly stated 'DFW' in turn.1.",
+          "date": "User explicitly stated '2026-11-25' in turn.1.",
+          "cabin": "User explicitly requested 'economy' in turn.1.",
+          "model_declared_action": "reject_proposed_call",
+          "policy_action_from_model_findings": "retrieve"
+        },
+        "latency_s": 41.867684791999636,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:14b",
+        "raw": "{\n  \"argument_findings\": {\n    \"flight_id\": \"unresolved\",\n    \"departure_time\": \"supported\",\n    \"traveler_name\": \"supported\",\n    \"passenger_dob\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"cabin\": \"supported\"\n  },\n  \"reasons\": {\n    \"flight_id\": \"Flight ID 'FL-8811' was generated on 2026-09-15 and expired 24h later (2026-09-16), but current time is 2026-10-19.\",\n    \"departure_time\": \"User explicitly stated '13:10' in turn.1 and tool.t1 output confirms this.\",\n    \"traveler_name\": \"User explicitly provided 'Lou Amara' in turn.1.\",\n    \"passenger_dob\": \"User explicitly stated '1979-12-02' in turn.1.\",\n    \"origin_airport\": \"User explicitly stated 'SEA' in turn.1.\",\n    \"destination_airport\": \"User explicitly stated 'DFW' in turn.1.\",\n    \"date\": \"User explicitly stated '2026-11-25' in turn.1.\",\n    \"cabin\": \"User explicitly requested 'economy' in turn.1.\"\n  },\n  \"next_action\": \"reject_proposed_call\"\n}",
+        "usage": {
+          "prompt_tokens": 1811,
+          "prompt_tokens_details": {
+            "cached_tokens": 357
+          },
+          "completion_tokens": 894,
+          "total_tokens": 2705
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "case_id": "TB-08a",
+        "pair_id": "P08",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "date": "supported",
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "date": "User explicitly stated '2026-11-14' in turn.1",
+          "traveler_name": "User explicitly stated 'Nadia Ferreira' in turn.1",
+          "passenger_dob": "User explicitly stated '1987-04-11' in turn.1",
+          "origin_airport": "User explicitly stated 'MIA' in turn.1",
+          "destination_airport": "User explicitly stated 'LAS' in turn.1",
+          "departure_time": "User explicitly stated '18:05' in turn.1",
+          "cabin": "User explicitly requested 'economy' in turn.1",
+          "flight_id": "Flight ID 'FL-5102' is present in search_flights result (t1)",
+          "model_declared_action": "proceed",
+          "policy_action_from_model_findings": "proceed"
+        },
+        "latency_s": 51.66441874999873,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:14b",
+        "raw": "{\n  \"argument_findings\": {\n    \"date\": \"supported\",\n    \"traveler_name\": \"supported\",\n    \"passenger_dob\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"cabin\": \"supported\",\n    \"flight_id\": \"supported\"\n  },\n  \"reasons\": {\n    \"date\": \"User explicitly stated '2026-11-14' in turn.1\",\n    \"traveler_name\": \"User explicitly stated 'Nadia Ferreira' in turn.1\",\n    \"passenger_dob\": \"User explicitly stated '1987-04-11' in turn.1\",\n    \"origin_airport\": \"User explicitly stated 'MIA' in turn.1\",\n    \"destination_airport\": \"User explicitly stated 'LAS' in turn.1\",\n    \"departure_time\": \"User explicitly stated '18:05' in turn.1\",\n    \"cabin\": \"User explicitly requested 'economy' in turn.1\",\n    \"flight_id\": \"Flight ID 'FL-5102' is present in search_flights result (t1)\"\n  },\n  \"next_action\": \"proceed\"\n}",
+        "usage": {
+          "prompt_tokens": 1810,
+          "prompt_tokens_details": {
+            "cached_tokens": 273
+          },
+          "completion_tokens": 1129,
+          "total_tokens": 2939
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "case_id": "TB-08b",
+        "pair_id": "P08",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "reject_proposed_call",
+        "action_ok": true,
+        "arg_findings": {
+          "date": "contradicted",
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "contradicted"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "contradicted",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "contradicted"
+        },
+        "details": {
+          "date": "User explicitly corrected date to 2026-11-15 in turn.3, overriding prior 2026-11-14 reference",
+          "traveler_name": "Matches explicit name in turn.1",
+          "passenger_dob": "Matches explicit DOB in turn.1",
+          "origin_airport": "Matches explicit MIA in turn.1",
+          "destination_airport": "Matches explicit LAS in turn.1",
+          "departure_time": "Matches 18:05 in both turn.1 and tool.t1 output",
+          "cabin": "Matches explicit 'economy' in turn.1",
+          "flight_id": "FL-5102 corresponds to 2026-11-14 flight, but user requested 2026-11-15",
+          "model_declared_action": "reject_proposed_call",
+          "policy_action_from_model_findings": "reject_proposed_call"
+        },
+        "latency_s": 51.49901695799781,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:14b",
+        "raw": "{\n  \"argument_findings\": {\n    \"date\": \"contradicted\",\n    \"traveler_name\": \"supported\",\n    \"passenger_dob\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"cabin\": \"supported\",\n    \"flight_id\": \"contradicted\"\n  },\n  \"reasons\": {\n    \"date\": \"User explicitly corrected date to 2026-11-15 in turn.3, overriding prior 2026-11-14 reference\",\n    \"traveler_name\": \"Matches explicit name in turn.1\",\n    \"passenger_dob\": \"Matches explicit DOB in turn.1\",\n    \"origin_airport\": \"Matches explicit MIA in turn.1\",\n    \"destination_airport\": \"Matches explicit LAS in turn.1\",\n    \"departure_time\": \"Matches 18:05 in both turn.1 and tool.t1 output\",\n    \"cabin\": \"Matches explicit 'economy' in turn.1\",\n    \"flight_id\": \"FL-5102 corresponds to 2026-11-14 flight, but user requested 2026-11-15\"\n  },\n  \"next_action\": \"reject_proposed_call\"\n}",
+        "usage": {
+          "prompt_tokens": 2017,
+          "prompt_tokens_details": {
+            "cached_tokens": 383
+          },
+          "completion_tokens": 1107,
+          "total_tokens": 3124
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "case_id": "TB-09a",
+        "pair_id": "P09",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "num_bags": "supported",
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "num_bags": "supported"
+        },
+        "details": {
+          "num_bags": "User explicitly stated 'checking 2 bags' in turn.1",
+          "traveler_name": "User identified as Owen Hale in turn.1, matching flying_person",
+          "passenger_dob": "User provided DOB 1996-02-14 in turn.1",
+          "origin_airport": "User requested SLC to PHX in turn.1",
+          "destination_airport": "User requested SLC to PHX in turn.1",
+          "date": "User specified 2026-11-30 in turn.1",
+          "departure_time": "User requested 07:45 and tool.t1 output confirms this time",
+          "cabin": "User requested economy in turn.1",
+          "flight_id": "tool.t1 output contains FL-9305",
+          "model_declared_action": "proceed",
+          "policy_action_from_model_findings": "proceed"
+        },
+        "latency_s": 41.72096041700206,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:14b",
+        "raw": "{\"argument_findings\": {\"num_bags\": \"supported\", \"traveler_name\": \"supported\", \"passenger_dob\": \"supported\", \"origin_airport\": \"supported\", \"destination_airport\": \"supported\", \"date\": \"supported\", \"departure_time\": \"supported\", \"cabin\": \"supported\", \"flight_id\": \"supported\"}, \"reasons\": {\"num_bags\": \"User explicitly stated 'checking 2 bags' in turn.1\", \"traveler_name\": \"User identified as Owen Hale in turn.1, matching flying_person\", \"passenger_dob\": \"User provided DOB 1996-02-14 in turn.1\", \"origin_airport\": \"User requested SLC to PHX in turn.1\", \"destination_airport\": \"User requested SLC to PHX in turn.1\", \"date\": \"User specified 2026-11-30 in turn.1\", \"departure_time\": \"User requested 07:45 and tool.t1 output confirms this time\", \"cabin\": \"User requested economy in turn.1\", \"flight_id\": \"tool.t1 output contains FL-9305\"}, \"next_action\": \"proceed\"}",
+        "usage": {
+          "prompt_tokens": 1891,
+          "prompt_tokens_details": {
+            "cached_tokens": 273
+          },
+          "completion_tokens": 871,
+          "total_tokens": 2762
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "case_id": "TB-09b",
+        "pair_id": "P09",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "clarify",
+        "action_ok": false,
+        "arg_findings": {
+          "num_bags": "unresolved",
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "num_bags": "missing"
+        },
+        "details": {
+          "num_bags": "No source_reference provided for num_bags=2; default is 0 without evidence.",
+          "traveler_name": "Explicitly stated in turn.1.",
+          "passenger_dob": "Explicitly stated in turn.1.",
+          "origin_airport": "Explicitly stated in turn.1.",
+          "destination_airport": "Explicitly stated in turn.1.",
+          "date": "Explicitly stated in turn.1.",
+          "departure_time": "Present in both user input and tool.t1.output.flights.",
+          "cabin": "Explicitly stated in turn.1.",
+          "flight_id": "Valid and present in tool.t1.output.flights.",
+          "model_declared_action": "reject_proposed_call",
+          "policy_action_from_model_findings": "clarify"
+        },
+        "latency_s": 77.7381720839985,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:14b",
+        "raw": "{\n  \"argument_findings\": {\n    \"num_bags\": \"unresolved\",\n    \"traveler_name\": \"supported\",\n    \"passenger_dob\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"cabin\": \"supported\",\n    \"flight_id\": \"supported\"\n  },\n  \"reasons\": {\n    \"num_bags\": \"No source_reference provided for num_bags=2; default is 0 without evidence.\",\n    \"traveler_name\": \"Explicitly stated in turn.1.\",\n    \"passenger_dob\": \"Explicitly stated in turn.1.\",\n    \"origin_airport\": \"Explicitly stated in turn.1.\",\n    \"destination_airport\": \"Explicitly stated in turn.1.\",\n    \"date\": \"Explicitly stated in turn.1.\",\n    \"departure_time\": \"Present in both user input and tool.t1.output.flights.\",\n    \"cabin\": \"Explicitly stated in turn.1.\",\n    \"flight_id\": \"Valid and present in tool.t1.output.flights.\"\n  },\n  \"next_action\": \"reject_proposed_call\"\n}",
+        "usage": {
+          "prompt_tokens": 1864,
+          "prompt_tokens_details": {
+            "cached_tokens": 384
+          },
+          "completion_tokens": 1775,
+          "total_tokens": 3639
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "case_id": "TB-10a",
+        "pair_id": "P10",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "traveler_name": "User explicitly stated name in turn.1",
+          "passenger_dob": "User explicitly provided DOB in turn.1",
+          "origin_airport": "lookup_traveler_profile.t1 output contains home_airport=SFO",
+          "destination_airport": "User explicitly stated AUS in turn.1",
+          "date": "User explicitly provided 2026-12-02 in turn.1",
+          "departure_time": "search_flights.t2 output contains departure_time=15:30",
+          "cabin": "User explicitly requested economy in turn.1",
+          "flight_id": "search_flights.t2 output contains flight_id=FL-1207",
+          "model_declared_action": "proceed",
+          "policy_action_from_model_findings": "proceed"
+        },
+        "latency_s": 41.92577329199776,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:14b",
+        "raw": "{\"argument_findings\": {\"traveler_name\": \"supported\", \"passenger_dob\": \"supported\", \"origin_airport\": \"supported\", \"destination_airport\": \"supported\", \"date\": \"supported\", \"departure_time\": \"supported\", \"cabin\": \"supported\", \"flight_id\": \"supported\"}, \"reasons\": {\"traveler_name\": \"User explicitly stated name in turn.1\", \"passenger_dob\": \"User explicitly provided DOB in turn.1\", \"origin_airport\": \"lookup_traveler_profile.t1 output contains home_airport=SFO\", \"destination_airport\": \"User explicitly stated AUS in turn.1\", \"date\": \"User explicitly provided 2026-12-02 in turn.1\", \"departure_time\": \"search_flights.t2 output contains departure_time=15:30\", \"cabin\": \"User explicitly requested economy in turn.1\", \"flight_id\": \"search_flights.t2 output contains flight_id=FL-1207\"}, \"next_action\": \"proceed\"}",
+        "usage": {
+          "prompt_tokens": 1896,
+          "prompt_tokens_details": {
+            "cached_tokens": 273
+          },
+          "completion_tokens": 873,
+          "total_tokens": 2769
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "case_id": "TB-10b",
+        "pair_id": "P10",
+        "expected_action": "clarify",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "unresolved",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "unresolved"
+        },
+        "details": {
+          "traveler_name": "Explicitly stated in user's turn.1",
+          "passenger_dob": "Explicitly stated in user's turn.1",
+          "origin_airport": "Flight FL-1207's origin is SFO in tool.t2.output.flights",
+          "destination_airport": "Explicitly stated in user's turn.1",
+          "date": "Explicitly stated in user's turn.1",
+          "departure_time": "Matches both user's request and flight FL-1207's departure time in tool.t2.output.flights",
+          "cabin": "Explicitly requested as 'economy' in user's turn.1",
+          "flight_id": "Explicitly present in tool.t2.output.flights",
+          "model_declared_action": "proceed",
+          "policy_action_from_model_findings": "proceed"
+        },
+        "latency_s": 54.17250100000092,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:14b",
+        "raw": "{\"argument_findings\": {\"traveler_name\": \"supported\", \"passenger_dob\": \"supported\", \"origin_airport\": \"supported\", \"destination_airport\": \"supported\", \"date\": \"supported\", \"departure_time\": \"supported\", \"cabin\": \"supported\", \"flight_id\": \"supported\"}, \"reasons\": {\"traveler_name\": \"Explicitly stated in user's turn.1\", \"passenger_dob\": \"Explicitly stated in user's turn.1\", \"origin_airport\": \"Flight FL-1207's origin is SFO in tool.t2.output.flights\", \"destination_airport\": \"Explicitly stated in user's turn.1\", \"date\": \"Explicitly stated in user's turn.1\", \"departure_time\": \"Matches both user's request and flight FL-1207's departure time in tool.t2.output.flights\", \"cabin\": \"Explicitly requested as 'economy' in user's turn.1\", \"flight_id\": \"Explicitly present in tool.t2.output.flights\"}, \"next_action\": \"proceed\"}",
+        "usage": {
+          "prompt_tokens": 1887,
+          "prompt_tokens_details": {
+            "cached_tokens": 290
+          },
+          "completion_tokens": 1156,
+          "total_tokens": 3043
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "unsupported_calls_allowed": [
+      3,
+      11
+    ],
+    "supported_calls_blocked": [
+      0,
+      9
+    ],
+    "next_action_accuracy": [
+      16,
+      20
+    ],
+    "unnecessary_clarification": [
+      1,
+      20
+    ],
+    "arg_level": [
+      157,
+      164
+    ],
+    "arg_by_category": {
+      "contradicted": {
+        "correct": 3,
+        "total": 3
+      },
+      "missing": {
+        "correct": 3,
+        "total": 4
+      },
+      "supported": {
+        "correct": 148,
+        "total": 148
+      },
+      "unresolved": {
+        "correct": 1,
+        "total": 7
+      },
+      "wrong_entity": {
+        "correct": 2,
+        "total": 2
+      }
+    },
+    "arg_confusion": {
+      "contradicted->contradicted": 3,
+      "missing->missing": 3,
+      "missing->unresolved": 1,
+      "supported->supported": 148,
+      "unresolved->supported": 6,
+      "unresolved->unresolved": 1,
+      "wrong_entity->wrong_entity": 2
+    },
+    "pair_both_correct": [
+      6,
+      10
+    ],
+    "latency_s_mean": 43.392275658399925,
+    "latency_s_median": 41.867684791999636,
+    "latency_s_p95": 65.77810037499876,
+    "latency_s_max": 77.7381720839985,
+    "n_parse_errors": 0,
+    "token_usage_total": {
+      "completion_tokens": 18282,
+      "total_tokens": 55871,
+      "prompt_tokens": 37589,
+      "prompt_tokens_details": 0
+    },
+    "token_usage_per_case": [
+      {
+        "prompt_tokens": 1968,
+        "prompt_tokens_details": {
+          "cached_tokens": 283
+        },
+        "completion_tokens": 889,
+        "total_tokens": 2857
+      },
+      {
+        "prompt_tokens": 1940,
+        "prompt_tokens_details": {
+          "cached_tokens": 1939
+        },
+        "completion_tokens": 666,
+        "total_tokens": 2606
+      },
+      {
+        "prompt_tokens": 1813,
+        "prompt_tokens_details": {
+          "cached_tokens": 273
+        },
+        "completion_tokens": 705,
+        "total_tokens": 2518
+      },
+      {
+        "prompt_tokens": 1877,
+        "prompt_tokens_details": {
+          "cached_tokens": 361
+        },
+        "completion_tokens": 1055,
+        "total_tokens": 2932
+      },
+      {
+        "prompt_tokens": 1944,
+        "prompt_tokens_details": {
+          "cached_tokens": 273
+        },
+        "completion_tokens": 660,
+        "total_tokens": 2604
+      },
+      {
+        "prompt_tokens": 1945,
+        "prompt_tokens_details": {
+          "cached_tokens": 387
+        },
+        "completion_tokens": 724,
+        "total_tokens": 2669
+      },
+      {
+        "prompt_tokens": 1975,
+        "prompt_tokens_details": {
+          "cached_tokens": 273
+        },
+        "completion_tokens": 664,
+        "total_tokens": 2639
+      },
+      {
+        "prompt_tokens": 1967,
+        "prompt_tokens_details": {
+          "cached_tokens": 1023
+        },
+        "completion_tokens": 1497,
+        "total_tokens": 3464
+      },
+      {
+        "prompt_tokens": 1764,
+        "prompt_tokens_details": {
+          "cached_tokens": 273
+        },
+        "completion_tokens": 630,
+        "total_tokens": 2394
+      },
+      {
+        "prompt_tokens": 1721,
+        "prompt_tokens_details": {
+          "cached_tokens": 294
+        },
+        "completion_tokens": 581,
+        "total_tokens": 2302
+      },
+      {
+        "prompt_tokens": 1820,
+        "prompt_tokens_details": {
+          "cached_tokens": 273
+        },
+        "completion_tokens": 782,
+        "total_tokens": 2602
+      },
+      {
+        "prompt_tokens": 1870,
+        "prompt_tokens_details": {
+          "cached_tokens": 353
+        },
+        "completion_tokens": 901,
+        "total_tokens": 2771
+      },
+      {
+        "prompt_tokens": 1809,
+        "prompt_tokens_details": {
+          "cached_tokens": 273
+        },
+        "completion_tokens": 723,
+        "total_tokens": 2532
+      },
+      {
+        "prompt_tokens": 1811,
+        "prompt_tokens_details": {
+          "cached_tokens": 357
+        },
+        "completion_tokens": 894,
+        "total_tokens": 2705
+      },
+      {
+        "prompt_tokens": 1810,
+        "prompt_tokens_details": {
+          "cached_tokens": 273
+        },
+        "completion_tokens": 1129,
+        "total_tokens": 2939
+      },
+      {
+        "prompt_tokens": 2017,
+        "prompt_tokens_details": {
+          "cached_tokens": 383
+        },
+        "completion_tokens": 1107,
+        "total_tokens": 3124
+      },
+      {
+        "prompt_tokens": 1891,
+        "prompt_tokens_details": {
+          "cached_tokens": 273
+        },
+        "completion_tokens": 871,
+        "total_tokens": 2762
+      },
+      {
+        "prompt_tokens": 1864,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens": 1775,
+        "total_tokens": 3639
+      },
+      {
+        "prompt_tokens": 1896,
+        "prompt_tokens_details": {
+          "cached_tokens": 273
+        },
+        "completion_tokens": 873,
+        "total_tokens": 2769
+      },
+      {
+        "prompt_tokens": 1887,
+        "prompt_tokens_details": {
+          "cached_tokens": 290
+        },
+        "completion_tokens": 1156,
+        "total_tokens": 3043
+      }
+    ]
+  }
+]

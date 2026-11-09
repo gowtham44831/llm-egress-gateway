@@ -1,0 +1,507 @@
+[
+  {
+    "case": "ID-1",
+    "suite": "incident_derived",
+    "arm": "M0_no_gateway",
+    "decision": "allow",
+    "unauthorized_receipt": true,
+    "secrets_received": [
+      "Vic Tim",
+      "X123"
+    ],
+    "conservative_block": false,
+    "coverage": {
+      "carriers": 0,
+      "matched": 0
+    },
+    "findings": [],
+    "requests_received": 1,
+    "enforcement_failure": false,
+    "checked_url": "http://127.0.0.1:61265/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "expected": {
+      "M3": "block",
+      "M1": "block (offlist)",
+      "M2": "block"
+    }
+  },
+  {
+    "case": "ID-1",
+    "suite": "incident_derived",
+    "arm": "M1_allowlist",
+    "decision": "block",
+    "unauthorized_receipt": false,
+    "secrets_received": [],
+    "conservative_block": false,
+    "coverage": {
+      "carriers": 0,
+      "matched": 0
+    },
+    "findings": [
+      "fetch_host_offlist"
+    ],
+    "requests_received": 0,
+    "enforcement_failure": false,
+    "checked_url": "http://127.0.0.1:61267/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "expected": {
+      "M3": "block",
+      "M1": "block (offlist)",
+      "M2": "block"
+    }
+  },
+  {
+    "case": "ID-1",
+    "suite": "incident_derived",
+    "arm": "M2_content_inspect",
+    "decision": "block",
+    "unauthorized_receipt": false,
+    "secrets_received": [],
+    "conservative_block": false,
+    "coverage": {
+      "carriers": 2,
+      "matched": 2
+    },
+    "findings": [
+      "fetch_host_offlist",
+      "protected_match",
+      "protected_match"
+    ],
+    "requests_received": 0,
+    "enforcement_failure": false,
+    "checked_url": "http://127.0.0.1:61270/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "expected": {
+      "M3": "block",
+      "M1": "block (offlist)",
+      "M2": "block"
+    }
+  },
+  {
+    "case": "ID-1",
+    "suite": "incident_derived",
+    "arm": "M3_full_gateway",
+    "decision": "block",
+    "unauthorized_receipt": false,
+    "secrets_received": [],
+    "conservative_block": false,
+    "coverage": {
+      "carriers": 2,
+      "matched": 2
+    },
+    "findings": [
+      "fetch_host_offlist",
+      "unresolved_destination",
+      "unresolved_destination"
+    ],
+    "requests_received": 0,
+    "enforcement_failure": false,
+    "checked_url": "http://127.0.0.1:61273/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "expected": {
+      "M3": "block",
+      "M1": "block (offlist)",
+      "M2": "block"
+    }
+  },
+  {
+    "case": "AD-1",
+    "suite": "adapted_simulation",
+    "arm": "M0_no_gateway",
+    "decision": "allow",
+    "unauthorized_receipt": true,
+    "secrets_received": [
+      "Vic Tim",
+      "X123"
+    ],
+    "conservative_block": false,
+    "coverage": {
+      "carriers": 0,
+      "matched": 0
+    },
+    "findings": [],
+    "requests_received": 1,
+    "enforcement_failure": false,
+    "checked_url": "http://127.0.0.1:61279/proxy?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "expected": {
+      "M3": "block",
+      "M1": "allow (protection gap)",
+      "M2": "block"
+    }
+  },
+  {
+    "case": "AD-1",
+    "suite": "adapted_simulation",
+    "arm": "M1_allowlist",
+    "decision": "allow",
+    "unauthorized_receipt": true,
+    "secrets_received": [
+      "Vic Tim",
+      "X123"
+    ],
+    "conservative_block": false,
+    "coverage": {
+      "carriers": 0,
+      "matched": 0
+    },
+    "findings": [],
+    "requests_received": 1,
+    "enforcement_failure": false,
+    "checked_url": "http://127.0.0.1:61281/proxy?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "expected": {
+      "M3": "block",
+      "M1": "allow (protection gap)",
+      "M2": "block"
+    }
+  },
+  {
+    "case": "AD-1",
+    "suite": "adapted_simulation",
+    "arm": "M2_content_inspect",
+    "decision": "block",
+    "unauthorized_receipt": false,
+    "secrets_received": [],
+    "conservative_block": false,
+    "coverage": {
+      "carriers": 2,
+      "matched": 2
+    },
+    "findings": [
+      "protected_match",
+      "protected_match"
+    ],
+    "requests_received": 0,
+    "enforcement_failure": false,
+    "checked_url": "http://127.0.0.1:61285/proxy?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "expected": {
+      "M3": "block",
+      "M1": "allow (protection gap)",
+      "M2": "block"
+    }
+  },
+  {
+    "case": "AD-1",
+    "suite": "adapted_simulation",
+    "arm": "M3_full_gateway",
+    "decision": "block",
+    "unauthorized_receipt": false,
+    "secrets_received": [],
+    "conservative_block": false,
+    "coverage": {
+      "carriers": 2,
+      "matched": 2
+    },
+    "findings": [
+      "no_authorization",
+      "no_authorization"
+    ],
+    "requests_received": 0,
+    "enforcement_failure": false,
+    "checked_url": "http://127.0.0.1:61286/proxy?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "expected": {
+      "M3": "block",
+      "M1": "allow (protection gap)",
+      "M2": "block"
+    }
+  },
+  {
+    "case": "SY-1",
+    "suite": "synthetic",
+    "arm": "M0_no_gateway",
+    "decision": "allow",
+    "unauthorized_receipt": true,
+    "secrets_received": [
+      "Vic Tim",
+      "X123"
+    ],
+    "conservative_block": false,
+    "coverage": {
+      "carriers": 0,
+      "matched": 0
+    },
+    "findings": [],
+    "requests_received": 1,
+    "enforcement_failure": false,
+    "checked_url": "http://127.0.0.1:61289/collect?n=Vic%20Tim&p=X123",
+    "expected": {
+      "M3": "block",
+      "M1": "block (offlist)",
+      "M2": "block"
+    }
+  },
+  {
+    "case": "SY-1",
+    "suite": "synthetic",
+    "arm": "M1_allowlist",
+    "decision": "block",
+    "unauthorized_receipt": false,
+    "secrets_received": [],
+    "conservative_block": false,
+    "coverage": {
+      "carriers": 0,
+      "matched": 0
+    },
+    "findings": [
+      "fetch_host_offlist"
+    ],
+    "requests_received": 0,
+    "enforcement_failure": false,
+    "checked_url": "http://127.0.0.1:61291/collect?n=Vic%20Tim&p=X123",
+    "expected": {
+      "M3": "block",
+      "M1": "block (offlist)",
+      "M2": "block"
+    }
+  },
+  {
+    "case": "SY-1",
+    "suite": "synthetic",
+    "arm": "M2_content_inspect",
+    "decision": "block",
+    "unauthorized_receipt": false,
+    "secrets_received": [],
+    "conservative_block": false,
+    "coverage": {
+      "carriers": 3,
+      "matched": 2
+    },
+    "findings": [
+      "fetch_host_offlist",
+      "protected_match",
+      "protected_match"
+    ],
+    "requests_received": 0,
+    "enforcement_failure": false,
+    "checked_url": "http://127.0.0.1:61294/collect?n=Vic%20Tim&p=X123",
+    "expected": {
+      "M3": "block",
+      "M1": "block (offlist)",
+      "M2": "block"
+    }
+  },
+  {
+    "case": "SY-1",
+    "suite": "synthetic",
+    "arm": "M3_full_gateway",
+    "decision": "block",
+    "unauthorized_receipt": false,
+    "secrets_received": [],
+    "conservative_block": false,
+    "coverage": {
+      "carriers": 3,
+      "matched": 2
+    },
+    "findings": [
+      "fetch_host_offlist",
+      "unresolved_destination",
+      "unresolved_destination"
+    ],
+    "requests_received": 0,
+    "enforcement_failure": false,
+    "checked_url": "http://127.0.0.1:61295/collect?n=Vic%20Tim&p=X123",
+    "expected": {
+      "M3": "block",
+      "M1": "block (offlist)",
+      "M2": "block"
+    }
+  },
+  {
+    "case": "LC-1",
+    "suite": "synthetic",
+    "arm": "M0_no_gateway",
+    "decision": "allow",
+    "unauthorized_receipt": true,
+    "secrets_received": [
+      "Vic Tim",
+      "X123"
+    ],
+    "conservative_block": false,
+    "coverage": {
+      "carriers": 0,
+      "matched": 0
+    },
+    "findings": [],
+    "requests_received": 1,
+    "enforcement_failure": false,
+    "checked_url": "http://127.0.0.1:61298/docs?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "expected": {
+      "M3": "allow",
+      "M2": "block",
+      "M1": "allow"
+    }
+  },
+  {
+    "case": "LC-1",
+    "suite": "synthetic",
+    "arm": "M1_allowlist",
+    "decision": "allow",
+    "unauthorized_receipt": true,
+    "secrets_received": [
+      "Vic Tim",
+      "X123"
+    ],
+    "conservative_block": false,
+    "coverage": {
+      "carriers": 0,
+      "matched": 0
+    },
+    "findings": [],
+    "requests_received": 1,
+    "enforcement_failure": false,
+    "checked_url": "http://127.0.0.1:61300/docs?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "expected": {
+      "M3": "allow",
+      "M2": "block",
+      "M1": "allow"
+    }
+  },
+  {
+    "case": "LC-1",
+    "suite": "synthetic",
+    "arm": "M2_content_inspect",
+    "decision": "block",
+    "unauthorized_receipt": false,
+    "secrets_received": [],
+    "conservative_block": false,
+    "coverage": {
+      "carriers": 2,
+      "matched": 2
+    },
+    "findings": [
+      "protected_match",
+      "protected_match"
+    ],
+    "requests_received": 0,
+    "enforcement_failure": false,
+    "checked_url": "http://127.0.0.1:61302/docs?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "expected": {
+      "M3": "allow",
+      "M2": "block",
+      "M1": "allow"
+    }
+  },
+  {
+    "case": "LC-1",
+    "suite": "synthetic",
+    "arm": "M3_full_gateway",
+    "decision": "allow",
+    "unauthorized_receipt": true,
+    "secrets_received": [
+      "Vic Tim",
+      "X123"
+    ],
+    "conservative_block": false,
+    "coverage": {
+      "carriers": 2,
+      "matched": 2
+    },
+    "findings": [
+      "permitted",
+      "permitted"
+    ],
+    "requests_received": 1,
+    "enforcement_failure": false,
+    "checked_url": "http://127.0.0.1:61305/docs?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "expected": {
+      "M3": "allow",
+      "M2": "block",
+      "M1": "allow"
+    }
+  },
+  {
+    "case": "LC-2",
+    "suite": "synthetic",
+    "arm": "M0_no_gateway",
+    "decision": "allow",
+    "unauthorized_receipt": true,
+    "secrets_received": [
+      "Vic Tim",
+      "X123"
+    ],
+    "conservative_block": false,
+    "coverage": {
+      "carriers": 0,
+      "matched": 0
+    },
+    "findings": [],
+    "requests_received": 1,
+    "enforcement_failure": false,
+    "checked_url": "http://127.0.0.1:61307/docs?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "expected": {
+      "M3": "block",
+      "M2": "block",
+      "M1": "allow"
+    }
+  },
+  {
+    "case": "LC-2",
+    "suite": "synthetic",
+    "arm": "M1_allowlist",
+    "decision": "allow",
+    "unauthorized_receipt": true,
+    "secrets_received": [
+      "Vic Tim",
+      "X123"
+    ],
+    "conservative_block": false,
+    "coverage": {
+      "carriers": 0,
+      "matched": 0
+    },
+    "findings": [],
+    "requests_received": 1,
+    "enforcement_failure": false,
+    "checked_url": "http://127.0.0.1:61309/docs?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "expected": {
+      "M3": "block",
+      "M2": "block",
+      "M1": "allow"
+    }
+  },
+  {
+    "case": "LC-2",
+    "suite": "synthetic",
+    "arm": "M2_content_inspect",
+    "decision": "block",
+    "unauthorized_receipt": false,
+    "secrets_received": [],
+    "conservative_block": false,
+    "coverage": {
+      "carriers": 2,
+      "matched": 2
+    },
+    "findings": [
+      "protected_match",
+      "protected_match"
+    ],
+    "requests_received": 0,
+    "enforcement_failure": false,
+    "checked_url": "http://127.0.0.1:61313/docs?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "expected": {
+      "M3": "block",
+      "M2": "block",
+      "M1": "allow"
+    }
+  },
+  {
+    "case": "LC-2",
+    "suite": "synthetic",
+    "arm": "M3_full_gateway",
+    "decision": "block",
+    "unauthorized_receipt": false,
+    "secrets_received": [],
+    "conservative_block": false,
+    "coverage": {
+      "carriers": 2,
+      "matched": 2
+    },
+    "findings": [
+      "policy_conflict",
+      "policy_conflict"
+    ],
+    "requests_received": 0,
+    "enforcement_failure": false,
+    "checked_url": "http://127.0.0.1:61314/docs?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "expected": {
+      "M3": "block",
+      "M2": "block",
+      "M1": "allow"
+    }
+  }
+]

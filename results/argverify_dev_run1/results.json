@@ -1,0 +1,3899 @@
+[
+  {
+    "method": "schema",
+    "status": "ok",
+    "n_cases": 20,
+    "rows": [
+      {
+        "case_id": "TB-01a",
+        "pair_id": "P01",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "traveler_name": "schema-valid (no evidence check performed)",
+          "passenger_dob": "schema-valid (no evidence check performed)",
+          "origin_airport": "schema-valid (no evidence check performed)",
+          "destination_airport": "schema-valid (no evidence check performed)",
+          "date": "schema-valid (no evidence check performed)",
+          "departure_time": "schema-valid (no evidence check performed)",
+          "cabin": "schema-valid (no evidence check performed)",
+          "flight_id": "schema-valid (no evidence check performed)"
+        },
+        "latency_s": 6.283299808274023e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-01b",
+        "pair_id": "P01",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "wrong_entity",
+          "passenger_dob": "wrong_entity",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "traveler_name": "schema-valid (no evidence check performed)",
+          "passenger_dob": "schema-valid (no evidence check performed)",
+          "origin_airport": "schema-valid (no evidence check performed)",
+          "destination_airport": "schema-valid (no evidence check performed)",
+          "date": "schema-valid (no evidence check performed)",
+          "departure_time": "schema-valid (no evidence check performed)",
+          "cabin": "schema-valid (no evidence check performed)",
+          "flight_id": "schema-valid (no evidence check performed)"
+        },
+        "latency_s": 7.208000170066953e-06,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-02a",
+        "pair_id": "P02",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "traveler_name": "schema-valid (no evidence check performed)",
+          "passenger_dob": "schema-valid (no evidence check performed)",
+          "origin_airport": "schema-valid (no evidence check performed)",
+          "destination_airport": "schema-valid (no evidence check performed)",
+          "date": "schema-valid (no evidence check performed)",
+          "departure_time": "schema-valid (no evidence check performed)",
+          "cabin": "schema-valid (no evidence check performed)",
+          "flight_id": "schema-valid (no evidence check performed)"
+        },
+        "latency_s": 5.000001692678779e-06,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-02b",
+        "pair_id": "P02",
+        "expected_action": "clarify",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "unresolved",
+          "cabin": "supported",
+          "flight_id": "unresolved"
+        },
+        "details": {
+          "traveler_name": "schema-valid (no evidence check performed)",
+          "passenger_dob": "schema-valid (no evidence check performed)",
+          "origin_airport": "schema-valid (no evidence check performed)",
+          "destination_airport": "schema-valid (no evidence check performed)",
+          "date": "schema-valid (no evidence check performed)",
+          "departure_time": "schema-valid (no evidence check performed)",
+          "cabin": "schema-valid (no evidence check performed)",
+          "flight_id": "schema-valid (no evidence check performed)"
+        },
+        "latency_s": 4.124998667975888e-06,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-03a",
+        "pair_id": "P03",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "traveler_name": "schema-valid (no evidence check performed)",
+          "passenger_dob": "schema-valid (no evidence check performed)",
+          "origin_airport": "schema-valid (no evidence check performed)",
+          "destination_airport": "schema-valid (no evidence check performed)",
+          "date": "schema-valid (no evidence check performed)",
+          "departure_time": "schema-valid (no evidence check performed)",
+          "cabin": "schema-valid (no evidence check performed)",
+          "flight_id": "schema-valid (no evidence check performed)"
+        },
+        "latency_s": 3.6660021578427404e-06,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-03b",
+        "pair_id": "P03",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "contradicted",
+          "flight_id": "supported"
+        },
+        "details": {
+          "traveler_name": "schema-valid (no evidence check performed)",
+          "passenger_dob": "schema-valid (no evidence check performed)",
+          "origin_airport": "schema-valid (no evidence check performed)",
+          "destination_airport": "schema-valid (no evidence check performed)",
+          "date": "schema-valid (no evidence check performed)",
+          "departure_time": "schema-valid (no evidence check performed)",
+          "cabin": "schema-valid (no evidence check performed)",
+          "flight_id": "schema-valid (no evidence check performed)"
+        },
+        "latency_s": 3.5420016502030194e-06,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-04a",
+        "pair_id": "P04",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "meal": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "meal": "supported"
+        },
+        "details": {
+          "traveler_name": "schema-valid (no evidence check performed)",
+          "passenger_dob": "schema-valid (no evidence check performed)",
+          "origin_airport": "schema-valid (no evidence check performed)",
+          "destination_airport": "schema-valid (no evidence check performed)",
+          "date": "schema-valid (no evidence check performed)",
+          "departure_time": "schema-valid (no evidence check performed)",
+          "cabin": "schema-valid (no evidence check performed)",
+          "flight_id": "schema-valid (no evidence check performed)",
+          "meal": "schema-valid (no evidence check performed)"
+        },
+        "latency_s": 4.083001840626821e-06,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-04b",
+        "pair_id": "P04",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "meal": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "meal": "missing"
+        },
+        "details": {
+          "traveler_name": "schema-valid (no evidence check performed)",
+          "passenger_dob": "schema-valid (no evidence check performed)",
+          "origin_airport": "schema-valid (no evidence check performed)",
+          "destination_airport": "schema-valid (no evidence check performed)",
+          "date": "schema-valid (no evidence check performed)",
+          "departure_time": "schema-valid (no evidence check performed)",
+          "cabin": "schema-valid (no evidence check performed)",
+          "flight_id": "schema-valid (no evidence check performed)",
+          "meal": "schema-valid (no evidence check performed)"
+        },
+        "latency_s": 3.6249984987080097e-06,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-05a",
+        "pair_id": "P05",
+        "expected_action": "retrieve",
+        "pred_action": "retrieve",
+        "action_ok": true,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "missing",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "passenger_dob": "missing"
+        },
+        "details": {
+          "traveler_name": "schema-valid (no evidence check performed)",
+          "passenger_dob": "required field absent from the call",
+          "origin_airport": "schema-valid (no evidence check performed)",
+          "destination_airport": "schema-valid (no evidence check performed)",
+          "date": "schema-valid (no evidence check performed)",
+          "departure_time": "schema-valid (no evidence check performed)",
+          "cabin": "schema-valid (no evidence check performed)",
+          "flight_id": "schema-valid (no evidence check performed)"
+        },
+        "latency_s": 8.082999556791037e-06,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-05b",
+        "pair_id": "P05",
+        "expected_action": "clarify",
+        "pred_action": "clarify",
+        "action_ok": true,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "missing",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "passenger_dob": "missing"
+        },
+        "details": {
+          "traveler_name": "schema-valid (no evidence check performed)",
+          "passenger_dob": "required field absent from the call",
+          "origin_airport": "schema-valid (no evidence check performed)",
+          "destination_airport": "schema-valid (no evidence check performed)",
+          "date": "schema-valid (no evidence check performed)",
+          "departure_time": "schema-valid (no evidence check performed)",
+          "cabin": "schema-valid (no evidence check performed)",
+          "flight_id": "schema-valid (no evidence check performed)"
+        },
+        "latency_s": 5.1249990065116435e-06,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-06a",
+        "pair_id": "P06",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "traveler_name": "schema-valid (no evidence check performed)",
+          "passenger_dob": "schema-valid (no evidence check performed)",
+          "origin_airport": "schema-valid (no evidence check performed)",
+          "destination_airport": "schema-valid (no evidence check performed)",
+          "date": "schema-valid (no evidence check performed)",
+          "departure_time": "schema-valid (no evidence check performed)",
+          "cabin": "schema-valid (no evidence check performed)",
+          "flight_id": "schema-valid (no evidence check performed)"
+        },
+        "latency_s": 3.625002136686817e-06,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-06b",
+        "pair_id": "P06",
+        "expected_action": "clarify",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "unresolved",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "unresolved"
+        },
+        "details": {
+          "traveler_name": "schema-valid (no evidence check performed)",
+          "passenger_dob": "schema-valid (no evidence check performed)",
+          "origin_airport": "schema-valid (no evidence check performed)",
+          "destination_airport": "schema-valid (no evidence check performed)",
+          "date": "schema-valid (no evidence check performed)",
+          "departure_time": "schema-valid (no evidence check performed)",
+          "cabin": "schema-valid (no evidence check performed)",
+          "flight_id": "schema-valid (no evidence check performed)"
+        },
+        "latency_s": 3.416000254219398e-06,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-07a",
+        "pair_id": "P07",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "traveler_name": "schema-valid (no evidence check performed)",
+          "passenger_dob": "schema-valid (no evidence check performed)",
+          "origin_airport": "schema-valid (no evidence check performed)",
+          "destination_airport": "schema-valid (no evidence check performed)",
+          "date": "schema-valid (no evidence check performed)",
+          "departure_time": "schema-valid (no evidence check performed)",
+          "cabin": "schema-valid (no evidence check performed)",
+          "flight_id": "schema-valid (no evidence check performed)"
+        },
+        "latency_s": 3.3329997677356005e-06,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-07b",
+        "pair_id": "P07",
+        "expected_action": "retrieve",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "unresolved"
+        },
+        "details": {
+          "traveler_name": "schema-valid (no evidence check performed)",
+          "passenger_dob": "schema-valid (no evidence check performed)",
+          "origin_airport": "schema-valid (no evidence check performed)",
+          "destination_airport": "schema-valid (no evidence check performed)",
+          "date": "schema-valid (no evidence check performed)",
+          "departure_time": "schema-valid (no evidence check performed)",
+          "cabin": "schema-valid (no evidence check performed)",
+          "flight_id": "schema-valid (no evidence check performed)"
+        },
+        "latency_s": 3.3329997677356005e-06,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-08a",
+        "pair_id": "P08",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "traveler_name": "schema-valid (no evidence check performed)",
+          "passenger_dob": "schema-valid (no evidence check performed)",
+          "origin_airport": "schema-valid (no evidence check performed)",
+          "destination_airport": "schema-valid (no evidence check performed)",
+          "date": "schema-valid (no evidence check performed)",
+          "departure_time": "schema-valid (no evidence check performed)",
+          "cabin": "schema-valid (no evidence check performed)",
+          "flight_id": "schema-valid (no evidence check performed)"
+        },
+        "latency_s": 3.3329997677356005e-06,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-08b",
+        "pair_id": "P08",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "contradicted",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "contradicted"
+        },
+        "details": {
+          "traveler_name": "schema-valid (no evidence check performed)",
+          "passenger_dob": "schema-valid (no evidence check performed)",
+          "origin_airport": "schema-valid (no evidence check performed)",
+          "destination_airport": "schema-valid (no evidence check performed)",
+          "date": "schema-valid (no evidence check performed)",
+          "departure_time": "schema-valid (no evidence check performed)",
+          "cabin": "schema-valid (no evidence check performed)",
+          "flight_id": "schema-valid (no evidence check performed)"
+        },
+        "latency_s": 3.291999746579677e-06,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-09a",
+        "pair_id": "P09",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "num_bags": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "num_bags": "supported"
+        },
+        "details": {
+          "traveler_name": "schema-valid (no evidence check performed)",
+          "passenger_dob": "schema-valid (no evidence check performed)",
+          "origin_airport": "schema-valid (no evidence check performed)",
+          "destination_airport": "schema-valid (no evidence check performed)",
+          "date": "schema-valid (no evidence check performed)",
+          "departure_time": "schema-valid (no evidence check performed)",
+          "cabin": "schema-valid (no evidence check performed)",
+          "flight_id": "schema-valid (no evidence check performed)",
+          "num_bags": "schema-valid (no evidence check performed)"
+        },
+        "latency_s": 3.95800088881515e-06,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-09b",
+        "pair_id": "P09",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "num_bags": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "num_bags": "missing"
+        },
+        "details": {
+          "traveler_name": "schema-valid (no evidence check performed)",
+          "passenger_dob": "schema-valid (no evidence check performed)",
+          "origin_airport": "schema-valid (no evidence check performed)",
+          "destination_airport": "schema-valid (no evidence check performed)",
+          "date": "schema-valid (no evidence check performed)",
+          "departure_time": "schema-valid (no evidence check performed)",
+          "cabin": "schema-valid (no evidence check performed)",
+          "flight_id": "schema-valid (no evidence check performed)",
+          "num_bags": "schema-valid (no evidence check performed)"
+        },
+        "latency_s": 3.625002136686817e-06,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-10a",
+        "pair_id": "P10",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "traveler_name": "schema-valid (no evidence check performed)",
+          "passenger_dob": "schema-valid (no evidence check performed)",
+          "origin_airport": "schema-valid (no evidence check performed)",
+          "destination_airport": "schema-valid (no evidence check performed)",
+          "date": "schema-valid (no evidence check performed)",
+          "departure_time": "schema-valid (no evidence check performed)",
+          "cabin": "schema-valid (no evidence check performed)",
+          "flight_id": "schema-valid (no evidence check performed)"
+        },
+        "latency_s": 3.249999281251803e-06,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-10b",
+        "pair_id": "P10",
+        "expected_action": "clarify",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "unresolved",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "unresolved"
+        },
+        "details": {
+          "traveler_name": "schema-valid (no evidence check performed)",
+          "passenger_dob": "schema-valid (no evidence check performed)",
+          "origin_airport": "schema-valid (no evidence check performed)",
+          "destination_airport": "schema-valid (no evidence check performed)",
+          "date": "schema-valid (no evidence check performed)",
+          "departure_time": "schema-valid (no evidence check performed)",
+          "cabin": "schema-valid (no evidence check performed)",
+          "flight_id": "schema-valid (no evidence check performed)"
+        },
+        "latency_s": 3.3340002119075507e-06,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      }
+    ],
+    "unsupported_calls_allowed": [
+      9,
+      11
+    ],
+    "supported_calls_blocked": [
+      0,
+      9
+    ],
+    "next_action_accuracy": [
+      11,
+      20
+    ],
+    "unnecessary_clarification": [
+      0,
+      20
+    ],
+    "arg_level": [
+      150,
+      164
+    ],
+    "arg_by_category": {
+      "contradicted": {
+        "correct": 0,
+        "total": 3
+      },
+      "missing": {
+        "correct": 2,
+        "total": 4
+      },
+      "supported": {
+        "correct": 148,
+        "total": 148
+      },
+      "unresolved": {
+        "correct": 0,
+        "total": 7
+      },
+      "wrong_entity": {
+        "correct": 0,
+        "total": 2
+      }
+    },
+    "arg_confusion": {
+      "contradicted->supported": 3,
+      "missing->missing": 2,
+      "missing->supported": 2,
+      "supported->supported": 148,
+      "unresolved->supported": 7,
+      "wrong_entity->supported": 2
+    },
+    "pair_both_correct": [
+      1,
+      10
+    ],
+    "latency_s_mean": 7.089450264174957e-06,
+    "latency_s_median": 3.625002136686817e-06,
+    "latency_s_p95": 8.082999556791037e-06,
+    "latency_s_max": 6.283299808274023e-05,
+    "n_parse_errors": 0,
+    "token_usage_total": null,
+    "token_usage_per_case": null
+  },
+  {
+    "method": "rule",
+    "status": "ok",
+    "n_cases": 20,
+    "rows": [
+      {
+        "case_id": "TB-01a",
+        "pair_id": "P01",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t2.output.flights",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in tool.t1.output.dob",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 0.0001544580009067431,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-01b",
+        "pair_id": "P01",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "reject_proposed_call",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "wrong_entity",
+          "traveler_name": "wrong_entity"
+        },
+        "expected_findings": {
+          "traveler_name": "wrong_entity",
+          "passenger_dob": "wrong_entity",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t2.output.flights",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value sourced from entity 'requester', not the traveler",
+          "traveler_name": "value sourced from entity 'requester', not the traveler"
+        },
+        "latency_s": 5.087500176159665e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-02a",
+        "pair_id": "P02",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t1.output.flights",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 3.6375000490807e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-02b",
+        "pair_id": "P02",
+        "expected_action": "clarify",
+        "pred_action": "clarify",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "unresolved",
+          "destination_airport": "supported",
+          "flight_id": "unresolved",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "unresolved",
+          "cabin": "supported",
+          "flight_id": "unresolved"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "3 distinct candidate values at the winning tier",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "3 distinct candidate values at the winning tier",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 3.6540997825795785e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-03a",
+        "pair_id": "P03",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t2.output.flights",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 3.4084001526935026e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-03b",
+        "pair_id": "P03",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "reject_proposed_call",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "contradicted",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "contradicted",
+          "flight_id": "supported"
+        },
+        "details": {
+          "cabin": "winning source asserts 'business', not 'economy'",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t2.output.flights",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 3.162499706377275e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-04a",
+        "pair_id": "P04",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "meal": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "meal": "supported"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t2.output.flights",
+          "meal": "value found in tool.t1.output.meal_preference",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 3.4458997106412426e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-04b",
+        "pair_id": "P04",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "reject_proposed_call",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "meal": "missing",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "meal": "missing"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t2.output.flights",
+          "meal": "no resolvable source reference",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 3.22499981848523e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-05a",
+        "pair_id": "P05",
+        "expected_action": "retrieve",
+        "pred_action": "retrieve",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "missing",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "passenger_dob": "missing"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t1.output.flights",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "required argument absent from the call",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 3.349999678903259e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-05b",
+        "pair_id": "P05",
+        "expected_action": "clarify",
+        "pred_action": "clarify",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "missing",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "passenger_dob": "missing"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t1.output.flights",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "required argument absent from the call",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 2.9292001272551715e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-06a",
+        "pair_id": "P06",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in tool.t1.output.flights",
+          "flight_id": "value found in tool.t1.output.flights",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 3.037499845959246e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-06b",
+        "pair_id": "P06",
+        "expected_action": "clarify",
+        "pred_action": "clarify",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "unresolved",
+          "flight_id": "unresolved",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "unresolved",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "unresolved"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "2 distinct candidate values at the winning tier",
+          "flight_id": "2 distinct candidate values at the winning tier",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 3.204200038453564e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-07a",
+        "pair_id": "P07",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t1.output.flights",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 2.8416998247848824e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-07b",
+        "pair_id": "P07",
+        "expected_action": "retrieve",
+        "pred_action": "retrieve",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "unresolved",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "unresolved"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "only evidence is a tool result past its validity window",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 3.099999958067201e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-08a",
+        "pair_id": "P08",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t1.output.flights",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 2.8749996999977157e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-08b",
+        "pair_id": "P08",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "reject_proposed_call",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "contradicted",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "unresolved",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "contradicted",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "contradicted"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "winning source asserts '2026-11-15', not '2026-11-14'",
+          "departure_time": "value found in tool.t1.output.flights",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "2 distinct candidate values at the winning tier",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 3.349999678903259e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-09a",
+        "pair_id": "P09",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "num_bags": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "num_bags": "supported"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t1.output.flights",
+          "num_bags": "value found in turn.1",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 3.5082997783320025e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-09b",
+        "pair_id": "P09",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "reject_proposed_call",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "num_bags": "missing",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "num_bags": "missing"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t1.output.flights",
+          "num_bags": "no resolvable source reference",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 3.1042000045999885e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-10a",
+        "pair_id": "P10",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t2.output.flights",
+          "origin_airport": "value found in tool.t1.output.home_airport",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 2.9417002224363387e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-10b",
+        "pair_id": "P10",
+        "expected_action": "clarify",
+        "pred_action": "clarify",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "unresolved",
+          "origin_airport": "unresolved",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "unresolved",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "unresolved"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "2 distinct candidate values at the winning tier",
+          "origin_airport": "2 distinct candidate values at the winning tier",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 3.1457999284612015e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      }
+    ],
+    "unsupported_calls_allowed": [
+      0,
+      11
+    ],
+    "supported_calls_blocked": [
+      0,
+      9
+    ],
+    "next_action_accuracy": [
+      20,
+      20
+    ],
+    "unnecessary_clarification": [
+      0,
+      20
+    ],
+    "arg_level": [
+      163,
+      164
+    ],
+    "arg_by_category": {
+      "contradicted": {
+        "correct": 2,
+        "total": 3
+      },
+      "missing": {
+        "correct": 4,
+        "total": 4
+      },
+      "supported": {
+        "correct": 148,
+        "total": 148
+      },
+      "unresolved": {
+        "correct": 7,
+        "total": 7
+      },
+      "wrong_entity": {
+        "correct": 2,
+        "total": 2
+      }
+    },
+    "arg_confusion": {
+      "contradicted->contradicted": 2,
+      "contradicted->unresolved": 1,
+      "missing->missing": 4,
+      "supported->supported": 148,
+      "unresolved->unresolved": 7,
+      "wrong_entity->wrong_entity": 2
+    },
+    "pair_both_correct": [
+      10,
+      10
+    ],
+    "latency_s_mean": 3.922714913642267e-05,
+    "latency_s_median": 3.22499981848523e-05,
+    "latency_s_p95": 5.087500176159665e-05,
+    "latency_s_max": 0.0001544580009067431,
+    "n_parse_errors": 0,
+    "token_usage_total": null,
+    "token_usage_per_case": null
+  },
+  {
+    "method": "crossrule",
+    "status": "ok",
+    "n_cases": 20,
+    "rows": [
+      {
+        "case_id": "TB-01a",
+        "pair_id": "P01",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t2.output.flights",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in tool.t1.output.dob",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 6.754199785063975e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-01b",
+        "pair_id": "P01",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "reject_proposed_call",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "wrong_entity",
+          "traveler_name": "wrong_entity"
+        },
+        "expected_findings": {
+          "traveler_name": "wrong_entity",
+          "passenger_dob": "wrong_entity",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t2.output.flights",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value sourced from entity 'requester', not the traveler",
+          "traveler_name": "value sourced from entity 'requester', not the traveler"
+        },
+        "latency_s": 5.708300159312785e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-02a",
+        "pair_id": "P02",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t1.output.flights",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 5.116600004839711e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-02b",
+        "pair_id": "P02",
+        "expected_action": "clarify",
+        "pred_action": "clarify",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "unresolved",
+          "destination_airport": "supported",
+          "flight_id": "unresolved",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "unresolved",
+          "cabin": "supported",
+          "flight_id": "unresolved"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "3 distinct candidate values at the winning tier",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "3 distinct candidate values at the winning tier",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 5.225000131758861e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-03a",
+        "pair_id": "P03",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t2.output.flights",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 5.149999924469739e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-03b",
+        "pair_id": "P03",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "reject_proposed_call",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "contradicted",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "contradicted",
+          "flight_id": "supported"
+        },
+        "details": {
+          "cabin": "winning source asserts 'business', not 'economy'",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t2.output.flights",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 5.0374997954349965e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-04a",
+        "pair_id": "P04",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "meal": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "meal": "supported"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t2.output.flights",
+          "meal": "value found in tool.t1.output.meal_preference",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 5.5500000598840415e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-04b",
+        "pair_id": "P04",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "reject_proposed_call",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "meal": "missing",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "meal": "missing"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t2.output.flights",
+          "meal": "no resolvable source reference",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 5.2166000386932865e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-05a",
+        "pair_id": "P05",
+        "expected_action": "retrieve",
+        "pred_action": "retrieve",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "missing",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "passenger_dob": "missing"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t1.output.flights",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "required argument absent from the call",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 9.966699872165918e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-05b",
+        "pair_id": "P05",
+        "expected_action": "clarify",
+        "pred_action": "clarify",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "missing",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "passenger_dob": "missing"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t1.output.flights",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "required argument absent from the call",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 4.875000013271347e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-06a",
+        "pair_id": "P06",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in tool.t1.output.flights",
+          "flight_id": "value found in tool.t1.output.flights",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 4.7166999138426036e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-06b",
+        "pair_id": "P06",
+        "expected_action": "clarify",
+        "pred_action": "clarify",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "unresolved",
+          "flight_id": "unresolved",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "unresolved",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "unresolved"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "2 distinct candidate values at the winning tier",
+          "flight_id": "2 distinct candidate values at the winning tier",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 5.012499968870543e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-07a",
+        "pair_id": "P07",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t1.output.flights",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 4.616699879989028e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-07b",
+        "pair_id": "P07",
+        "expected_action": "retrieve",
+        "pred_action": "retrieve",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "unresolved",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "unresolved"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "only evidence is a tool result past its validity window",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 4.579099913826212e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-08a",
+        "pair_id": "P08",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t1.output.flights",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 4.520799848251045e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-08b",
+        "pair_id": "P08",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "reject_proposed_call",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "contradicted",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "contradicted",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "contradicted",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "contradicted"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "winning source asserts '2026-11-15', not '2026-11-14'",
+          "departure_time": "value found in tool.t1.output.flights",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "record matches no current request values (cross-argument inconsistency)",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 5.5917000281624496e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-09a",
+        "pair_id": "P09",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "num_bags": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "num_bags": "supported"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t1.output.flights",
+          "num_bags": "value found in turn.1",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 5.400000009103678e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-09b",
+        "pair_id": "P09",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "reject_proposed_call",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "num_bags": "missing",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "num_bags": "missing"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t1.output.flights",
+          "num_bags": "no resolvable source reference",
+          "origin_airport": "value found in turn.1",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 4.995800190954469e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-10a",
+        "pair_id": "P10",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "value found in tool.t2.output.flights",
+          "origin_airport": "value found in tool.t1.output.home_airport",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 4.724999962490983e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      },
+      {
+        "case_id": "TB-10b",
+        "pair_id": "P10",
+        "expected_action": "clarify",
+        "pred_action": "clarify",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "destination_airport": "supported",
+          "flight_id": "unresolved",
+          "origin_airport": "unresolved",
+          "passenger_dob": "supported",
+          "traveler_name": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "unresolved",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "unresolved"
+        },
+        "details": {
+          "cabin": "value found in turn.1",
+          "date": "value found in turn.1",
+          "departure_time": "value found in turn.1",
+          "destination_airport": "value found in turn.1",
+          "flight_id": "2 distinct candidate values at the winning tier",
+          "origin_airport": "2 distinct candidate values at the winning tier",
+          "passenger_dob": "value found in turn.1",
+          "traveler_name": "value found in turn.1"
+        },
+        "latency_s": 4.8541998694418e-05,
+        "error": null,
+        "parse_ok": null,
+        "model": null,
+        "raw": null,
+        "usage": null
+      }
+    ],
+    "unsupported_calls_allowed": [
+      0,
+      11
+    ],
+    "supported_calls_blocked": [
+      0,
+      9
+    ],
+    "next_action_accuracy": [
+      20,
+      20
+    ],
+    "unnecessary_clarification": [
+      0,
+      20
+    ],
+    "arg_level": [
+      164,
+      164
+    ],
+    "arg_by_category": {
+      "contradicted": {
+        "correct": 3,
+        "total": 3
+      },
+      "missing": {
+        "correct": 4,
+        "total": 4
+      },
+      "supported": {
+        "correct": 148,
+        "total": 148
+      },
+      "unresolved": {
+        "correct": 7,
+        "total": 7
+      },
+      "wrong_entity": {
+        "correct": 2,
+        "total": 2
+      }
+    },
+    "arg_confusion": {
+      "contradicted->contradicted": 3,
+      "missing->missing": 4,
+      "supported->supported": 148,
+      "unresolved->unresolved": 7,
+      "wrong_entity->wrong_entity": 2
+    },
+    "pair_both_correct": [
+      10,
+      10
+    ],
+    "latency_s_mean": 5.380619968491374e-05,
+    "latency_s_median": 5.116600004839711e-05,
+    "latency_s_p95": 6.754199785063975e-05,
+    "latency_s_max": 9.966699872165918e-05,
+    "n_parse_errors": 0,
+    "token_usage_total": null,
+    "token_usage_per_case": null
+  },
+  {
+    "method": "ai",
+    "status": "ok",
+    "n_cases": 20,
+    "rows": [
+      {
+        "case_id": "TB-01a",
+        "pair_id": "P01",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": "All required arguments are supported by the provided evidence. The traveler's name, date of birth, origin, destination, departure time, cabin, and flight ID are all correctly referenced and validated.",
+        "latency_s": 2.0404944580004667,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:0.6b",
+        "raw": "{\n  \"argument_findings\": {\n    \"traveler_name\": \"supported\",\n    \"passenger_dob\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"cabin\": \"supported\",\n    \"flight_id\": \"supported\"\n  },\n  \"reasons\": \"All required arguments are supported by the provided evidence. The traveler's name, date of birth, origin, destination, departure time, cabin, and flight ID are all correctly referenced and validated.\",\n  \"next_action\": \"proceed\"\n}",
+        "usage": {
+          "prompt_tokens": 1916,
+          "prompt_tokens_details": {
+            "cached_tokens": 1915
+          },
+          "completion_tokens": 403,
+          "total_tokens": 2319
+        }
+      },
+      {
+        "case_id": "TB-01b",
+        "pair_id": "P01",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "wrong_entity",
+          "passenger_dob": "wrong_entity",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": "All required arguments are supported by the provided evidence. The traveler's name and date are from the profile lookup, the origin and destination airports are confirmed from the search result, and the flight details are valid within the contract's validity window.",
+        "latency_s": 1.909239708998939,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:0.6b",
+        "raw": "{\n  \"argument_findings\": {\n    \"traveler_name\": \"supported\",\n    \"passenger_dob\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"cabin\": \"supported\",\n    \"flight_id\": \"supported\"\n  },\n  \"reasons\": \"All required arguments are supported by the provided evidence. The traveler's name and date are from the profile lookup, the origin and destination airports are confirmed from the search result, and the flight details are valid within the contract's validity window.\",\n  \"next_action\": \"proceed\"\n}",
+        "usage": {
+          "prompt_tokens": 1893,
+          "prompt_tokens_details": {
+            "cached_tokens": 1892
+          },
+          "completion_tokens": 381,
+          "total_tokens": 2274
+        }
+      },
+      {
+        "case_id": "TB-02a",
+        "pair_id": "P02",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "departure_time": "supported",
+          "flight_id": "supported",
+          "traveler_name": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "cabin": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "departure_time": "Theo Marsh's departure time is explicitly stated in the conversation and confirmed in the tool result.",
+          "flight_id": "Theo Marsh's flight ID is directly referenced in the tool result.",
+          "traveler_name": "Theo Marsh's full name is provided in the conversation and stored in the profile.",
+          "origin_airport": "DEN is the origin airport specified in the conversation and confirmed in the tool result.",
+          "destination_airport": "AUS is the destination airport as provided in the conversation and confirmed in the tool result.",
+          "date": "2026-11-03 is the date of the flight as specified in the conversation and confirmed in the tool result.",
+          "cabin": "economy is the cabin type set in the tool result and confirmed in the conversation."
+        },
+        "latency_s": 2.6453297909974935,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:0.6b",
+        "raw": "{\n  \"argument_findings\": {\n    \"departure_time\": \"supported\",\n    \"flight_id\": \"supported\",\n    \"traveler_name\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"cabin\": \"supported\"\n  },\n  \"reasons\": {\n    \"departure_time\": \"Theo Marsh's departure time is explicitly stated in the conversation and confirmed in the tool result.\",\n    \"flight_id\": \"Theo Marsh's flight ID is directly referenced in the tool result.\",\n    \"traveler_name\": \"Theo Marsh's full name is provided in the conversation and stored in the profile.\",\n    \"origin_airport\": \"DEN is the origin airport specified in the conversation and confirmed in the tool result.\",\n    \"destination_airport\": \"AUS is the destination airport as provided in the conversation and confirmed in the tool result.\",\n    \"date\": \"2026-11-03 is the date of the flight as specified in the conversation and confirmed in the tool result.\",\n    \"cabin\": \"economy is the cabin type set in the tool result and confirmed in the conversation.\"\n  },\n  \"next_action\": \"proceed\"\n}",
+        "usage": {
+          "prompt_tokens": 1743,
+          "prompt_tokens_details": {
+            "cached_tokens": 1742
+          },
+          "completion_tokens": 557,
+          "total_tokens": 2300
+        }
+      },
+      {
+        "case_id": "TB-02b",
+        "pair_id": "P02",
+        "expected_action": "clarify",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "cabin": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "unresolved",
+          "cabin": "supported",
+          "flight_id": "unresolved"
+        },
+        "details": "All required arguments are supported by the evidence from the tool's output. The flight ID, origin, destination, and date are directly referenced from the search_flights result, which is valid for 24 hours. The cabin is set to economy, which is an enum value. No conflicting evidence is present.",
+        "latency_s": 2.054957625001407,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:0.6b",
+        "raw": "{\n  \"argument_findings\": {\n    \"traveler_name\": \"supported\",\n    \"passenger_dob\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"cabin\": \"supported\"\n  },\n  \"reasons\": \"All required arguments are supported by the evidence from the tool's output. The flight ID, origin, destination, and date are directly referenced from the search_flights result, which is valid for 24 hours. The cabin is set to economy, which is an enum value. No conflicting evidence is present.\",\n  \"next_action\": \"proceed\"\n}",
+        "usage": {
+          "prompt_tokens": 1812,
+          "prompt_tokens_details": {
+            "cached_tokens": 1811
+          },
+          "completion_tokens": 437,
+          "total_tokens": 2249
+        }
+      },
+      {
+        "case_id": "TB-03a",
+        "pair_id": "P03",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "cabin": "supported",
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": "All required arguments are supported by the provided evidence. The cabin preference in the profile aligns with the tool's output, and all other fields match the context. The flight details are confirmed from the tool's results.",
+        "latency_s": 3.5991421250000712,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:0.6b",
+        "raw": "{\n  \"argument_findings\": {\n    \"cabin\": \"supported\",\n    \"traveler_name\": \"supported\",\n    \"passenger_dob\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"flight_id\": \"supported\"\n  },\n  \"reasons\": \"All required arguments are supported by the provided evidence. The cabin preference in the profile aligns with the tool's output, and all other fields match the context. The flight details are confirmed from the tool's results.\",\n  \"next_action\": \"proceed\"\n}",
+        "usage": {
+          "prompt_tokens": 1870,
+          "prompt_tokens_details": {
+            "cached_tokens": 273
+          },
+          "completion_tokens": 674,
+          "total_tokens": 2544
+        }
+      },
+      {
+        "case_id": "TB-03b",
+        "pair_id": "P03",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "contradicted",
+          "flight_id": "supported"
+        },
+        "details": "All arguments are supported by the provided evidence. The traveler's name, DOB, origin, destination, date, and flight details align with the context and prior tool results.",
+        "latency_s": 3.273779833001754,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:0.6b",
+        "raw": "{\n  \"argument_findings\": {\n    \"traveler_name\": \"supported\",\n    \"passenger_dob\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"cabin\": \"supported\",\n    \"flight_id\": \"supported\"\n  },\n  \"reasons\": \"All arguments are supported by the provided evidence. The traveler's name, DOB, origin, destination, date, and flight details align with the context and prior tool results.\",\n  \"next_action\": \"proceed\"\n}",
+        "usage": {
+          "prompt_tokens": 1871,
+          "prompt_tokens_details": {
+            "cached_tokens": 1870
+          },
+          "completion_tokens": 637,
+          "total_tokens": 2508
+        }
+      },
+      {
+        "case_id": "TB-04a",
+        "pair_id": "P04",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "meal": "supported"
+        },
+        "details": "All required arguments are supported by the evidence. The meal preference is documented in the lookup_profile result, the flight details are valid for 24 hours, and all other parameters align with the provided information.",
+        "latency_s": 2.1846368750011607,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:0.6b",
+        "raw": "{\n  \"argument_findings\": {\n    \"traveler_name\": \"supported\",\n    \"passenger_dob\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"cabin\": \"supported\",\n    \"flight_id\": \"supported\"\n  },\n  \"reasons\": \"All required arguments are supported by the evidence. The meal preference is documented in the lookup_profile result, the flight details are valid for 24 hours, and all other parameters align with the provided information.\",\n  \"next_action\": \"proceed\"\n}",
+        "usage": {
+          "prompt_tokens": 1900,
+          "prompt_tokens_details": {
+            "cached_tokens": 1899
+          },
+          "completion_tokens": 432,
+          "total_tokens": 2332
+        }
+      },
+      {
+        "case_id": "TB-04b",
+        "pair_id": "P04",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "meal": "supported",
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "meal": "missing"
+        },
+        "details": "All required arguments are provided, and the meal is set to vegetarian, which aligns with the profile data. No conflicting evidence is found.",
+        "latency_s": 2.3106223329996283,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:0.6b",
+        "raw": "{\n  \"argument_findings\": {\n    \"meal\": \"supported\",\n    \"traveler_name\": \"supported\",\n    \"passenger_dob\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"cabin\": \"supported\",\n    \"flight_id\": \"supported\"\n  },\n  \"reasons\": \"All required arguments are provided, and the meal is set to vegetarian, which aligns with the profile data. No conflicting evidence is found.\",\n  \"next_action\": \"proceed\"\n}",
+        "usage": {
+          "prompt_tokens": 1892,
+          "prompt_tokens_details": {
+            "cached_tokens": 1891
+          },
+          "completion_tokens": 488,
+          "total_tokens": 2380
+        }
+      },
+      {
+        "case_id": "TB-05a",
+        "pair_id": "P05",
+        "expected_action": "retrieve",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "passenger_dob": "missing",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "passenger_dob": "missing"
+        },
+        "details": "All required arguments are provided with valid evidence. The missing passenger_dob is inferred from the traveler's profile, which is contextually valid.",
+        "latency_s": 2.033019834001607,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:0.6b",
+        "raw": "{\n  \"argument_findings\": {\n    \"passenger_dob\": \"missing\",\n    \"cabin\": \"supported\",\n    \"flight_id\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"departure_time\": \"supported\"\n  },\n  \"reasons\": \"All required arguments are provided with valid evidence. The missing passenger_dob is inferred from the traveler's profile, which is contextually valid.\",\n  \"next_action\": \"proceed\"\n}",
+        "usage": {
+          "prompt_tokens": 1716,
+          "prompt_tokens_details": {
+            "cached_tokens": 1715
+          },
+          "completion_tokens": 449,
+          "total_tokens": 2165
+        }
+      },
+      {
+        "case_id": "TB-05b",
+        "pair_id": "P05",
+        "expected_action": "clarify",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "passenger_dob": "missing"
+        },
+        "details": "All required arguments are provided, and the necessary information is available. The missing required argument for passenger_dob indicates that the user's date of birth is not specified, which is a problem. However, the other arguments are supported by the provided data.",
+        "latency_s": 5.850697499998205,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:0.6b",
+        "raw": "{\n  \"argument_findings\": {\n    \"passenger_dob\": \"missing_required_args\",\n    \"traveler_name\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"cabin\": \"supported\",\n    \"flight_id\": \"supported\"\n  },\n  \"reasons\": \"All required arguments are provided, and the necessary information is available. The missing required argument for passenger_dob indicates that the user's date of birth is not specified, which is a problem. However, the other arguments are supported by the provided data.\",\n  \"next_action\": \"proceed\"\n}",
+        "usage": {
+          "prompt_tokens": 1678,
+          "prompt_tokens_details": {
+            "cached_tokens": 1677
+          },
+          "completion_tokens": 1250,
+          "total_tokens": 2928
+        }
+      },
+      {
+        "case_id": "TB-06a",
+        "pair_id": "P06",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "destination_airport": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "destination_airport": "The destination airport (SPI) is explicitly referenced from the tool result, which aligns with the traveler's information.",
+          "origin_airport": "The origin airport (LAX) is also explicitly referenced from the tool result, matching the traveler's details.",
+          "passenger_dob": "The passenger's DOB (1991-05-17) is directly provided by the user's context, which is valid for the flight booking.",
+          "date": "The date (2026-11-08) is consistent with the current time and the flight's departure time.",
+          "departure_time": "The departure time (12:20) is directly stated in the user's context and matches the tool's output.",
+          "cabin": "The economy cabin is explicitly set in the tool call, which is valid as per the default configuration.",
+          "flight_id": "The flight ID (FL-7700) is directly referenced from the tool result, which is valid for the booking period."
+        },
+        "latency_s": 2.8071285000005446,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:0.6b",
+        "raw": "{\n  \"argument_findings\": {\n    \"destination_airport\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"passenger_dob\": \"supported\",\n    \"date\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"cabin\": \"supported\",\n    \"flight_id\": \"supported\"\n  },\n  \"reasons\": {\n    \"destination_airport\": \"The destination airport (SPI) is explicitly referenced from the tool result, which aligns with the traveler's information.\",\n    \"origin_airport\": \"The origin airport (LAX) is also explicitly referenced from the tool result, matching the traveler's details.\",\n    \"passenger_dob\": \"The passenger's DOB (1991-05-17) is directly provided by the user's context, which is valid for the flight booking.\",\n    \"date\": \"The date (2026-11-08) is consistent with the current time and the flight's departure time.\",\n    \"departure_time\": \"The departure time (12:20) is directly stated in the user's context and matches the tool's output.\",\n    \"cabin\": \"The economy cabin is explicitly set in the tool call, which is valid as per the default configuration.\",\n    \"flight_id\": \"The flight ID (FL-7700) is directly referenced from the tool result, which is valid for the booking period.\"\n  },\n  \"next_action\": \"proceed\"\n}",
+        "usage": {
+          "prompt_tokens": 1753,
+          "prompt_tokens_details": {
+            "cached_tokens": 1752
+          },
+          "completion_tokens": 612,
+          "total_tokens": 2365
+        }
+      },
+      {
+        "case_id": "TB-06b",
+        "pair_id": "P06",
+        "expected_action": "clarify",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "destination_airport": "supported",
+          "origin_airport": "supported",
+          "passenger_dob": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "unresolved",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "unresolved"
+        },
+        "details": "All required arguments are supported by the provided evidence. The destination airport is from the tool_result, the traveler's name and dob are from the user_current context, and the flight details are valid from the search_flights result.",
+        "latency_s": 1.7250440000025264,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:0.6b",
+        "raw": "{\n  \"argument_findings\": {\n    \"destination_airport\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"passenger_dob\": \"supported\",\n    \"date\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"cabin\": \"supported\"\n  },\n  \"reasons\": \"All required arguments are supported by the provided evidence. The destination airport is from the tool_result, the traveler's name and dob are from the user_current context, and the flight details are valid from the search_flights result.\",\n  \"next_action\": \"proceed\"\n}",
+        "usage": {
+          "prompt_tokens": 1803,
+          "prompt_tokens_details": {
+            "cached_tokens": 1802
+          },
+          "completion_tokens": 373,
+          "total_tokens": 2176
+        }
+      },
+      {
+        "case_id": "TB-07a",
+        "pair_id": "P07",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "flight_id": "supported",
+          "departure_time": "supported",
+          "traveler_name": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "cabin": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": "All required arguments are supported by the provided evidence. The flight details from the search_flights tool align with the current time and contract validity.",
+        "latency_s": 1.7859274170004937,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:0.6b",
+        "raw": "{\n  \"argument_findings\": {\n    \"flight_id\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"traveler_name\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"cabin\": \"supported\"\n  },\n  \"reasons\": \"All required arguments are supported by the provided evidence. The flight details from the search_flights tool align with the current time and contract validity.\",\n  \"next_action\": \"proceed\"\n}",
+        "usage": {
+          "prompt_tokens": 1739,
+          "prompt_tokens_details": {
+            "cached_tokens": 1738
+          },
+          "completion_tokens": 393,
+          "total_tokens": 2132
+        }
+      },
+      {
+        "case_id": "TB-07b",
+        "pair_id": "P07",
+        "expected_action": "retrieve",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "unresolved"
+        },
+        "details": "All required arguments are correctly referenced and validated from the provided evidence. The flight details align with the context and the tool's parameters.",
+        "latency_s": 1.6489119580000988,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:0.6b",
+        "raw": "{\n  \"argument_findings\": {\n    \"traveler_name\": \"supported\",\n    \"passenger_dob\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"cabin\": \"supported\"\n  },\n  \"reasons\": \"All required arguments are correctly referenced and validated from the provided evidence. The flight details align with the context and the tool's parameters.\",\n  \"next_action\": \"proceed\"\n}",
+        "usage": {
+          "prompt_tokens": 1741,
+          "prompt_tokens_details": {
+            "cached_tokens": 1740
+          },
+          "completion_tokens": 338,
+          "total_tokens": 2079
+        }
+      },
+      {
+        "case_id": "TB-08a",
+        "pair_id": "P08",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "date": "supported",
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": {
+          "date": "The date provided (2026-11-14) is 24 hours after the search timestamp (2026-10-19), which is valid for the booking.",
+          "traveler_name": "The traveler's name (Nadia Ferreira) is person-scoped and directly referenced in the context.",
+          "passenger_dob": "The date of birth (1987-04-11) is directly provided in the context and matches the person's information.",
+          "origin_airport": "The origin and destination airports (MIA, LAS) are directly referenced in the context and match the prior tool's output.",
+          "departure_time": "The departure time (18:05) is directly provided in the context and matches the prior result.",
+          "cabin": "The cabin (economy) is set in the context and matches the prior tool's output.",
+          "flight_id": "The flight ID (FL-5102) is directly provided in the context and matches the prior tool's output."
+        },
+        "latency_s": 3.1339174169988837,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:0.6b",
+        "raw": "{\n  \"argument_findings\": {\n    \"date\": \"supported\",\n    \"traveler_name\": \"supported\",\n    \"passenger_dob\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"cabin\": \"supported\",\n    \"flight_id\": \"supported\"\n  },\n  \"reasons\": {\n    \"date\": \"The date provided (2026-11-14) is 24 hours after the search timestamp (2026-10-19), which is valid for the booking.\",\n    \"traveler_name\": \"The traveler's name (Nadia Ferreira) is person-scoped and directly referenced in the context.\",\n    \"passenger_dob\": \"The date of birth (1987-04-11) is directly provided in the context and matches the person's information.\",\n    \"origin_airport\": \"The origin and destination airports (MIA, LAS) are directly referenced in the context and match the prior tool's output.\",\n    \"departure_time\": \"The departure time (18:05) is directly provided in the context and matches the prior result.\",\n    \"cabin\": \"The cabin (economy) is set in the context and matches the prior tool's output.\",\n    \"flight_id\": \"The flight ID (FL-5102) is directly provided in the context and matches the prior tool's output.\"\n  },\n  \"next_action\": \"proceed\"\n}",
+        "usage": {
+          "prompt_tokens": 1740,
+          "prompt_tokens_details": {
+            "cached_tokens": 1739
+          },
+          "completion_tokens": 634,
+          "total_tokens": 2374
+        }
+      },
+      {
+        "case_id": "TB-08b",
+        "pair_id": "P08",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "clarify",
+        "action_ok": false,
+        "arg_findings": {},
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "contradicted",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "contradicted"
+        },
+        "details": {},
+        "latency_s": 211.16738287499902,
+        "error": null,
+        "parse_ok": false,
+        "model": "qwen3:0.6b",
+        "raw": "",
+        "usage": {
+          "prompt_tokens": 1938,
+          "prompt_tokens_details": {
+            "cached_tokens": 383
+          },
+          "completion_tokens": 40960,
+          "total_tokens": 42898
+        }
+      },
+      {
+        "case_id": "TB-09a",
+        "pair_id": "P09",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "num_bags": "supported",
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "num_bags": "supported"
+        },
+        "details": "All required arguments are supported by the context. The num_bags value (2) is derived from the user's own context, the traveler's name (Owen Hale) and dob (1996-02-14) are also directly referenced, and all other parameters align with the provided search_flights result.",
+        "latency_s": 2.4729416250011127,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:0.6b",
+        "raw": "{\n  \"argument_findings\": {\n    \"num_bags\": \"supported\",\n    \"traveler_name\": \"supported\",\n    \"passenger_dob\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"cabin\": \"supported\",\n    \"flight_id\": \"supported\"\n  },\n  \"reasons\": \"All required arguments are supported by the context. The num_bags value (2) is derived from the user's own context, the traveler's name (Owen Hale) and dob (1996-02-14) are also directly referenced, and all other parameters align with the provided search_flights result.\",\n  \"next_action\": \"proceed\"\n}",
+        "usage": {
+          "prompt_tokens": 1813,
+          "prompt_tokens_details": {
+            "cached_tokens": 1812
+          },
+          "completion_tokens": 521,
+          "total_tokens": 2334
+        }
+      },
+      {
+        "case_id": "TB-09b",
+        "pair_id": "P09",
+        "expected_action": "reject_proposed_call",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported",
+          "num_bags": "missing"
+        },
+        "details": "All arguments are supported by the provided evidence. The person's name and date are correctly referenced, and all required parameters are provided. No conflicting evidence is present.",
+        "latency_s": 3.592537958000321,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:0.6b",
+        "raw": "{\n  \"argument_findings\": {\n    \"num_bags\": \"unsupported\",\n    \"traveler_name\": \"supported\",\n    \"passenger_dob\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"cabin\": \"supported\",\n    \"flight_id\": \"supported\"\n  },\n  \"reasons\": \"All arguments are supported by the provided evidence. The person's name and date are correctly referenced, and all required parameters are provided. No conflicting evidence is present.\",\n  \"next_action\": \"proceed\"\n}",
+        "usage": {
+          "prompt_tokens": 1793,
+          "prompt_tokens_details": {
+            "cached_tokens": 1792
+          },
+          "completion_tokens": 732,
+          "total_tokens": 2525
+        }
+      },
+      {
+        "case_id": "TB-10a",
+        "pair_id": "P10",
+        "expected_action": "proceed",
+        "pred_action": "proceed",
+        "action_ok": true,
+        "arg_findings": {
+          "origin_airport": "supported",
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "details": "All required arguments are supported by existing sources. The flight_id is valid for 24 hours, and all other parameters align with the user's context and default values.",
+        "latency_s": 2.3475882499988074,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:0.6b",
+        "raw": "{\n  \"argument_findings\": {\n    \"origin_airport\": \"supported\",\n    \"traveler_name\": \"supported\",\n    \"passenger_dob\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"cabin\": \"supported\",\n    \"flight_id\": \"supported\"\n  },\n  \"reasons\": \"All required arguments are supported by existing sources. The flight_id is valid for 24 hours, and all other parameters align with the user's context and default values.\",\n  \"next_action\": \"proceed\"\n}",
+        "usage": {
+          "prompt_tokens": 1829,
+          "prompt_tokens_details": {
+            "cached_tokens": 1828
+          },
+          "completion_tokens": 499,
+          "total_tokens": 2328
+        }
+      },
+      {
+        "case_id": "TB-10b",
+        "pair_id": "P10",
+        "expected_action": "clarify",
+        "pred_action": "proceed",
+        "action_ok": false,
+        "arg_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "supported",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "supported"
+        },
+        "expected_findings": {
+          "traveler_name": "supported",
+          "passenger_dob": "supported",
+          "origin_airport": "unresolved",
+          "destination_airport": "supported",
+          "date": "supported",
+          "departure_time": "supported",
+          "cabin": "supported",
+          "flight_id": "unresolved"
+        },
+        "details": {
+          "traveler_name": "June Park's name is explicitly provided in the context and matches the person flying.",
+          "passenger_dob": "The date 1990-10-08 is directly referenced in the context and matches the person's DOB.",
+          "origin_airport": "The origin airport is SFO, which is explicitly stated in the tool response and matches the context.",
+          "destination_airport": "The destination airport is AUS, which is also explicitly stated in the tool response and matches the context.",
+          "date": "The date 2026-12-02 is directly referenced in the context and matches the person's travel date.",
+          "departure_time": "The departure time 15:30 is directly referenced in the context and matches the person's scheduled time.",
+          "cabin": "The cabin is economy, which is explicitly stated in the tool response and matches the context.",
+          "flight_id": "The flight ID FL-1207 is directly referenced in the tool response and matches the context."
+        },
+        "latency_s": 2.6689621660007106,
+        "error": null,
+        "parse_ok": true,
+        "model": "qwen3:0.6b",
+        "raw": "{\n  \"argument_findings\": {\n    \"traveler_name\": \"supported\",\n    \"passenger_dob\": \"supported\",\n    \"origin_airport\": \"supported\",\n    \"destination_airport\": \"supported\",\n    \"date\": \"supported\",\n    \"departure_time\": \"supported\",\n    \"cabin\": \"supported\",\n    \"flight_id\": \"supported\"\n  },\n  \"reasons\": {\n    \"traveler_name\": \"June Park's name is explicitly provided in the context and matches the person flying.\",\n    \"passenger_dob\": \"The date 1990-10-08 is directly referenced in the context and matches the person's DOB.\",\n    \"origin_airport\": \"The origin airport is SFO, which is explicitly stated in the tool response and matches the context.\",\n    \"destination_airport\": \"The destination airport is AUS, which is also explicitly stated in the tool response and matches the context.\",\n    \"date\": \"The date 2026-12-02 is directly referenced in the context and matches the person's travel date.\",\n    \"departure_time\": \"The departure time 15:30 is directly referenced in the context and matches the person's scheduled time.\",\n    \"cabin\": \"The cabin is economy, which is explicitly stated in the tool response and matches the context.\",\n    \"flight_id\": \"The flight ID FL-1207 is directly referenced in the tool response and matches the context.\"\n  },\n  \"next_action\": \"proceed\"\n}",
+        "usage": {
+          "prompt_tokens": 1820,
+          "prompt_tokens_details": {
+            "cached_tokens": 1819
+          },
+          "completion_tokens": 577,
+          "total_tokens": 2397
+        }
+      }
+    ],
+    "unsupported_calls_allowed": [
+      10,
+      11
+    ],
+    "supported_calls_blocked": [
+      0,
+      9
+    ],
+    "next_action_accuracy": [
+      9,
+      20
+    ],
+    "unnecessary_clarification": [
+      1,
+      20
+    ],
+    "arg_level": [
+      137,
+      164
+    ],
+    "arg_by_category": {
+      "contradicted": {
+        "correct": 0,
+        "total": 3
+      },
+      "missing": {
+        "correct": 1,
+        "total": 4
+      },
+      "supported": {
+        "correct": 136,
+        "total": 148
+      },
+      "unresolved": {
+        "correct": 0,
+        "total": 7
+      },
+      "wrong_entity": {
+        "correct": 0,
+        "total": 2
+      }
+    },
+    "arg_confusion": {
+      "contradicted->supported": 1,
+      "contradicted->None": 2,
+      "missing->missing": 1,
+      "missing->supported": 1,
+      "missing->None": 2,
+      "supported->supported": 136,
+      "supported->None": 12,
+      "unresolved->supported": 3,
+      "unresolved->None": 4,
+      "wrong_entity->supported": 2
+    },
+    "pair_both_correct": [
+      0,
+      10
+    ],
+    "latency_s_mean": 13.062613112450162,
+    "latency_s_median": 2.4729416250011127,
+    "latency_s_p95": 5.850697499998205,
+    "latency_s_max": 211.16738287499902,
+    "n_parse_errors": 1,
+    "token_usage_total": {
+      "completion_tokens": 51347,
+      "prompt_tokens_details": 0,
+      "prompt_tokens": 36260,
+      "total_tokens": 87607
+    },
+    "token_usage_per_case": [
+      {
+        "prompt_tokens": 1916,
+        "prompt_tokens_details": {
+          "cached_tokens": 1915
+        },
+        "completion_tokens": 403,
+        "total_tokens": 2319
+      },
+      {
+        "prompt_tokens": 1893,
+        "prompt_tokens_details": {
+          "cached_tokens": 1892
+        },
+        "completion_tokens": 381,
+        "total_tokens": 2274
+      },
+      {
+        "prompt_tokens": 1743,
+        "prompt_tokens_details": {
+          "cached_tokens": 1742
+        },
+        "completion_tokens": 557,
+        "total_tokens": 2300
+      },
+      {
+        "prompt_tokens": 1812,
+        "prompt_tokens_details": {
+          "cached_tokens": 1811
+        },
+        "completion_tokens": 437,
+        "total_tokens": 2249
+      },
+      {
+        "prompt_tokens": 1870,
+        "prompt_tokens_details": {
+          "cached_tokens": 273
+        },
+        "completion_tokens": 674,
+        "total_tokens": 2544
+      },
+      {
+        "prompt_tokens": 1871,
+        "prompt_tokens_details": {
+          "cached_tokens": 1870
+        },
+        "completion_tokens": 637,
+        "total_tokens": 2508
+      },
+      {
+        "prompt_tokens": 1900,
+        "prompt_tokens_details": {
+          "cached_tokens": 1899
+        },
+        "completion_tokens": 432,
+        "total_tokens": 2332
+      },
+      {
+        "prompt_tokens": 1892,
+        "prompt_tokens_details": {
+          "cached_tokens": 1891
+        },
+        "completion_tokens": 488,
+        "total_tokens": 2380
+      },
+      {
+        "prompt_tokens": 1716,
+        "prompt_tokens_details": {
+          "cached_tokens": 1715
+        },
+        "completion_tokens": 449,
+        "total_tokens": 2165
+      },
+      {
+        "prompt_tokens": 1678,
+        "prompt_tokens_details": {
+          "cached_tokens": 1677
+        },
+        "completion_tokens": 1250,
+        "total_tokens": 2928
+      },
+      {
+        "prompt_tokens": 1753,
+        "prompt_tokens_details": {
+          "cached_tokens": 1752
+        },
+        "completion_tokens": 612,
+        "total_tokens": 2365
+      },
+      {
+        "prompt_tokens": 1803,
+        "prompt_tokens_details": {
+          "cached_tokens": 1802
+        },
+        "completion_tokens": 373,
+        "total_tokens": 2176
+      },
+      {
+        "prompt_tokens": 1739,
+        "prompt_tokens_details": {
+          "cached_tokens": 1738
+        },
+        "completion_tokens": 393,
+        "total_tokens": 2132
+      },
+      {
+        "prompt_tokens": 1741,
+        "prompt_tokens_details": {
+          "cached_tokens": 1740
+        },
+        "completion_tokens": 338,
+        "total_tokens": 2079
+      },
+      {
+        "prompt_tokens": 1740,
+        "prompt_tokens_details": {
+          "cached_tokens": 1739
+        },
+        "completion_tokens": 634,
+        "total_tokens": 2374
+      },
+      {
+        "prompt_tokens": 1938,
+        "prompt_tokens_details": {
+          "cached_tokens": 383
+        },
+        "completion_tokens": 40960,
+        "total_tokens": 42898
+      },
+      {
+        "prompt_tokens": 1813,
+        "prompt_tokens_details": {
+          "cached_tokens": 1812
+        },
+        "completion_tokens": 521,
+        "total_tokens": 2334
+      },
+      {
+        "prompt_tokens": 1793,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens": 732,
+        "total_tokens": 2525
+      },
+      {
+        "prompt_tokens": 1829,
+        "prompt_tokens_details": {
+          "cached_tokens": 1828
+        },
+        "completion_tokens": 499,
+        "total_tokens": 2328
+      },
+      {
+        "prompt_tokens": 1820,
+        "prompt_tokens_details": {
+          "cached_tokens": 1819
+        },
+        "completion_tokens": 577,
+        "total_tokens": 2397
+      }
+    ]
+  }
+]

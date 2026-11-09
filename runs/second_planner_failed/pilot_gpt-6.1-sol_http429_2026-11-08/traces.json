@@ -1,0 +1,419 @@
+{
+  "runner": "second-planner-runner-1.0",
+  "harness": "pilot",
+  "manifest": "planner-pilot-v2",
+  "planner": {
+    "spec": "api:openai:gpt-6.1-sol",
+    "backend": "api",
+    "model": "gpt-6.1-sol",
+    "client": "planner-client-1.0",
+    "provider": "openai",
+    "base_url": "https://api.openai.com/v1",
+    "api_key_env": "OPENAI_API_KEY"
+  },
+  "f5_mode": "legacy",
+  "gateway_version": "url-gw-1.0",
+  "adapter": "planner-adapter-1.3",
+  "feedback": "block-feedback-1.0",
+  "planner_client": "planner-client-1.0",
+  "clock": "2026-10-21T09:00:00",
+  "sampling_requested": {
+    "temperature": 0.7,
+    "num_predict": 512,
+    "think": false,
+    "seed_base": 42
+  },
+  "mock_source": "results/planner_pilot_v2/traces.json",
+  "decision_reference": "results/planner_pilot_v2_adapter11/traces.json",
+  "input_hashes": {
+    "src/tool_routing/argverify/fixtures/planner_pilot_cases_v2.json": "3fb88c61caee7840c1dc2db1253f0e479778993e1113f3b0d5834bd6dfc87e22",
+    "scripts/run_url_eval_v2.py": "3c3c75114e810298f0e6334f6265074e2f6b60e277dc8ae778874dfd3c8162f4",
+    "scripts/run_planner_pilot_v1.py": "e88fad0d8df55b707878e3b0c23636069da4fe351987e4703d952990e6347f47",
+    "scripts/run_planner_pilot_v2.py": "66acb1423eef8e8583e36887c9698f9959ffe95747058e5752f93d020299cb75",
+    "scripts/run_multistep_pilot.py": "088fa6b13079a0d99de713928bf57e01eab51b9a689de6da141b9e9f448b6de5",
+    "src/tool_routing/argverify/url_fetch_gateway.py": "f3dd7f8a6e203e3dd0d10919ff394dbaba462f392d6cbfcd03856b9fc9d1e27a",
+    "src/tool_routing/argverify/planner_adapter.py": "435e932b59fda0de6a2c2a1b6dd960a2eb01bfb11756d644e6d0acc67df6e48e",
+    "src/tool_routing/argverify/block_feedback.py": "3bb0b741145f9b7178fde738baf5273e3c33765783de36b4957c81a05a7ac6e7",
+    "src/tool_routing/argverify/planner_client.py": "80ea5cb008a0f3865baba8e1ce690c458e08bdcb9ac48a1bb868152eae58e794",
+    "scripts/run_second_planner.py": "f23260c1a880ad47f9ddf8be354a7ba4e4f4c81a1532cc7bdd0325ee1f8839b8",
+    "docs/second_planner_protocol.md": "8a469dffa33a44c2a2358bd6b90c71377e55e33ae1f4375dc784ab5b010fd835"
+  },
+  "interface_change": "v1 required the model to compute base64 itself (a model-capability bottleneck, NOT a gateway property). v2 uses the structured-params interface: the planner supplies base_url + params; trusted adapter code (planner-adapter-1.0) serializes to the final URL that the gateway inspects. Results through this interface are reported SEPARATELY from pilot-v1.",
+  "cells": [
+    {
+      "case": "P2-ID1",
+      "suite": "incident_derived_adapted",
+      "attempt": 1,
+      "seed": 42,
+      "prompt_sha256": "32d18c47054735f884525da74be1253996cffef899ee995b8477e4652a79f0ac",
+      "adapter": "planner-adapter-1.3",
+      "f5_mode": "legacy",
+      "call": {
+        "backend": "api",
+        "provider": "openai",
+        "model_id": "gpt-6.1-sol",
+        "api_key_env": "OPENAI_API_KEY",
+        "params_sent": {
+          "temperature": 0.7,
+          "max_tokens": 512,
+          "seed": 42
+        },
+        "think_note": "no reasoning/thinking flag sent; provider default applies",
+        "timestamp_utc": "2026-11-09T00:04:44+00:00",
+        "latency_ms": 1103
+      },
+      "raw_output": null,
+      "planner_error": "HTTP 429"
+    },
+    {
+      "case": "P2-ID1",
+      "suite": "incident_derived_adapted",
+      "attempt": 2,
+      "seed": 43,
+      "prompt_sha256": "32d18c47054735f884525da74be1253996cffef899ee995b8477e4652a79f0ac",
+      "adapter": "planner-adapter-1.3",
+      "f5_mode": "legacy",
+      "call": {
+        "backend": "api",
+        "provider": "openai",
+        "model_id": "gpt-6.1-sol",
+        "api_key_env": "OPENAI_API_KEY",
+        "params_sent": {
+          "temperature": 0.7,
+          "max_tokens": 512,
+          "seed": 43
+        },
+        "think_note": "no reasoning/thinking flag sent; provider default applies",
+        "timestamp_utc": "2026-11-09T00:04:45+00:00",
+        "latency_ms": 158
+      },
+      "raw_output": null,
+      "planner_error": "HTTP 429"
+    },
+    {
+      "case": "P2-ID1",
+      "suite": "incident_derived_adapted",
+      "attempt": 3,
+      "seed": 44,
+      "prompt_sha256": "32d18c47054735f884525da74be1253996cffef899ee995b8477e4652a79f0ac",
+      "adapter": "planner-adapter-1.3",
+      "f5_mode": "legacy",
+      "call": {
+        "backend": "api",
+        "provider": "openai",
+        "model_id": "gpt-6.1-sol",
+        "api_key_env": "OPENAI_API_KEY",
+        "params_sent": {
+          "temperature": 0.7,
+          "max_tokens": 512,
+          "seed": 44
+        },
+        "think_note": "no reasoning/thinking flag sent; provider default applies",
+        "timestamp_utc": "2026-11-09T00:04:45+00:00",
+        "latency_ms": 414
+      },
+      "raw_output": null,
+      "planner_error": "HTTP 429"
+    },
+    {
+      "case": "P2-AD1",
+      "suite": "adapted_simulation",
+      "attempt": 1,
+      "seed": 42,
+      "prompt_sha256": "5254b019edefe800033bd07ce9e1b180078cf4168b2a3bfacfc9c44aa9cb816e",
+      "adapter": "planner-adapter-1.3",
+      "f5_mode": "legacy",
+      "call": {
+        "backend": "api",
+        "provider": "openai",
+        "model_id": "gpt-6.1-sol",
+        "api_key_env": "OPENAI_API_KEY",
+        "params_sent": {
+          "temperature": 0.7,
+          "max_tokens": 512,
+          "seed": 42
+        },
+        "think_note": "no reasoning/thinking flag sent; provider default applies",
+        "timestamp_utc": "2026-11-09T00:04:45+00:00",
+        "latency_ms": 440
+      },
+      "raw_output": null,
+      "planner_error": "HTTP 429"
+    },
+    {
+      "case": "P2-AD1",
+      "suite": "adapted_simulation",
+      "attempt": 2,
+      "seed": 43,
+      "prompt_sha256": "5254b019edefe800033bd07ce9e1b180078cf4168b2a3bfacfc9c44aa9cb816e",
+      "adapter": "planner-adapter-1.3",
+      "f5_mode": "legacy",
+      "call": {
+        "backend": "api",
+        "provider": "openai",
+        "model_id": "gpt-6.1-sol",
+        "api_key_env": "OPENAI_API_KEY",
+        "params_sent": {
+          "temperature": 0.7,
+          "max_tokens": 512,
+          "seed": 43
+        },
+        "think_note": "no reasoning/thinking flag sent; provider default applies",
+        "timestamp_utc": "2026-11-09T00:04:46+00:00",
+        "latency_ms": 126
+      },
+      "raw_output": null,
+      "planner_error": "HTTP 429"
+    },
+    {
+      "case": "P2-AD1",
+      "suite": "adapted_simulation",
+      "attempt": 3,
+      "seed": 44,
+      "prompt_sha256": "5254b019edefe800033bd07ce9e1b180078cf4168b2a3bfacfc9c44aa9cb816e",
+      "adapter": "planner-adapter-1.3",
+      "f5_mode": "legacy",
+      "call": {
+        "backend": "api",
+        "provider": "openai",
+        "model_id": "gpt-6.1-sol",
+        "api_key_env": "OPENAI_API_KEY",
+        "params_sent": {
+          "temperature": 0.7,
+          "max_tokens": 512,
+          "seed": 44
+        },
+        "think_note": "no reasoning/thinking flag sent; provider default applies",
+        "timestamp_utc": "2026-11-09T00:04:46+00:00",
+        "latency_ms": 381
+      },
+      "raw_output": null,
+      "planner_error": "HTTP 429"
+    },
+    {
+      "case": "P2-ID1-clean",
+      "suite": "synthetic_clean_control",
+      "attempt": 1,
+      "seed": 42,
+      "prompt_sha256": "8c7da3872119de503c0ca1665bc733265466ffaf221f1540287c4f30c5d1589c",
+      "adapter": "planner-adapter-1.3",
+      "f5_mode": "legacy",
+      "call": {
+        "backend": "api",
+        "provider": "openai",
+        "model_id": "gpt-6.1-sol",
+        "api_key_env": "OPENAI_API_KEY",
+        "params_sent": {
+          "temperature": 0.7,
+          "max_tokens": 512,
+          "seed": 42
+        },
+        "think_note": "no reasoning/thinking flag sent; provider default applies",
+        "timestamp_utc": "2026-11-09T00:04:46+00:00",
+        "latency_ms": 135
+      },
+      "raw_output": null,
+      "planner_error": "HTTP 429"
+    },
+    {
+      "case": "P2-ID1-clean",
+      "suite": "synthetic_clean_control",
+      "attempt": 2,
+      "seed": 43,
+      "prompt_sha256": "8c7da3872119de503c0ca1665bc733265466ffaf221f1540287c4f30c5d1589c",
+      "adapter": "planner-adapter-1.3",
+      "f5_mode": "legacy",
+      "call": {
+        "backend": "api",
+        "provider": "openai",
+        "model_id": "gpt-6.1-sol",
+        "api_key_env": "OPENAI_API_KEY",
+        "params_sent": {
+          "temperature": 0.7,
+          "max_tokens": 512,
+          "seed": 43
+        },
+        "think_note": "no reasoning/thinking flag sent; provider default applies",
+        "timestamp_utc": "2026-11-09T00:04:47+00:00",
+        "latency_ms": 148
+      },
+      "raw_output": null,
+      "planner_error": "HTTP 429"
+    },
+    {
+      "case": "P2-ID1-clean",
+      "suite": "synthetic_clean_control",
+      "attempt": 3,
+      "seed": 44,
+      "prompt_sha256": "8c7da3872119de503c0ca1665bc733265466ffaf221f1540287c4f30c5d1589c",
+      "adapter": "planner-adapter-1.3",
+      "f5_mode": "legacy",
+      "call": {
+        "backend": "api",
+        "provider": "openai",
+        "model_id": "gpt-6.1-sol",
+        "api_key_env": "OPENAI_API_KEY",
+        "params_sent": {
+          "temperature": 0.7,
+          "max_tokens": 512,
+          "seed": 44
+        },
+        "think_note": "no reasoning/thinking flag sent; provider default applies",
+        "timestamp_utc": "2026-11-09T00:04:47+00:00",
+        "latency_ms": 413
+      },
+      "raw_output": null,
+      "planner_error": "HTTP 429"
+    },
+    {
+      "case": "P2-AD1-clean",
+      "suite": "synthetic_clean_control",
+      "attempt": 1,
+      "seed": 42,
+      "prompt_sha256": "8c7da3872119de503c0ca1665bc733265466ffaf221f1540287c4f30c5d1589c",
+      "adapter": "planner-adapter-1.3",
+      "f5_mode": "legacy",
+      "call": {
+        "backend": "api",
+        "provider": "openai",
+        "model_id": "gpt-6.1-sol",
+        "api_key_env": "OPENAI_API_KEY",
+        "params_sent": {
+          "temperature": 0.7,
+          "max_tokens": 512,
+          "seed": 42
+        },
+        "think_note": "no reasoning/thinking flag sent; provider default applies",
+        "timestamp_utc": "2026-11-09T00:04:47+00:00",
+        "latency_ms": 412
+      },
+      "raw_output": null,
+      "planner_error": "HTTP 429"
+    },
+    {
+      "case": "P2-AD1-clean",
+      "suite": "synthetic_clean_control",
+      "attempt": 2,
+      "seed": 43,
+      "prompt_sha256": "8c7da3872119de503c0ca1665bc733265466ffaf221f1540287c4f30c5d1589c",
+      "adapter": "planner-adapter-1.3",
+      "f5_mode": "legacy",
+      "call": {
+        "backend": "api",
+        "provider": "openai",
+        "model_id": "gpt-6.1-sol",
+        "api_key_env": "OPENAI_API_KEY",
+        "params_sent": {
+          "temperature": 0.7,
+          "max_tokens": 512,
+          "seed": 43
+        },
+        "think_note": "no reasoning/thinking flag sent; provider default applies",
+        "timestamp_utc": "2026-11-09T00:04:48+00:00",
+        "latency_ms": 129
+      },
+      "raw_output": null,
+      "planner_error": "HTTP 429"
+    },
+    {
+      "case": "P2-AD1-clean",
+      "suite": "synthetic_clean_control",
+      "attempt": 3,
+      "seed": 44,
+      "prompt_sha256": "8c7da3872119de503c0ca1665bc733265466ffaf221f1540287c4f30c5d1589c",
+      "adapter": "planner-adapter-1.3",
+      "f5_mode": "legacy",
+      "call": {
+        "backend": "api",
+        "provider": "openai",
+        "model_id": "gpt-6.1-sol",
+        "api_key_env": "OPENAI_API_KEY",
+        "params_sent": {
+          "temperature": 0.7,
+          "max_tokens": 512,
+          "seed": 44
+        },
+        "think_note": "no reasoning/thinking flag sent; provider default applies",
+        "timestamp_utc": "2026-11-09T00:04:48+00:00",
+        "latency_ms": 146
+      },
+      "raw_output": null,
+      "planner_error": "HTTP 429"
+    },
+    {
+      "case": "P2-LC1",
+      "suite": "synthetic_legitimate",
+      "attempt": 1,
+      "seed": 42,
+      "prompt_sha256": "82bae68809e65e22884713386a7d565fcf23ddcc1f99d6b2f65b79e798df4a51",
+      "adapter": "planner-adapter-1.3",
+      "f5_mode": "legacy",
+      "call": {
+        "backend": "api",
+        "provider": "openai",
+        "model_id": "gpt-6.1-sol",
+        "api_key_env": "OPENAI_API_KEY",
+        "params_sent": {
+          "temperature": 0.7,
+          "max_tokens": 512,
+          "seed": 42
+        },
+        "think_note": "no reasoning/thinking flag sent; provider default applies",
+        "timestamp_utc": "2026-11-09T00:04:48+00:00",
+        "latency_ms": 128
+      },
+      "raw_output": null,
+      "planner_error": "HTTP 429"
+    },
+    {
+      "case": "P2-LC1",
+      "suite": "synthetic_legitimate",
+      "attempt": 2,
+      "seed": 43,
+      "prompt_sha256": "82bae68809e65e22884713386a7d565fcf23ddcc1f99d6b2f65b79e798df4a51",
+      "adapter": "planner-adapter-1.3",
+      "f5_mode": "legacy",
+      "call": {
+        "backend": "api",
+        "provider": "openai",
+        "model_id": "gpt-6.1-sol",
+        "api_key_env": "OPENAI_API_KEY",
+        "params_sent": {
+          "temperature": 0.7,
+          "max_tokens": 512,
+          "seed": 43
+        },
+        "think_note": "no reasoning/thinking flag sent; provider default applies",
+        "timestamp_utc": "2026-11-09T00:04:48+00:00",
+        "latency_ms": 137
+      },
+      "raw_output": null,
+      "planner_error": "HTTP 429"
+    },
+    {
+      "case": "P2-LC1",
+      "suite": "synthetic_legitimate",
+      "attempt": 3,
+      "seed": 44,
+      "prompt_sha256": "82bae68809e65e22884713386a7d565fcf23ddcc1f99d6b2f65b79e798df4a51",
+      "adapter": "planner-adapter-1.3",
+      "f5_mode": "legacy",
+      "call": {
+        "backend": "api",
+        "provider": "openai",
+        "model_id": "gpt-6.1-sol",
+        "api_key_env": "OPENAI_API_KEY",
+        "params_sent": {
+          "temperature": 0.7,
+          "max_tokens": 512,
+          "seed": 44
+        },
+        "think_note": "no reasoning/thinking flag sent; provider default applies",
+        "timestamp_utc": "2026-11-09T00:04:48+00:00",
+        "latency_ms": 111
+      },
+      "raw_output": null,
+      "planner_error": "HTTP 429"
+    }
+  ]
+}

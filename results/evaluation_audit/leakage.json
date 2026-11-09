@@ -1,0 +1,93 @@
+{
+  "exact_variant_groups": {
+    "n_groups": 500,
+    "n_groups_with_more_than_one_query": 0,
+    "n_groups_spanning_multiple_splits": 0,
+    "examples": []
+  },
+  "near_duplicate_cross_split_pairs": {
+    "jaccard_threshold": 0.8,
+    "n_pairs_by_split_pair": {
+      "test-val": 1
+    },
+    "examples": [
+      {
+        "a": "toolret_apibank_apibank_query_6",
+        "b": "toolret_apibank_apibank_query_95",
+        "splits": "test-val",
+        "jaccard": 0.875,
+        "a_text": "Hi, can you help me delete my account?",
+        "b_text": "Can you help me delete my account?"
+      }
+    ]
+  },
+  "annotated_tool_overlap": {
+    "val_vs_dev": {
+      "n_queries": 100,
+      "n_with_any_annotated_tool_seen_in_earlier_splits": 25,
+      "n_with_identical_label_set_in_earlier_splits": 7,
+      "n_distinct_annotated_tools": 123,
+      "n_distinct_annotated_tools_also_in_earlier_splits": 24
+    },
+    "test_vs_dev_val": {
+      "n_queries": 100,
+      "n_with_any_annotated_tool_seen_in_earlier_splits": 25,
+      "n_with_identical_label_set_in_earlier_splits": 11,
+      "n_distinct_annotated_tools": 122,
+      "n_distinct_annotated_tools_also_in_earlier_splits": 28
+    }
+  },
+  "tool_families_by_split": {
+    "dev": [
+      "apibank",
+      "apigen",
+      "gorilla_huggingface",
+      "metatool_which",
+      "toolalpaca"
+    ],
+    "val": [
+      "apibank",
+      "apigen",
+      "gorilla_huggingface",
+      "metatool_which",
+      "toolalpaca"
+    ],
+    "test": [
+      "apibank",
+      "apigen",
+      "gorilla_huggingface",
+      "metatool_which",
+      "toolalpaca"
+    ]
+  },
+  "tool_families_in_all_three_splits": [
+    "apibank",
+    "apigen",
+    "gorilla_huggingface",
+    "metatool_which",
+    "toolalpaca"
+  ],
+  "source_subset_counts_by_split": {
+    "dev": {
+      "apibank": 15,
+      "apigen": 172,
+      "gorilla-huggingface": 70,
+      "metatool": 26,
+      "toolalpaca": 17
+    },
+    "val": {
+      "apibank": 5,
+      "apigen": 50,
+      "gorilla-huggingface": 31,
+      "metatool": 11,
+      "toolalpaca": 3
+    },
+    "test": {
+      "apibank": 8,
+      "apigen": 48,
+      "gorilla-huggingface": 27,
+      "metatool": 11,
+      "toolalpaca": 6
+    }
+  }
+}

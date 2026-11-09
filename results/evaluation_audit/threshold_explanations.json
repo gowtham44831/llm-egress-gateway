@@ -1,0 +1,414 @@
+{
+  "bm25::score_threshold": {
+    "kind": "score_threshold",
+    "frozen_threshold": 113.29860430547402,
+    "reselected_threshold_matches_frozen": true,
+    "n_val_records": 300,
+    "n_candidates": 301,
+    "n_candidates_meeting_target": 2,
+    "n_nonzero_coverage_candidates_meeting_target": 2,
+    "fallback_used": false,
+    "selected_val_counts": {
+      "n_queries": 300,
+      "n_accepted": 2,
+      "n_correct_accepted": 2,
+      "n_incorrect_accepted": 0,
+      "coverage": 0.006666666666666667,
+      "coverage_ci95_low": 0.0018301483562302972,
+      "coverage_ci95_high": 0.02397758327184811,
+      "selective_risk": 0.0,
+      "selective_risk_ci95_low": 0.0,
+      "selective_risk_ci95_high": 0.6576197728563925,
+      "selective_risk_status": "defined"
+    },
+    "selected_val_was_zero_coverage": false,
+    "val_rank_of_threshold_from_top": 2,
+    "test_counts": {
+      "n_queries": 300,
+      "n_accepted": 0,
+      "n_correct_accepted": 0,
+      "n_incorrect_accepted": 0,
+      "coverage": 0.0,
+      "coverage_ci95_low": 8.673617379884035e-19,
+      "coverage_ci95_high": 0.012642971244674058,
+      "selective_risk": null,
+      "selective_risk_ci95_low": null,
+      "selective_risk_ci95_high": null,
+      "selective_risk_status": "UNDEFINED (0 accepted)"
+    },
+    "test_rejected_everything": true,
+    "val_signal_max": 115.46770465952565,
+    "test_signal_max": 82.31287376793486,
+    "test_signal_quantiles": {
+      "min": 6.072204376516508,
+      "p25": 19.440783246198837,
+      "p50": 29.03343091838763,
+      "p75": 44.142776643958925,
+      "p90": 60.44130797223482,
+      "max": 82.31287376793486
+    },
+    "val_signal_quantiles": {
+      "min": 4.64821933585248,
+      "p25": 20.172195500776038,
+      "p50": 29.166355842026345,
+      "p75": 45.73557152248129,
+      "p90": 63.30792136065483,
+      "max": 115.46770465952565
+    },
+    "n_undefined_signal_val": 0,
+    "n_undefined_signal_test": 0,
+    "n_val_exactly_at_threshold": 1,
+    "n_test_exactly_at_threshold": 0,
+    "n_zero_margin_top1_ties_val": 2,
+    "n_zero_margin_top1_ties_test": 3,
+    "best_val_coverage_at_risk_target": {
+      "0.1": 0.006666666666666667,
+      "0.2": 0.03333333333333333,
+      "0.3": 0.06666666666666667,
+      "0.5": 0.24
+    },
+    "winner_trace_row": {
+      "threshold": 113.29860430547402,
+      "n_accepted": 2,
+      "n_incorrect_accepted": 0,
+      "coverage": 0.006666666666666667,
+      "selective_risk": 0.0,
+      "meets_target": true
+    },
+    "val_counts_by_scenario_at_frozen_threshold": {
+      "distractors_added": {
+        "n_queries": 100,
+        "n_accepted": 1,
+        "n_correct_accepted": 1,
+        "n_incorrect_accepted": 0
+      },
+      "known_removed": {
+        "n_queries": 100,
+        "n_accepted": 0,
+        "n_correct_accepted": 0,
+        "n_incorrect_accepted": 0
+      },
+      "original": {
+        "n_queries": 100,
+        "n_accepted": 1,
+        "n_correct_accepted": 1,
+        "n_incorrect_accepted": 0
+      },
+      "ALL (mixed)": {
+        "n_queries": 300,
+        "n_accepted": 2,
+        "n_correct_accepted": 2,
+        "n_incorrect_accepted": 0
+      }
+    }
+  },
+  "bm25::margin_threshold": {
+    "kind": "margin_threshold",
+    "frozen_threshold": 43.56766199068542,
+    "reselected_threshold_matches_frozen": true,
+    "n_val_records": 300,
+    "n_candidates": 300,
+    "n_candidates_meeting_target": 2,
+    "n_nonzero_coverage_candidates_meeting_target": 2,
+    "fallback_used": false,
+    "selected_val_counts": {
+      "n_queries": 300,
+      "n_accepted": 2,
+      "n_correct_accepted": 2,
+      "n_incorrect_accepted": 0,
+      "coverage": 0.006666666666666667,
+      "coverage_ci95_low": 0.0018301483562302972,
+      "coverage_ci95_high": 0.02397758327184811,
+      "selective_risk": 0.0,
+      "selective_risk_ci95_low": 0.0,
+      "selective_risk_ci95_high": 0.6576197728563925,
+      "selective_risk_status": "defined"
+    },
+    "selected_val_was_zero_coverage": false,
+    "val_rank_of_threshold_from_top": 2,
+    "test_counts": {
+      "n_queries": 300,
+      "n_accepted": 0,
+      "n_correct_accepted": 0,
+      "n_incorrect_accepted": 0,
+      "coverage": 0.0,
+      "coverage_ci95_low": 8.673617379884035e-19,
+      "coverage_ci95_high": 0.012642971244674058,
+      "selective_risk": null,
+      "selective_risk_ci95_low": null,
+      "selective_risk_ci95_high": null,
+      "selective_risk_status": "UNDEFINED (0 accepted)"
+    },
+    "test_rejected_everything": true,
+    "val_signal_max": 47.27098427815284,
+    "test_signal_max": 42.011068451746524,
+    "test_signal_quantiles": {
+      "min": 0.0,
+      "p25": 1.0391748218487074,
+      "p50": 2.5440867345162097,
+      "p75": 6.715917073043741,
+      "p90": 15.332144383953697,
+      "max": 42.011068451746524
+    },
+    "val_signal_quantiles": {
+      "min": 0.0,
+      "p25": 1.0681821059925625,
+      "p50": 2.5436419641650474,
+      "p75": 6.718178351379507,
+      "p90": 13.391896303290142,
+      "max": 47.27098427815284
+    },
+    "n_undefined_signal_val": 0,
+    "n_undefined_signal_test": 0,
+    "n_val_exactly_at_threshold": 1,
+    "n_test_exactly_at_threshold": 0,
+    "n_zero_margin_top1_ties_val": 2,
+    "n_zero_margin_top1_ties_test": 3,
+    "best_val_coverage_at_risk_target": {
+      "0.1": 0.006666666666666667,
+      "0.2": 0.006666666666666667,
+      "0.3": 0.12333333333333334,
+      "0.5": 0.26
+    },
+    "winner_trace_row": {
+      "threshold": 43.56766199068542,
+      "n_accepted": 2,
+      "n_incorrect_accepted": 0,
+      "coverage": 0.006666666666666667,
+      "selective_risk": 0.0,
+      "meets_target": true
+    },
+    "val_counts_by_scenario_at_frozen_threshold": {
+      "distractors_added": {
+        "n_queries": 100,
+        "n_accepted": 0,
+        "n_correct_accepted": 0,
+        "n_incorrect_accepted": 0
+      },
+      "known_removed": {
+        "n_queries": 100,
+        "n_accepted": 0,
+        "n_correct_accepted": 0,
+        "n_incorrect_accepted": 0
+      },
+      "original": {
+        "n_queries": 100,
+        "n_accepted": 2,
+        "n_correct_accepted": 2,
+        "n_incorrect_accepted": 0
+      },
+      "ALL (mixed)": {
+        "n_queries": 300,
+        "n_accepted": 2,
+        "n_correct_accepted": 2,
+        "n_incorrect_accepted": 0
+      }
+    }
+  },
+  "embedding::score_threshold": {
+    "kind": "score_threshold",
+    "frozen_threshold": 0.8324443697929382,
+    "reselected_threshold_matches_frozen": true,
+    "n_val_records": 300,
+    "n_candidates": 188,
+    "n_candidates_meeting_target": 1,
+    "n_nonzero_coverage_candidates_meeting_target": 1,
+    "fallback_used": false,
+    "selected_val_counts": {
+      "n_queries": 300,
+      "n_accepted": 2,
+      "n_correct_accepted": 2,
+      "n_incorrect_accepted": 0,
+      "coverage": 0.006666666666666667,
+      "coverage_ci95_low": 0.0018301483562302972,
+      "coverage_ci95_high": 0.02397758327184811,
+      "selective_risk": 0.0,
+      "selective_risk_ci95_low": 0.0,
+      "selective_risk_ci95_high": 0.6576197728563925,
+      "selective_risk_status": "defined"
+    },
+    "selected_val_was_zero_coverage": false,
+    "val_rank_of_threshold_from_top": 1,
+    "test_counts": {
+      "n_queries": 300,
+      "n_accepted": 0,
+      "n_correct_accepted": 0,
+      "n_incorrect_accepted": 0,
+      "coverage": 0.0,
+      "coverage_ci95_low": 8.673617379884035e-19,
+      "coverage_ci95_high": 0.012642971244674058,
+      "selective_risk": null,
+      "selective_risk_ci95_low": null,
+      "selective_risk_ci95_high": null,
+      "selective_risk_status": "UNDEFINED (0 accepted)"
+    },
+    "test_rejected_everything": true,
+    "val_signal_max": 0.8324443697929382,
+    "test_signal_max": 0.8062376976013184,
+    "test_signal_quantiles": {
+      "min": 0.15284116566181183,
+      "p25": 0.3997344672679901,
+      "p50": 0.49017104506492615,
+      "p75": 0.5766960382461548,
+      "p90": 0.6583353877067566,
+      "max": 0.8062376976013184
+    },
+    "val_signal_quantiles": {
+      "min": 0.16523905098438263,
+      "p25": 0.43668505549430847,
+      "p50": 0.5083940625190735,
+      "p75": 0.5882580280303955,
+      "p90": 0.6671956777572632,
+      "max": 0.8324443697929382
+    },
+    "n_undefined_signal_val": 0,
+    "n_undefined_signal_test": 0,
+    "n_val_exactly_at_threshold": 2,
+    "n_test_exactly_at_threshold": 0,
+    "n_zero_margin_top1_ties_val": 0,
+    "n_zero_margin_top1_ties_test": 0,
+    "best_val_coverage_at_risk_target": {
+      "0.1": 0.006666666666666667,
+      "0.2": 0.006666666666666667,
+      "0.3": 0.006666666666666667,
+      "0.5": 0.16
+    },
+    "winner_trace_row": {
+      "threshold": 0.8324443697929382,
+      "n_accepted": 2,
+      "n_incorrect_accepted": 0,
+      "coverage": 0.006666666666666667,
+      "selective_risk": 0.0,
+      "meets_target": true
+    },
+    "val_counts_by_scenario_at_frozen_threshold": {
+      "distractors_added": {
+        "n_queries": 100,
+        "n_accepted": 1,
+        "n_correct_accepted": 1,
+        "n_incorrect_accepted": 0
+      },
+      "known_removed": {
+        "n_queries": 100,
+        "n_accepted": 0,
+        "n_correct_accepted": 0,
+        "n_incorrect_accepted": 0
+      },
+      "original": {
+        "n_queries": 100,
+        "n_accepted": 1,
+        "n_correct_accepted": 1,
+        "n_incorrect_accepted": 0
+      },
+      "ALL (mixed)": {
+        "n_queries": 300,
+        "n_accepted": 2,
+        "n_correct_accepted": 2,
+        "n_incorrect_accepted": 0
+      }
+    }
+  },
+  "embedding::margin_threshold": {
+    "kind": "margin_threshold",
+    "frozen_threshold": 0.34014785289764404,
+    "reselected_threshold_matches_frozen": true,
+    "n_val_records": 300,
+    "n_candidates": 217,
+    "n_candidates_meeting_target": 3,
+    "n_nonzero_coverage_candidates_meeting_target": 3,
+    "fallback_used": false,
+    "selected_val_counts": {
+      "n_queries": 300,
+      "n_accepted": 3,
+      "n_correct_accepted": 3,
+      "n_incorrect_accepted": 0,
+      "coverage": 0.01,
+      "coverage_ci95_low": 0.0034066184350093273,
+      "coverage_ci95_high": 0.028983493384771256,
+      "selective_risk": 0.0,
+      "selective_risk_ci95_low": 0.0,
+      "selective_risk_ci95_high": 0.561497032152052,
+      "selective_risk_status": "defined"
+    },
+    "selected_val_was_zero_coverage": false,
+    "val_rank_of_threshold_from_top": 3,
+    "test_counts": {
+      "n_queries": 300,
+      "n_accepted": 7,
+      "n_correct_accepted": 6,
+      "n_incorrect_accepted": 1,
+      "coverage": 0.023333333333333334,
+      "coverage_ci95_low": 0.011347660292776587,
+      "coverage_ci95_high": 0.047371972293812695,
+      "selective_risk": 0.14285714285714285,
+      "selective_risk_ci95_low": 0.02567962431541787,
+      "selective_risk_ci95_high": 0.5131278295671371,
+      "selective_risk_status": "defined"
+    },
+    "test_rejected_everything": false,
+    "val_signal_max": 0.42219290137290955,
+    "test_signal_max": 0.4066430926322937,
+    "test_signal_quantiles": {
+      "min": 0.00022673606872558594,
+      "p25": 0.015380799770355225,
+      "p50": 0.038902223110198975,
+      "p75": 0.08770892024040222,
+      "p90": 0.15693393349647522,
+      "max": 0.4066430926322937
+    },
+    "val_signal_quantiles": {
+      "min": 0.00026345252990722656,
+      "p25": 0.010156035423278809,
+      "p50": 0.033120542764663696,
+      "p75": 0.06921911239624023,
+      "p90": 0.12263208627700806,
+      "max": 0.42219290137290955
+    },
+    "n_undefined_signal_val": 0,
+    "n_undefined_signal_test": 0,
+    "n_val_exactly_at_threshold": 1,
+    "n_test_exactly_at_threshold": 0,
+    "n_zero_margin_top1_ties_val": 0,
+    "n_zero_margin_top1_ties_test": 0,
+    "best_val_coverage_at_risk_target": {
+      "0.1": 0.01,
+      "0.2": 0.05333333333333334,
+      "0.3": 0.12333333333333334,
+      "0.5": 0.31
+    },
+    "winner_trace_row": {
+      "threshold": 0.34014785289764404,
+      "n_accepted": 3,
+      "n_incorrect_accepted": 0,
+      "coverage": 0.01,
+      "selective_risk": 0.0,
+      "meets_target": true
+    },
+    "val_counts_by_scenario_at_frozen_threshold": {
+      "distractors_added": {
+        "n_queries": 100,
+        "n_accepted": 0,
+        "n_correct_accepted": 0,
+        "n_incorrect_accepted": 0
+      },
+      "known_removed": {
+        "n_queries": 100,
+        "n_accepted": 0,
+        "n_correct_accepted": 0,
+        "n_incorrect_accepted": 0
+      },
+      "original": {
+        "n_queries": 100,
+        "n_accepted": 3,
+        "n_correct_accepted": 3,
+        "n_incorrect_accepted": 0
+      },
+      "ALL (mixed)": {
+        "n_queries": 300,
+        "n_accepted": 3,
+        "n_correct_accepted": 3,
+        "n_incorrect_accepted": 0
+      }
+    }
+  }
+}

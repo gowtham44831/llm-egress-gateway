@@ -1,252 +1,116 @@
-# Reliable Neural Tool Selection When Available Tools Change
+# Which check stopped it? — artifact repository
 
-> **Current project status, standing caveats, and all later milestones
-> (argument verification, security extension): see
-> [`docs/STATUS.md`](docs/STATUS.md).**
+Companion artifact for the paper **"Which check stopped it? Evaluating
+egress defenses for LLM agents"** (working title; draft at
+`docs/paper_draft.md`). A bounded laboratory experience report about an
+egress-authorization gateway that sits between an unmodified, untrusted
+LLM planner and outbound `url_fetch` calls: serialized-URL inspection,
+bounded payload decoding, per-field owner/destination/purpose
+authorization, and an independent loopback receiver as ground truth.
 
-**Research question:** Can a compact neural approach reduce incorrect tool
-selections when tools are added or removed, while maintaining useful
-request coverage?
+What the artifact supports:
 
-**This is milestone 1: datasets, baselines, and evaluation.** It does
-**not** train or propose a new model, and it does **not** claim
-publication-ready or novel results. See `results/*/REPORT.md` after a run
-for measured findings, and the "Final handoff" section below for an
-honest summary of what was and wasn't done.
+- Per-call **deciding-check attribution** — which rule actually decided
+  each outbound call, plus the minimal blocking arm — not aggregate
+  block rates (`results/attribution_table.csv`, `docs/paper_counts.md`).
+- Two live planners: **qwen3:14b** (frozen model-in-loop runs) and
+  **gpt-6.1-sol** (second-planner replication under a frozen protocol,
+  `runs/second_planner/`), and what changed when the model refused
+  instead of probing the gateway (`docs/second_planner_report.md`).
+- Two preserved failures: a missing-purpose context-plumbing block on a
+  legitimate share, and an F5 sibling-carrier coverage defect found by
+  receiver-side ground truth.
+- Fictional data, mock receivers, local/API models under frozen
+  protocols. **Not** a production system, an efficacy claim, or a
+  prevention-rate measurement.
 
-## Scope
-
-* Python 3.12, `pyproject.toml`, installable with plain `pip` (no `uv`
-  requirement).
-* CPU by default; `sentence-transformers`/`torch` will use MPS/CUDA if
-  available and requested via config (`embedding.device`).
-* CLI only (`tool-routing` / `python -m tool_routing.cli`) -- no web UI,
-  no FastAPI/MCP server.
-* No paid APIs or credentials required. No tool is ever executed/called;
-  only text descriptions are ranked.
-
-## Setup
+## Install
 
 ```bash
 python3.12 -m venv .venv
 source .venv/bin/activate
-pip install -e ".[data]"   # ".[data]" only needed for scripts/download_toolret.py
+pip install -e .        # core; ".[data]" only needed to download ToolRet
 ```
 
-Core dependencies: numpy, pandas, rank-bm25, sentence-transformers (pulls
-in torch and transformers), scikit-learn, matplotlib, PyYAML, pytest.
-Exact versions that were verified to work together are pinned in
-`requirements-lock.txt` (generated with `pip freeze`); `pyproject.toml`
-uses compatible ranges around those versions.
+Python 3.12. On macOS with a Homebrew Python that predates the OS,
+`import xml.parsers.expat` can fail —
+`brew install expat && export DYLD_LIBRARY_PATH=/opt/homebrew/opt/expat/lib`
+(see `AGENTS.md`). Core deps: numpy, pandas, pydantic, PyYAML, pytest;
+the milestone-1 stack (sentence-transformers/torch) is only needed for
+the tool-routing pilot work, not the egress pipeline.
 
-**Expected download sizes**, so you can decide before running anything:
-* `pip install -e ".[data]"`: ~350-400 MB total, dominated by `torch`
-  (CPU wheel, ~130 MB) and `transformers`/`scikit-learn`/`matplotlib`.
-* The default embedding model
-  (`sentence-transformers/all-MiniLM-L6-v2`) is ~90 MB, downloaded once on
-  first use and cached by `sentence-transformers` under `~/.cache/huggingface`.
-* `scripts/download_toolret.py` (optional, real data) downloads ~10 MB of
-  parquet files for the 5 pilot query subsets + all 3 ToolRet-Tools
-  corpora (~44.5k tool docs total).
-
-### macOS note (Apple Silicon, very new macOS versions)
-
-If `pip install`/`ensurepip` crashes inside `pip._vendor.truststore` with
-`ValueError: invalid literal for int() with base 10: ''`, or any `import
-xml.parsers.expat` fails with `Symbol not found:
-_XML_SetAllocTrackerActivationThreshold`, your Homebrew Python/libexpat
-predates your macOS version and `platform.mac_ver()`/`pyexpat` break. We
-worked around this locally with:
+## Reproduce
 
 ```bash
-brew install expat
-export DYLD_LIBRARY_PATH=/opt/homebrew/opt/expat/lib   # put in your shell rc
+make reproduce-tables   # regenerates every committed table/doc from the
+                        # frozen traces and diffs against the committed
+                        # reference outputs — read-only on inputs
+python -m pytest -q     # 198 tests, no network, no model calls
 ```
 
-This is an environment compatibility issue, not something specific to
-this repository.
+`make reproduce-tables` runs `scripts/reproduce_tables.sh`: regenerates
+`results/attribution_table*.csv`, `results/case_inventory.csv`,
+`results/scenario_matrix.csv`, `docs/attribution_notes.md`,
+`docs/paper_counts.md`, `docs/second_planner_report.md`, the labeling
+packet and `prompts/`, diffs all of them against the committed versions,
+verifies frozen-input sha256s, and smoke-tests the mock-replay path
+into scratch output. A `PROTOCOL-DRIFT` note on two documents is
+expected and documented (`ARTIFACTS.md` — "Protocol-document drift").
 
-## Running
+Live-model runs additionally need a local Ollama endpoint or a
+`SECOND_PLANNER_*_API_KEY` environment variable (never recorded — see
+`docs/second_planner_protocol.md`). The frozen traces committed under
+`results/` and `runs/` are all that reproduction requires.
 
-```bash
-# Toy fixture smoke test (no network, no real data; NOT a benchmark)
-python -m tool_routing.cli smoke-test
+## Map: folders → paper sections
 
-# Download a pilot slice of the real ToolRet benchmark (network + pip install -e ".[data]")
-python scripts/download_toolret.py --queries apibank apigen gorilla-huggingface toolalpaca metatool
+The authoritative claim→evidence map is **`ARTIFACTS.md`** (per claim,
+per figure cell, with generator commands). Summary:
 
-# Validate the downloaded data
-python -m tool_routing.cli validate --dataset toolret --config configs/pilot_toolret.yaml
+| Paper section | Primary artifacts |
+|---|---|
+| §3 gateway, F1–F5, task context | `src/tool_routing/argverify/url_fetch_gateway.py`, `planner_adapter.py`, `block_feedback.py`; `docs/binding_test_report.md` |
+| §4 evaluation design (arms, cases, counting) | `scripts/run_*.py` runners; `src/tool_routing/argverify/fixtures/` case definitions; `docs/run_config.md` (sampling, seeds); protocol docs `docs/security_*protocol.md`, `docs/second_planner_protocol.md` + `*_FREEZE.md` |
+| §5 Figure 1 + live-call table | `results/attribution_table.csv` (per run:case:arm:attempt deciding rule, minimal blocking arm, receiver receipt), `docs/paper_counts.md` (full + v2-only counts), `results/scenario_matrix.csv`, `results/case_inventory.csv` |
+| §6.1 deciding-check lessons | `docs/attribution_notes.md`; `results/*/` per-harness traces |
+| §6.2 missing-purpose failure | `results/planner_pilot_v2/` vs `results/planner_pilot_v2_adapter11/`; adapter code |
+| §6.3 F5 defect + strict replay | `results/f5_coverage_repro/`, `results/demo_showcase/`; `docs/attribution_notes.md` §§4–5 (13 allows, 0 changed) |
+| §7 second planner | `runs/second_planner/` (traces + manifests), `runs/second_planner_failed/` (preserved pre-output failures), `docs/second_planner_report.md`, `docs/second_planner_FREEZE.md` |
+| Labels/prompts evidence | `labels/` (packet + unblinded key), `prompts/` (hash-verified prompt reconstruction) |
+| Consistency audits | `docs/draft_consistency_report.md`, `docs/draft_consistency_report_v2.md` |
 
-# Run the full pilot (splits -> catalogs -> BM25+embedding retrieval -> thresholds -> metrics -> review.csv -> report)
-python -m tool_routing.cli run --config configs/pilot_toolret.yaml
-```
+## Folders belonging to sibling projects
 
-Outputs land in `output_dir` from the config (default
-`results/toolret_pilot/`, git-ignored): `REPORT.md`, `risk_coverage.png`,
-`metrics.json`, `predictions.jsonl`, `catalog_manifests.jsonl`,
-`splits.json`, `thresholds.json`, `review.csv`, `run_metadata.json`,
-`validation_report.txt`.
+This is a lab monorepo; three sibling efforts share it. Their outputs
+feed `results/attribution_table_other.csv`, so removing them would
+break byte-identical reproduction — recommendation: **keep, clearly
+labeled**, rather than strip (see decision below).
 
-## Repository layout
+| Folder(s) | Project | Recommendation |
+|---|---|---|
+| `data/`, `configs/pilot_toolret.yaml`, `results/toolret_pilot`, `results/evaluation_audit`, `results/toy_smoke_test`, `src/tool_routing/{cli,data,evaluation,reporting,retrieval,scenarios,audit}`, `docs/toolret*`, `docs/evaluation_audit*`, `docs/review_workflow*` | ToolRet neural tool-routing pilot (milestone 1) | Keep — small tracked portion (`data/` stays git-ignored); feeds the out-of-scope table. Exclude only if shipping a paper-scoped subtree |
+| `results/disclosure_*`, `docs/security_disclosure_*`, `docs/disclosure_*`, disclosure fixtures | Email-disclosure gateway evals | Keep — feeds `attribution_table_other.csv` |
+| `results/argverify_*`, `docs/argument_verification_*`, `docs/argverify_*` | Argument-verification evals | Keep — same reason. **Note:** `src/tool_routing/argverify/` also hosts the paper's gateway code — never exclude it |
+| `archive/` | Exploratory/closed directions | Keep — labeled archive, see `archive/README.md` |
+| `artifacts/` | Curated copies of key `results/` dirs (from the earlier release checklist) | Keep as labeled copies; `results/` is now the tracked evidence base and the reproduction source |
 
-```
-src/tool_routing/
-  data/        # schema, validation, toy fixture, ToolRet adapter
-  retrieval/   # BM25 and frozen-embedding baselines (shared interface)
-  scenarios/   # dev/val/test split construction, catalog scenario generation
-  evaluation/  # prediction records, abstention policies, metrics, bootstrap CIs
-  reporting/   # review CSV export, run metadata, Markdown report + plots
-  cli.py
-configs/       # pilot_toy.yaml, pilot_toolret.yaml
-scripts/       # download_toolret.py
-tests/         # pytest suite (toy-fixture based, no network)
-docs/          # dataset.md, review_workflow.md
-docker-compose.opensearch.yml   # optional, NOT required, NOT auto-started
-```
+## Licensing
 
-## Design decisions worth knowing about
+- **Code** (`src/`, `scripts/`, `Makefile`): MIT — `LICENSE`.
+- **Data, traces, and generated artifacts**: CC BY 4.0 — `DATA_LICENSE.md`.
+- Vendored CaMeL policy components (`src/third_party/camel_policy/`):
+  Apache-2.0, upstream `f083b6b` — `THIRD_PARTY_NOTICES`,
+  `docs/camel_vendor_record.md`. Used for a component comparison only.
 
-* **Known-incomplete labels.** `known_valid_tool_ids` on a `Request` is
-  the benchmark's annotated positive set, not a verified exhaustive one.
-  "Incorrect" in all metrics means "outside that set", not "confirmed
-  wrong". See `docs/dataset.md`.
-* **Catalog scenarios** (`scenarios/catalog.py`): for every query we build
-  `original`, `known_removed` (all annotated valid tools removed -- does
-  *not* imply the request becomes unanswerable), and `distractors_added`
-  (BM25-lexical-similarity-to-query distractors from a disjoint held-out
-  pool). All three are built from the same base pool so every retriever
-  sees identical catalogs.
-* **Reduced-catalog pilot.** For ToolRet, "original" = all tools sharing
-  the query's own source-subset tool family, not the full `code`/
-  `customized`/`web` corpus (up to 37k tools). See `docs/dataset.md` for
-  why, and what full-corpus evaluation would require.
-* **Abstention policies** (`evaluation/thresholds.py`): `always_top1`,
-  `score_threshold`, `margin_threshold`. Thresholds are selected on
-  validation only (`select_threshold`) and then frozen for test; see
-  `tests/test_thresholds.py` for a test that this boundary holds.
-* **Per-tool embedding caching**, not per-catalog: most catalogs in this
-  project share almost all of their tools (every query in a subset shares
-  the same `original` pool; `known_removed`/`distractors_added` only
-  change a few tools), so `retrieval/embeddings.py` caches one vector per
-  distinct tool and assembles catalog matrices from that cache. This is
-  what makes the real pilot run in a few minutes instead of a few hours.
-* **Query-grouped bootstrap** (`evaluation/metrics.py::query_grouped_bootstrap_ci`):
-  resamples whole queries (all of a query's scenario variants move
-  together), not individual prediction rows, to avoid pseudo-replication.
+## Citation
 
-## Deferred: OpenSearch BM25 adapter
-
-Not implemented in this milestone. `docker-compose.opensearch.yml` is
-provided for future local experimentation (pinned image, localhost-only
-ports, health check, named volume, security plugin disabled and clearly
-documented as local-only -- never started automatically). Implementing an
-OpenSearch-backed retriever behind the same `BaseRetriever` interface
-used by BM25/embeddings is deferred: it would require documenting
-OpenSearch's analyzer/scoring configuration and treating its scores as a
-genuinely separate experimental backend (its BM25 is not guaranteed to
-match `rank_bm25`'s scores), which is out of scope for getting the core
-dataset/baseline/evaluation pipeline working first.
-
-## Tests
-
-```bash
-python -m pytest -q
-```
-
-61 tests (41 from milestone 1, 20 added for the milestone-2 audit:
-Wilson intervals, review-sample stratification, catalog invariants,
-threshold-selection traces, leakage checks, embedding cache keys), all
-against the toy fixture and small inline fixtures (no
-network, no model download), covering: relevance-label mapping, dup
-IDs/missing fields/dangling refs/conflicting-label validation, "all known
-valid tools removed", "genuine additions without duplicate IDs",
-validation/test threshold-selection separation, hand-computed metrics,
-zero-coverage/empty-catalog behavior, and deterministic/grouped split
-construction.
-
-## Final handoff
-
-See `docs/dataset.md` and `docs/review_workflow.md` for the dataset
-writeup, and the project handoff summary below (also in the task
-conversation) for: what was implemented, exact commands run, actual pilot
-findings on real ToolRet data, an error-analysis sample, what's
-unverified/blocked (no human review pass yet; no official full-corpus
-evaluation yet), and the next experiment justified by observed failures.
-
-**Correction (milestone 2):** an earlier version of this paragraph said
-"baseline top-1 accuracy of ~43-52%". The measured test-split values in
-`results/toolret_pilot/metrics.json` are **43/100 (embedding) and 48/100
-(BM25)** agreement with the known relevance labels on the `original`
-catalog, i.e. 43-48%. 52% is BM25's test *selective risk* (52/100), not
-an accuracy. See `docs/evaluation_audit.md` for the reconciliation,
-per-split numbers with confidence intervals, and the diagnosis of why the
-threshold policies reach (near-)zero test coverage.
-
-## Milestone 2: evaluation audit
-
-```bash
-python scripts/audit_evaluation.py --config configs/pilot_toolret.yaml \
-    --pilot-dir results/toolret_pilot --out-dir results/evaluation_audit
-```
-
-Reads the milestone-1 pilot outputs read-only (hash-verified before and
-after) and writes exact count tables, Wilson intervals, paired bootstrap
-comparisons, score/margin plots, catalog/leakage checks, and human-review
-CSVs. Write-up: `docs/evaluation_audit.md`; reviewer instructions:
-`docs/review_workflow.md`.
-
-## Showcase release — egress gateway (milestones 3+)
-
-The current supported path is the **`url_fetch` egress gateway,
-`url-gw-1.1` (strict F5 by default)** plus `planner-adapter-1.3`
-context binding. Earlier `disclosure.py`/`min_disclosure.py`
-implementations are frozen predecessors; `f5_mode="legacy"` keeps
-url-gw-1.0 behavior for reproduction. Exploratory and closed
-directions live under `archive/` (labeled in `archive/README.md`).
-Frozen experiment artifacts remain under `results/` — never
-overwrite them.
-
-### Quick start
-
-```bash
-python3.12 -m venv .venv && source .venv/bin/activate
-pip install -e .            # core; ".[data]" only for ToolRet download
-python -m pytest -q         # 181 core (186 with .[data])
-python scripts/demo_showcase.py   # scripted 3-scene demo ->
-                                  # results/demo_showcase/traces.json
-```
-
-The demo uses **scripted calls** on fictional data (unauthorized
-disclosure blocked, authorized delivery permitted, the
-sibling-carrier defect before/after the F5 fix). Live-model runs
-(`scripts/run_multistep_pilot.py --v2`) additionally need a local
-Ollama `qwen3:14b` endpoint; no paid APIs are used anywhere.
-
-### Dependencies and licensing
-
-- This repository: **MIT** (`LICENSE`; `pyproject.toml`).
-- Vendored third-party code: `src/third_party/camel_policy/`
-  contains a dependency closure of the released CaMeL policy
-  components (upstream commit `f083b6b`), **Apache-2.0** — upstream
-  license and notices preserved; modifications and rationale in
-  `docs/camel_vendor_record.md`. It is used for a *component*
-  comparison only — not a CaMeL reproduction.
-- Runtime deps: `pydantic` (vendored CaMeL closure), plus the
-  milestone-1 stack pinned in `requirements-lock.txt`.
+See `CITATION.cff`. All personal data in this repository is fictional;
+no real secrets, credentials, or network traffic are included.
 
 ### AI assistance
 
-This project was developed with AI coding assistance (Devin,
-Cognition) for implementation, evaluation harness code, and
-documentation drafting. All security-relevant claims in
-`docs/`/`results/` trace to saved artifacts; exploratory and
-corrected work is labeled per milestone in `docs/STATUS.md`, and the
-evidence-to-claim mapping is in `docs/claim_to_evidence.md`.
-
-### Reports
-
-- Technical report + reproduction commands: `docs/technical_report.md`
-- Publication-pitch abstract: `docs/publication_abstract.md`
-- Public-release checklist: `docs/release_checklist.md`
-- Full milestone log: `docs/STATUS.md`
+Developed with AI coding assistance (Devin, Cognition) for
+implementation, harness code, and documentation drafting. Every
+security-relevant claim traces to a frozen artifact; exploratory and
+corrected work is labeled in `docs/STATUS.md` and
+`docs/claim_to_evidence.md`.

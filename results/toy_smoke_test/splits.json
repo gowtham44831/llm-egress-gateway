@@ -1,0 +1,118 @@
+{
+  "seed": 42,
+  "n_total_queries": 20,
+  "n_available_queries": 20,
+  "n_dev": 12,
+  "n_val": 4,
+  "n_test": 4,
+  "dev_query_ids": [
+    "toy_q_translate_2",
+    "toy_q_finance_1",
+    "toy_q_finance_3",
+    "toy_q_calendar_1",
+    "toy_q_weather_6",
+    "toy_q_finance_4",
+    "toy_q_weather_1",
+    "toy_q_weather_1_dup1",
+    "toy_q_weather_1_dup2",
+    "toy_q_translate_3",
+    "toy_q_weather_5",
+    "toy_q_weather_4"
+  ],
+  "val_query_ids": [
+    "toy_q_weather_3",
+    "toy_q_translate_1",
+    "toy_q_calendar_3",
+    "toy_q_calendar_2"
+  ],
+  "test_query_ids": [
+    "toy_q_weather_2",
+    "toy_q_finance_5",
+    "toy_q_calendar_4",
+    "toy_q_finance_2"
+  ],
+  "groups": {
+    "what language is this sentence written in": [
+      "toy_q_translate_2"
+    ],
+    "what is apples current stock price": [
+      "toy_q_finance_1"
+    ],
+    "give me a company profile for tesla": [
+      "toy_q_finance_3"
+    ],
+    "schedule a meeting with my team tomorrow at 10am": [
+      "toy_q_calendar_1"
+    ],
+    "give me the forecast for seattle this weekend": [
+      "toy_q_weather_6"
+    ],
+    "how much is 50 euros in british pounds": [
+      "toy_q_finance_4"
+    ],
+    "whats the weather like in paris right now": [
+      "toy_q_weather_1",
+      "toy_q_weather_1_dup1",
+      "toy_q_weather_1_dup2"
+    ],
+    "how do you say thank you in french": [
+      "toy_q_translate_3"
+    ],
+    "tell me the current temperature in tokyo": [
+      "toy_q_weather_5"
+    ],
+    "what was the weather in chicago last july 4th": [
+      "toy_q_weather_4"
+    ],
+    "are there any severe weather warnings for miami": [
+      "toy_q_weather_3"
+    ],
+    "translate good morning into spanish": [
+      "toy_q_translate_1"
+    ],
+    "cancel my 3pm dentist appointment": [
+      "toy_q_calendar_3"
+    ],
+    "what meetings do i have this week": [
+      "toy_q_calendar_2"
+    ],
+    "will it rain in boston over the next five days": [
+      "toy_q_weather_2"
+    ],
+    "i need apples latest price information": [
+      "toy_q_finance_5"
+    ],
+    "add a dentist appointment to my calendar for friday": [
+      "toy_q_calendar_4"
+    ],
+    "convert 100 us dollars to japanese yen": [
+      "toy_q_finance_2"
+    ]
+  },
+  "group_split": {
+    "what language is this sentence written in": "dev",
+    "what is apples current stock price": "dev",
+    "give me a company profile for tesla": "dev",
+    "schedule a meeting with my team tomorrow at 10am": "dev",
+    "give me the forecast for seattle this weekend": "dev",
+    "how much is 50 euros in british pounds": "dev",
+    "whats the weather like in paris right now": "dev",
+    "how do you say thank you in french": "dev",
+    "tell me the current temperature in tokyo": "dev",
+    "what was the weather in chicago last july 4th": "dev",
+    "are there any severe weather warnings for miami": "val",
+    "translate good morning into spanish": "val",
+    "cancel my 3pm dentist appointment": "val",
+    "what meetings do i have this week": "val",
+    "will it rain in boston over the next five days": "test",
+    "i need apples latest price information": "test",
+    "add a dentist appointment to my calendar for friday": "test",
+    "convert 100 us dollars to japanese yen": "test"
+  },
+  "family_overlap_warnings": [
+    "calendar",
+    "finance",
+    "translation",
+    "weather"
+  ]
+}

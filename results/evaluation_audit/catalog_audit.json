@@ -1,0 +1,351 @@
+{
+  "n_queries": 500,
+  "checks": [
+    {
+      "check": "all_three_scenarios_present",
+      "n_checked": 500,
+      "n_violations": 0,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "check": "original_contains_every_annotated_tool",
+      "n_checked": 500,
+      "n_violations": 0,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "check": "known_removed_equals_original_minus_annotated",
+      "n_checked": 500,
+      "n_violations": 0,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "check": "known_removed_contains_no_annotated_tool",
+      "n_checked": 500,
+      "n_violations": 0,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "check": "distractors_not_in_original_by_id",
+      "n_checked": 500,
+      "n_violations": 0,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "check": "distractors_from_held_out_pool",
+      "n_checked": 500,
+      "n_violations": 0,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "check": "distractors_resolve_to_known_tools",
+      "n_checked": 500,
+      "n_violations": 0,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "check": "distractors_unique_within_catalog",
+      "n_checked": 500,
+      "n_violations": 0,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "check": "distractors_added_equals_original_plus_distractors",
+      "n_checked": 500,
+      "n_violations": 0,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "check": "distractors_content_distinct_from_original",
+      "n_checked": 500,
+      "n_violations": 0,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "check": "distractors_not_annotated_valid",
+      "n_checked": 500,
+      "n_violations": 0,
+      "passed": true,
+      "examples": []
+    },
+    {
+      "check": "catalog_tool_ids_unique",
+      "n_checked": 1500,
+      "n_violations": 0,
+      "passed": true,
+      "examples": []
+    }
+  ],
+  "catalog_sizes": [
+    {
+      "subset": "apibank",
+      "scenario": "distractors_added",
+      "n_catalogs": 28,
+      "min": 104,
+      "median": 104.0,
+      "mean": 104.0,
+      "max": 104
+    },
+    {
+      "subset": "apibank",
+      "scenario": "known_removed",
+      "n_catalogs": 28,
+      "min": 97,
+      "median": 99.0,
+      "mean": 99.32,
+      "max": 100
+    },
+    {
+      "subset": "apibank",
+      "scenario": "original",
+      "n_catalogs": 28,
+      "min": 101,
+      "median": 101.0,
+      "mean": 101.0,
+      "max": 101
+    },
+    {
+      "subset": "apigen",
+      "scenario": "distractors_added",
+      "n_catalogs": 270,
+      "min": 3608,
+      "median": 3608.0,
+      "mean": 3608.0,
+      "max": 3608
+    },
+    {
+      "subset": "apigen",
+      "scenario": "known_removed",
+      "n_catalogs": 270,
+      "min": 3601,
+      "median": 3604.0,
+      "mean": 3603.64,
+      "max": 3604
+    },
+    {
+      "subset": "apigen",
+      "scenario": "original",
+      "n_catalogs": 270,
+      "min": 3605,
+      "median": 3605.0,
+      "mean": 3605.0,
+      "max": 3605
+    },
+    {
+      "subset": "gorilla-huggingface",
+      "scenario": "distractors_added",
+      "n_catalogs": 128,
+      "min": 910,
+      "median": 910.0,
+      "mean": 910.0,
+      "max": 910
+    },
+    {
+      "subset": "gorilla-huggingface",
+      "scenario": "known_removed",
+      "n_catalogs": 128,
+      "min": 906,
+      "median": 906.0,
+      "mean": 906.0,
+      "max": 906
+    },
+    {
+      "subset": "gorilla-huggingface",
+      "scenario": "original",
+      "n_catalogs": 128,
+      "min": 907,
+      "median": 907.0,
+      "mean": 907.0,
+      "max": 907
+    },
+    {
+      "subset": "metatool",
+      "scenario": "distractors_added",
+      "n_catalogs": 48,
+      "min": 203,
+      "median": 203.0,
+      "mean": 203.0,
+      "max": 203
+    },
+    {
+      "subset": "metatool",
+      "scenario": "known_removed",
+      "n_catalogs": 48,
+      "min": 198,
+      "median": 199.0,
+      "mean": 198.9,
+      "max": 199
+    },
+    {
+      "subset": "metatool",
+      "scenario": "original",
+      "n_catalogs": 48,
+      "min": 200,
+      "median": 200.0,
+      "mean": 200.0,
+      "max": 200
+    },
+    {
+      "subset": "toolalpaca",
+      "scenario": "distractors_added",
+      "n_catalogs": 26,
+      "min": 1940,
+      "median": 1940.0,
+      "mean": 1940.0,
+      "max": 1940
+    },
+    {
+      "subset": "toolalpaca",
+      "scenario": "known_removed",
+      "n_catalogs": 26,
+      "min": 1936,
+      "median": 1936.0,
+      "mean": 1936.0,
+      "max": 1936
+    },
+    {
+      "subset": "toolalpaca",
+      "scenario": "original",
+      "n_catalogs": 26,
+      "min": 1937,
+      "median": 1937.0,
+      "mean": 1937.0,
+      "max": 1937
+    },
+    {
+      "subset": "ALL",
+      "scenario": "original",
+      "n_catalogs": 500,
+      "min": 101,
+      "median": 3605.0,
+      "mean": 2304.47,
+      "max": 3605
+    },
+    {
+      "subset": "ALL",
+      "scenario": "known_removed",
+      "n_catalogs": 500,
+      "min": 97,
+      "median": 3603.0,
+      "mean": 2303.23,
+      "max": 3604
+    },
+    {
+      "subset": "ALL",
+      "scenario": "distractors_added",
+      "n_catalogs": 500,
+      "min": 104,
+      "median": 3608.0,
+      "mean": 2307.47,
+      "max": 3608
+    }
+  ],
+  "n_distractors_per_catalog_histogram": {
+    "3": 500
+  },
+  "queries_with_annotated_tool_missing_from_original_by_subset": {},
+  "duplicate_content_ids_within_original_pool": {
+    "apibank:101": 0,
+    "apigen:3605": 0,
+    "gorilla-huggingface:907": 0,
+    "metatool:200": 0,
+    "toolalpaca:1937": 0
+  },
+  "methods_identical_inputs": {
+    "methods": [
+      "bm25",
+      "embedding"
+    ],
+    "n_query_scenario_pairs_per_method": {
+      "bm25": 1500,
+      "embedding": 1500
+    },
+    "identical_query_scenario_catalog_sets": true,
+    "returned_ids_check": {
+      "check": "returned_tool_ids_inside_catalog",
+      "n_checked": 3000,
+      "n_violations": 0,
+      "passed": true,
+      "examples": []
+    }
+  },
+  "distractor_top1_breakdown_by_split": {
+    "dev": [
+      {
+        "method": "bm25",
+        "n": 300,
+        "top1_label_match": 78,
+        "top1_added_distractor": 184,
+        "top1_other_unlabeled": 38
+      },
+      {
+        "method": "embedding",
+        "n": 300,
+        "top1_label_match": 114,
+        "top1_added_distractor": 93,
+        "top1_other_unlabeled": 93
+      }
+    ],
+    "val": [
+      {
+        "method": "bm25",
+        "n": 100,
+        "top1_label_match": 27,
+        "top1_added_distractor": 62,
+        "top1_other_unlabeled": 11
+      },
+      {
+        "method": "embedding",
+        "n": 100,
+        "top1_label_match": 37,
+        "top1_added_distractor": 33,
+        "top1_other_unlabeled": 30
+      }
+    ],
+    "test": [
+      {
+        "method": "bm25",
+        "n": 100,
+        "top1_label_match": 26,
+        "top1_added_distractor": 64,
+        "top1_other_unlabeled": 10
+      },
+      {
+        "method": "embedding",
+        "n": 100,
+        "top1_label_match": 32,
+        "top1_added_distractor": 31,
+        "top1_other_unlabeled": 37
+      }
+    ]
+  },
+  "pilot_requests_with_label_missing_from_corpus": 0,
+  "subset_tool_families": {
+    "apibank": [
+      "apibank"
+    ],
+    "apigen": [
+      "apigen"
+    ],
+    "gorilla-huggingface": [
+      "gorilla_huggingface"
+    ],
+    "toolalpaca": [
+      "toolalpaca"
+    ],
+    "metatool": [
+      "metatool_which"
+    ]
+  },
+  "n_distractor_top1_review_rows_val_test": 168
+}

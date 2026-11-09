@@ -1,0 +1,322 @@
+{
+  "summary": {
+    "block_only": {
+      "affirmative": 0,
+      "declined": 0,
+      "unanswered": 0,
+      "invalid_reply": 0
+    },
+    "recovery": {
+      "affirmative": 7,
+      "declined": 0,
+      "unanswered": 1,
+      "invalid_reply": 6
+    },
+    "ref_conservative": {
+      "affirmative": 4,
+      "declined": 0,
+      "unanswered": 0,
+      "invalid_reply": 2
+    },
+    "ref_optimistic": {
+      "affirmative": 3,
+      "declined": 0,
+      "unanswered": 0,
+      "invalid_reply": 0
+    },
+    "mnd": {
+      "affirmative": 5,
+      "declined": 1,
+      "unanswered": 0,
+      "invalid_reply": 0
+    },
+    "mnd_v1_2": {
+      "affirmative": 7,
+      "declined": 1,
+      "unanswered": 2,
+      "invalid_reply": 1
+    }
+  },
+  "details": [
+    {
+      "episode": "E2-01",
+      "method": "recovery",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-02",
+      "method": "recovery",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-04",
+      "method": "recovery",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "invalid_reply"
+    },
+    {
+      "episode": "E2-04",
+      "method": "recovery",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "invalid_reply"
+    },
+    {
+      "episode": "E2-05",
+      "method": "recovery",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "invalid_reply"
+    },
+    {
+      "episode": "E2-05",
+      "method": "recovery",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "invalid_reply"
+    },
+    {
+      "episode": "E2-06",
+      "method": "recovery",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-07",
+      "method": "recovery",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-08",
+      "method": "recovery",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "invalid_reply"
+    },
+    {
+      "episode": "E2-08",
+      "method": "recovery",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "invalid_reply"
+    },
+    {
+      "episode": "E2-09",
+      "method": "recovery",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-10",
+      "method": "recovery",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-11",
+      "method": "recovery",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "unanswered"
+    },
+    {
+      "episode": "E2-12",
+      "method": "recovery",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-02",
+      "method": "ref_conservative",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-06",
+      "method": "ref_conservative",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-07",
+      "method": "ref_conservative",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-08",
+      "method": "ref_conservative",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "invalid_reply"
+    },
+    {
+      "episode": "E2-08",
+      "method": "ref_conservative",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "invalid_reply"
+    },
+    {
+      "episode": "E2-09",
+      "method": "ref_conservative",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-02",
+      "method": "ref_optimistic",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-06",
+      "method": "ref_optimistic",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-09",
+      "method": "ref_optimistic",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-02",
+      "method": "mnd",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-06",
+      "method": "mnd",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-07",
+      "method": "mnd",
+      "target": "consulate.visa_b",
+      "kind": "ref_acceptance",
+      "class": "declined"
+    },
+    {
+      "episode": "E2-07",
+      "method": "mnd",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-08",
+      "method": "mnd",
+      "target": "consulate.visa_b",
+      "kind": "ref_acceptance",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-09",
+      "method": "mnd",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-02",
+      "method": "mnd_v1_2",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-04",
+      "method": "mnd_v1_2",
+      "target": "lena.farouk",
+      "kind": "record_selection",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-05",
+      "method": "mnd_v1_2",
+      "target": "lena.farouk",
+      "kind": "record_selection",
+      "class": "invalid_reply"
+    },
+    {
+      "episode": "E2-06",
+      "method": "mnd_v1_2",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-07",
+      "method": "mnd_v1_2",
+      "target": "consulate.visa_b",
+      "kind": "ref_acceptance",
+      "class": "declined"
+    },
+    {
+      "episode": "E2-07",
+      "method": "mnd_v1_2",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-08",
+      "method": "mnd_v1_2",
+      "target": "lena.farouk",
+      "kind": "record_selection",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-08",
+      "method": "mnd_v1_2",
+      "target": "consulate.visa_b",
+      "kind": "ref_acceptance",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-09",
+      "method": "mnd_v1_2",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "affirmative"
+    },
+    {
+      "episode": "E2-11",
+      "method": "mnd_v1_2",
+      "target": "lena.farouk",
+      "kind": "record_selection",
+      "class": "unanswered"
+    },
+    {
+      "episode": "E2-11",
+      "method": "mnd_v1_2",
+      "target": "lena.farouk",
+      "kind": "grant",
+      "class": "unanswered"
+    }
+  ]
+}

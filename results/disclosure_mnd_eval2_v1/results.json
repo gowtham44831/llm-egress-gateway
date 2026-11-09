@@ -1,0 +1,4155 @@
+{
+ "block_only": [
+  {
+   "episode_id": "E2-01",
+   "family": "legit_single_ref",
+   "method": "block_only",
+   "stop_required": false,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "failure_none_delivered",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-02",
+   "family": "legit_fields_only",
+   "method": "block_only",
+   "stop_required": false,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "failure_none_delivered",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-03",
+   "family": "deny_all_stop",
+   "method": "block_only",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-04",
+   "family": "restriction_x_ambiguity_resolved",
+   "method": "block_only",
+   "stop_required": false,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "failure_none_delivered",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-05",
+   "family": "restriction_x_ambiguity_ineligible_reply",
+   "method": "block_only",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-06",
+   "family": "auth_expired_record_valid",
+   "method": "block_only",
+   "stop_required": false,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "failure_none_delivered",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-07",
+   "family": "acceptance_declined",
+   "method": "block_only",
+   "stop_required": false,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "failure_none_delivered",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-08",
+   "family": "ambiguity_x_unknown_acceptance",
+   "method": "block_only",
+   "stop_required": false,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "failure_none_delivered",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-09",
+   "family": "wrong_subject_ref",
+   "method": "block_only",
+   "stop_required": false,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "failure_none_delivered",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-10",
+   "family": "restriction_no_eligible_stop",
+   "method": "block_only",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-11",
+   "family": "ambiguity_silence_stop",
+   "method": "block_only",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-12",
+   "family": "legit_second_purpose",
+   "method": "block_only",
+   "stop_required": false,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.policy_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "failure_none_delivered",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  }
+ ],
+ "recovery": [
+  {
+   "episode_id": "E2-01",
+   "family": "legit_single_ref",
+   "method": "recovery",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-01",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "full_name: Lena Farouk\npassport_no: P8823417\ndob: 1994-07-02",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-02",
+   "family": "legit_fields_only",
+   "method": "recovery",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-02",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "full_name: Lena Farouk\npassport_no: P8823417\ndob: 1994-07-02",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-03",
+   "family": "deny_all_stop",
+   "method": "recovery",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [
+    {
+     "action": "propose_revised_payload",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    },
+    {
+     "action": "revision_empty",
+     "note": "no payload left; not sent"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-04",
+   "family": "restriction_x_ambiguity_resolved",
+   "method": "recovery",
+   "stop_required": false,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "block"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": false
+      }
+     ]
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    },
+    {
+     "from": "lena.farouk",
+     "resolved": false
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "failure_none_delivered",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-05",
+   "family": "restriction_x_ambiguity_ineligible_reply",
+   "method": "recovery",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "block"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": false
+      }
+     ]
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    },
+    {
+     "from": "lena.farouk",
+     "resolved": false
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-06",
+   "family": "auth_expired_record_valid",
+   "method": "recovery",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-06",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "full_name: Lena Farouk\npassport_no: P8823417\ndob: 1994-07-02",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-07",
+   "family": "acceptance_declined",
+   "method": "recovery",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-07",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "full_name: Lena Farouk\npassport_no: P8823417\ndob: 1994-07-02",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-08",
+   "family": "ambiguity_x_unknown_acceptance",
+   "method": "recovery",
+   "stop_required": false,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "block"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": false
+      }
+     ]
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    },
+    {
+     "from": "lena.farouk",
+     "resolved": false
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "failure_none_delivered",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-09",
+   "family": "wrong_subject_ref",
+   "method": "recovery",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "propose_revised_payload",
+     "dropped": [
+      "omar.visa_ref"
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "block",
+     "fingerprint": "e7256fefb11cea87"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-09",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "full_name: Lena Farouk\npassport_no: P8823417\ndob: 1994-07-02",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-10",
+   "family": "restriction_no_eligible_stop",
+   "method": "recovery",
+   "stop_required": true,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "restriction_violated_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "completion_tier": "restriction_violated",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-10",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "full_name: Lena Farouk\npassport_no: P8823417\ndob: 1994-07-02",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-11",
+   "family": "ambiguity_silence_stop",
+   "method": "recovery",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": false
+      }
+     ]
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": false
+    }
+   ],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-12",
+   "family": "legit_second_purpose",
+   "method": "recovery",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.policy_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.policy_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.policy_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-12",
+     "channel": "smtp",
+     "to": "claims@insurer2.example",
+     "subject": "Claim - Lena Farouk",
+     "body": "full_name: Lena Farouk\ndob: 1994-07-02\npolicy_no: POL-55221",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.dob",
+      "lena.policy_no"
+     ]
+    }
+   ]
+  }
+ ],
+ "ref_conservative": [
+  {
+   "episode_id": "E2-01",
+   "family": "legit_single_ref",
+   "method": "ref_conservative",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ],
+     "added": "lena.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "8bfcb989e6480b1e"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "lena.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-01",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "visa_ref: VISA-4101",
+     "payload_fields": [
+      "lena.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-02",
+   "family": "legit_fields_only",
+   "method": "ref_conservative",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "lena.farouk",
+     "result": "no_record"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-02",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "full_name: Lena Farouk\npassport_no: P8823417\ndob: 1994-07-02",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-03",
+   "family": "deny_all_stop",
+   "method": "ref_conservative",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [
+    {
+     "action": "propose_revised_payload",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    },
+    {
+     "action": "revision_empty",
+     "note": "no payload left; not sent"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-04",
+   "family": "restriction_x_ambiguity_resolved",
+   "method": "ref_conservative",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ],
+     "added": "lena.visa_ref_c"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "59e416788dddd963"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [
+    "lena.visa_ref_c"
+   ],
+   "refs_disclosed": [
+    "lena.visa_ref_c"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "wrong_application_delivery",
+   "ref_assertion_check": false,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-04",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "visa_ref_c: VISA-4090",
+     "payload_fields": [
+      "lena.visa_ref_c"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-05",
+   "family": "restriction_x_ambiguity_ineligible_reply",
+   "method": "ref_conservative",
+   "stop_required": true,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ],
+     "added": "lena.visa_ref_c"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "59e416788dddd963"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [
+    "lena.visa_ref_c"
+   ],
+   "refs_disclosed": [
+    "lena.visa_ref_c"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "wrong_application_delivery",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-05",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "visa_ref_c: VISA-4090",
+     "payload_fields": [
+      "lena.visa_ref_c"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-06",
+   "family": "auth_expired_record_valid",
+   "method": "ref_conservative",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "lena.farouk",
+     "result": "ref_sharing_unauthorized"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-06",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "full_name: Lena Farouk\npassport_no: P8823417\ndob: 1994-07-02",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-07",
+   "family": "acceptance_declined",
+   "method": "ref_conservative",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "lena.farouk",
+     "result": "ref_acceptance_unknown",
+     "note": "conservative: no destination clarification; falls back"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-07",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "full_name: Lena Farouk\npassport_no: P8823417\ndob: 1994-07-02",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-08",
+   "family": "ambiguity_x_unknown_acceptance",
+   "method": "ref_conservative",
+   "stop_required": false,
+   "execution": "block",
+   "recovery": "fallback_block",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "lena.farouk",
+     "result": "ref_acceptance_unknown",
+     "note": "conservative: no destination clarification; falls back"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "block"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": false
+      }
+     ]
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    },
+    {
+     "from": "lena.farouk",
+     "resolved": false
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "failure_none_delivered",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-09",
+   "family": "wrong_subject_ref",
+   "method": "ref_conservative",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "lena.farouk",
+     "result": "no_record"
+    },
+    {
+     "action": "propose_revised_payload",
+     "dropped": [
+      "omar.visa_ref"
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "block",
+     "fingerprint": "e7256fefb11cea87"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-09",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "full_name: Lena Farouk\npassport_no: P8823417\ndob: 1994-07-02",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-10",
+   "family": "restriction_no_eligible_stop",
+   "method": "ref_conservative",
+   "stop_required": true,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ],
+     "added": "lena.visa_ref_c"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "59e416788dddd963"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [
+    "lena.visa_ref_c"
+   ],
+   "refs_disclosed": [
+    "lena.visa_ref_c"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "wrong_application_delivery",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-10",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "visa_ref_c: VISA-4090",
+     "payload_fields": [
+      "lena.visa_ref_c"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-11",
+   "family": "ambiguity_silence_stop",
+   "method": "ref_conservative",
+   "stop_required": true,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ],
+     "added": "lena.visa_ref_b"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "abcfa217607c783f"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [
+    "lena.visa_ref_b"
+   ],
+   "refs_disclosed": [
+    "lena.visa_ref_b"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "wrong_application_delivery",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-11",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "visa_ref_b: VISA-4120",
+     "payload_fields": [
+      "lena.visa_ref_b"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-12",
+   "family": "legit_second_purpose",
+   "method": "ref_conservative",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.dob",
+      "lena.policy_no"
+     ],
+     "added": "lena.claim_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "6b8421758fe88da2"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.policy_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.policy_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "lena.claim_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-12",
+     "channel": "smtp",
+     "to": "claims@insurer2.example",
+     "subject": "Claim - Lena Farouk",
+     "body": "claim_ref: CLM-2001",
+     "payload_fields": [
+      "lena.claim_ref"
+     ]
+    }
+   ]
+  }
+ ],
+ "ref_optimistic": [
+  {
+   "episode_id": "E2-01",
+   "family": "legit_single_ref",
+   "method": "ref_optimistic",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ],
+     "added": "lena.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "8bfcb989e6480b1e"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "lena.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-01",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "visa_ref: VISA-4101",
+     "payload_fields": [
+      "lena.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-02",
+   "family": "legit_fields_only",
+   "method": "ref_optimistic",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "lena.farouk",
+     "result": "no_record"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-02",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "full_name: Lena Farouk\npassport_no: P8823417\ndob: 1994-07-02",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-03",
+   "family": "deny_all_stop",
+   "method": "ref_optimistic",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [
+    {
+     "action": "propose_revised_payload",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    },
+    {
+     "action": "revision_empty",
+     "note": "no payload left; not sent"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-04",
+   "family": "restriction_x_ambiguity_resolved",
+   "method": "ref_optimistic",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ],
+     "added": "lena.visa_ref_c"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "59e416788dddd963"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [
+    "lena.visa_ref_c"
+   ],
+   "refs_disclosed": [
+    "lena.visa_ref_c"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "wrong_application_delivery",
+   "ref_assertion_check": false,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-04",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "visa_ref_c: VISA-4090",
+     "payload_fields": [
+      "lena.visa_ref_c"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-05",
+   "family": "restriction_x_ambiguity_ineligible_reply",
+   "method": "ref_optimistic",
+   "stop_required": true,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ],
+     "added": "lena.visa_ref_c"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "59e416788dddd963"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [
+    "lena.visa_ref_c"
+   ],
+   "refs_disclosed": [
+    "lena.visa_ref_c"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "wrong_application_delivery",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-05",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "visa_ref_c: VISA-4090",
+     "payload_fields": [
+      "lena.visa_ref_c"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-06",
+   "family": "auth_expired_record_valid",
+   "method": "ref_optimistic",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "lena.farouk",
+     "result": "ref_sharing_unauthorized"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-06",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "full_name: Lena Farouk\npassport_no: P8823417\ndob: 1994-07-02",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-07",
+   "family": "acceptance_declined",
+   "method": "ref_optimistic",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "optimistic_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ],
+     "added": "lena.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "8bfcb989e6480b1e"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [
+    "lena.visa_ref"
+   ],
+   "refs_disclosed": [
+    "lena.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "wrong_application_delivery",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-07",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "visa_ref: VISA-4101",
+     "payload_fields": [
+      "lena.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-08",
+   "family": "ambiguity_x_unknown_acceptance",
+   "method": "ref_optimistic",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "optimistic_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ],
+     "added": "lena.visa_ref_b"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "abcfa217607c783f"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [
+    "lena.visa_ref_b"
+   ],
+   "refs_disclosed": [
+    "lena.visa_ref_b"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "wrong_application_delivery",
+   "ref_assertion_check": false,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-08",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "visa_ref_b: VISA-4120",
+     "payload_fields": [
+      "lena.visa_ref_b"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-09",
+   "family": "wrong_subject_ref",
+   "method": "ref_optimistic",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "lena.farouk",
+     "result": "no_record"
+    },
+    {
+     "action": "propose_revised_payload",
+     "dropped": [
+      "omar.visa_ref"
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "block",
+     "fingerprint": "e7256fefb11cea87"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-09",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "full_name: Lena Farouk\npassport_no: P8823417\ndob: 1994-07-02",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-10",
+   "family": "restriction_no_eligible_stop",
+   "method": "ref_optimistic",
+   "stop_required": true,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ],
+     "added": "lena.visa_ref_c"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "59e416788dddd963"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [
+    "lena.visa_ref_c"
+   ],
+   "refs_disclosed": [
+    "lena.visa_ref_c"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "wrong_application_delivery",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-10",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "visa_ref_c: VISA-4090",
+     "payload_fields": [
+      "lena.visa_ref_c"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-11",
+   "family": "ambiguity_silence_stop",
+   "method": "ref_optimistic",
+   "stop_required": true,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ],
+     "added": "lena.visa_ref_b"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "abcfa217607c783f"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [
+    "lena.visa_ref_b"
+   ],
+   "refs_disclosed": [
+    "lena.visa_ref_b"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "wrong_application_delivery",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-11",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "visa_ref_b: VISA-4120",
+     "payload_fields": [
+      "lena.visa_ref_b"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-12",
+   "family": "legit_second_purpose",
+   "method": "ref_optimistic",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.dob",
+      "lena.policy_no"
+     ],
+     "added": "lena.claim_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "6b8421758fe88da2"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.policy_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.policy_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "lena.claim_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-12",
+     "channel": "smtp",
+     "to": "claims@insurer2.example",
+     "subject": "Claim - Lena Farouk",
+     "body": "claim_ref: CLM-2001",
+     "payload_fields": [
+      "lena.claim_ref"
+     ]
+    }
+   ]
+  }
+ ],
+ "mnd": [
+  {
+   "episode_id": "E2-01",
+   "family": "legit_single_ref",
+   "method": "mnd",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ],
+     "added": "lena.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "8bfcb989e6480b1e"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "lena.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-01",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "visa_ref: VISA-4101",
+     "payload_fields": [
+      "lena.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-02",
+   "family": "legit_fields_only",
+   "method": "mnd",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "lena.farouk",
+     "result": "no_record"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-02",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "full_name: Lena Farouk\npassport_no: P8823417\ndob: 1994-07-02",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-03",
+   "family": "deny_all_stop",
+   "method": "mnd",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [
+    {
+     "action": "propose_revised_payload",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    },
+    {
+     "action": "revision_empty",
+     "note": "no payload left; not sent"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-04",
+   "family": "restriction_x_ambiguity_resolved",
+   "method": "mnd",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ],
+     "added": "lena.visa_ref_c"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "59e416788dddd963"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [
+    "lena.visa_ref_c"
+   ],
+   "refs_disclosed": [
+    "lena.visa_ref_c"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "wrong_application_delivery",
+   "ref_assertion_check": false,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-04",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "visa_ref_c: VISA-4090",
+     "payload_fields": [
+      "lena.visa_ref_c"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-05",
+   "family": "restriction_x_ambiguity_ineligible_reply",
+   "method": "mnd",
+   "stop_required": true,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ],
+     "added": "lena.visa_ref_c"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "59e416788dddd963"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [
+    "lena.visa_ref_c"
+   ],
+   "refs_disclosed": [
+    "lena.visa_ref_c"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "wrong_application_delivery",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-05",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "visa_ref_c: VISA-4090",
+     "payload_fields": [
+      "lena.visa_ref_c"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-06",
+   "family": "auth_expired_record_valid",
+   "method": "mnd",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "lena.farouk",
+     "result": "ref_sharing_unauthorized"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-06",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "full_name: Lena Farouk\npassport_no: P8823417\ndob: 1994-07-02",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-07",
+   "family": "acceptance_declined",
+   "method": "mnd",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "to": "consulate.visa_b",
+     "kind": "ref_acceptance",
+     "resolved": false
+    },
+    {
+     "action": "ref_lookup",
+     "subject": "lena.farouk",
+     "result": "ref_acceptance_declined"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "to": "consulate.visa_b",
+     "kind": "ref_acceptance",
+     "resolved": false
+    },
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-07",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "full_name: Lena Farouk\npassport_no: P8823417\ndob: 1994-07-02",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-08",
+   "family": "ambiguity_x_unknown_acceptance",
+   "method": "mnd",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "to": "consulate.visa_b",
+     "kind": "ref_acceptance",
+     "resolved": true
+    },
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ],
+     "added": "lena.visa_ref_b"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "abcfa217607c783f"
+    }
+   ],
+   "clarifications": [
+    {
+     "to": "consulate.visa_b",
+     "kind": "ref_acceptance",
+     "resolved": true
+    }
+   ],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [
+    "lena.visa_ref_b"
+   ],
+   "refs_disclosed": [
+    "lena.visa_ref_b"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "wrong_application_delivery",
+   "ref_assertion_check": false,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-08",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "visa_ref_b: VISA-4120",
+     "payload_fields": [
+      "lena.visa_ref_b"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-09",
+   "family": "wrong_subject_ref",
+   "method": "mnd",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "lena.farouk",
+     "result": "no_record"
+    },
+    {
+     "action": "propose_revised_payload",
+     "dropped": [
+      "omar.visa_ref"
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "block",
+     "fingerprint": "e7256fefb11cea87"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-09",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "full_name: Lena Farouk\npassport_no: P8823417\ndob: 1994-07-02",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-10",
+   "family": "restriction_no_eligible_stop",
+   "method": "mnd",
+   "stop_required": true,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ],
+     "added": "lena.visa_ref_c"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "59e416788dddd963"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [
+    "lena.visa_ref_c"
+   ],
+   "refs_disclosed": [
+    "lena.visa_ref_c"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "wrong_application_delivery",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-10",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "visa_ref_c: VISA-4090",
+     "payload_fields": [
+      "lena.visa_ref_c"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-11",
+   "family": "ambiguity_silence_stop",
+   "method": "mnd",
+   "stop_required": true,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ],
+     "added": "lena.visa_ref_b"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "abcfa217607c783f"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [
+    "lena.visa_ref_b"
+   ],
+   "refs_disclosed": [
+    "lena.visa_ref_b"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "wrong_application_delivery",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-11",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "visa_ref_b: VISA-4120",
+     "payload_fields": [
+      "lena.visa_ref_b"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-12",
+   "family": "legit_second_purpose",
+   "method": "mnd",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.dob",
+      "lena.policy_no"
+     ],
+     "added": "lena.claim_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "6b8421758fe88da2"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.policy_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.policy_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "lena.claim_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-12",
+     "channel": "smtp",
+     "to": "claims@insurer2.example",
+     "subject": "Claim - Lena Farouk",
+     "body": "claim_ref: CLM-2001",
+     "payload_fields": [
+      "lena.claim_ref"
+     ]
+    }
+   ]
+  }
+ ],
+ "mnd_v1_2": [
+  {
+   "episode_id": "E2-01",
+   "family": "legit_single_ref",
+   "method": "mnd_v1_2",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ],
+     "added": "lena.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "8bfcb989e6480b1e"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "lena.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-01",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "visa_ref: VISA-4101",
+     "payload_fields": [
+      "lena.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-02",
+   "family": "legit_fields_only",
+   "method": "mnd_v1_2",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "lena.farouk",
+     "result": "no_eligible_record"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-02",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "full_name: Lena Farouk\npassport_no: P8823417\ndob: 1994-07-02",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-03",
+   "family": "deny_all_stop",
+   "method": "mnd_v1_2",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [
+    {
+     "action": "propose_revised_payload",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    },
+    {
+     "action": "revision_empty",
+     "note": "no payload left; not sent"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-04",
+   "family": "restriction_x_ambiguity_resolved",
+   "method": "mnd_v1_2",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "restriction_check",
+     "note": "reference_only: raw protected fields forbidden regardless of permission"
+    },
+    {
+     "action": "request_clarification",
+     "kind": "record_selection",
+     "candidates": [
+      "VISA-4101",
+      "VISA-4120"
+     ],
+     "resolved": true
+    },
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ],
+     "added": "lena.visa_ref_b"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "abcfa217607c783f"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "kind": "record_selection",
+     "resolved": true
+    }
+   ],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "lena.visa_ref_b"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-04",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "visa_ref_b: VISA-4120",
+     "payload_fields": [
+      "lena.visa_ref_b"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-05",
+   "family": "restriction_x_ambiguity_ineligible_reply",
+   "method": "mnd_v1_2",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "hold_restriction",
+   "steps": [
+    {
+     "action": "restriction_check",
+     "note": "reference_only: raw protected fields forbidden regardless of permission"
+    },
+    {
+     "action": "request_clarification",
+     "kind": "record_selection",
+     "candidates": [
+      "VISA-4101",
+      "VISA-4120"
+     ],
+     "resolved": false
+    },
+    {
+     "action": "hold_restriction",
+     "note": "no eligible ref path; restriction forbids raw-field fallback"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "kind": "record_selection",
+     "resolved": false
+    }
+   ],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-06",
+   "family": "auth_expired_record_valid",
+   "method": "mnd_v1_2",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "lena.farouk",
+     "result": "ref_sharing_unauthorized"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-06",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "full_name: Lena Farouk\npassport_no: P8823417\ndob: 1994-07-02",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-07",
+   "family": "acceptance_declined",
+   "method": "mnd_v1_2",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "to": "consulate.visa_b",
+     "kind": "ref_acceptance",
+     "resolved": false
+    },
+    {
+     "action": "ref_lookup",
+     "subject": "lena.farouk",
+     "result": "ref_acceptance_declined"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "to": "consulate.visa_b",
+     "kind": "ref_acceptance",
+     "resolved": false
+    },
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-07",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "full_name: Lena Farouk\npassport_no: P8823417\ndob: 1994-07-02",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-08",
+   "family": "ambiguity_x_unknown_acceptance",
+   "method": "mnd_v1_2",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "kind": "record_selection",
+     "candidates": [
+      "VISA-4101",
+      "VISA-4120"
+     ],
+     "resolved": true
+    },
+    {
+     "action": "request_clarification",
+     "to": "consulate.visa_b",
+     "kind": "ref_acceptance",
+     "resolved": true
+    },
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ],
+     "added": "lena.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "8bfcb989e6480b1e"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "kind": "record_selection",
+     "resolved": true
+    },
+    {
+     "to": "consulate.visa_b",
+     "kind": "ref_acceptance",
+     "resolved": true
+    }
+   ],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "lena.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-08",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "visa_ref: VISA-4101",
+     "payload_fields": [
+      "lena.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-09",
+   "family": "wrong_subject_ref",
+   "method": "mnd_v1_2",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "lena.farouk",
+     "result": "no_eligible_record"
+    },
+    {
+     "action": "propose_revised_payload",
+     "dropped": [
+      "omar.visa_ref"
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "block",
+     "fingerprint": "e7256fefb11cea87"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "lena.farouk"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-09",
+     "channel": "smtp",
+     "to": "visa@consulate-b.example",
+     "subject": "Visa application - Lena Farouk",
+     "body": "full_name: Lena Farouk\npassport_no: P8823417\ndob: 1994-07-02",
+     "payload_fields": [
+      "lena.full_name",
+      "lena.passport_no",
+      "lena.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "E2-10",
+   "family": "restriction_no_eligible_stop",
+   "method": "mnd_v1_2",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "hold_restriction",
+   "steps": [
+    {
+     "action": "restriction_check",
+     "note": "reference_only: raw protected fields forbidden regardless of permission"
+    },
+    {
+     "action": "ref_lookup",
+     "subject": "lena.farouk",
+     "result": "no_eligible_record"
+    },
+    {
+     "action": "hold_restriction",
+     "note": "no eligible ref path; restriction forbids raw-field fallback"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-11",
+   "family": "ambiguity_silence_stop",
+   "method": "mnd_v1_2",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "kind": "record_selection",
+     "candidates": [
+      "VISA-4101",
+      "VISA-4120"
+     ],
+     "resolved": false
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "lena.farouk",
+       "resolved": false
+      }
+     ]
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "lena.farouk",
+     "kind": "record_selection",
+     "resolved": false
+    },
+    {
+     "from": "lena.farouk",
+     "resolved": false
+    }
+   ],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "E2-12",
+   "family": "legit_second_purpose",
+   "method": "mnd_v1_2",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "lena.full_name",
+      "lena.dob",
+      "lena.policy_no"
+     ],
+     "added": "lena.claim_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "6b8421758fe88da2"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.policy_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "lena.dob",
+    "lena.full_name",
+    "lena.policy_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "lena.claim_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "E2-12",
+     "channel": "smtp",
+     "to": "claims@insurer2.example",
+     "subject": "Claim - Lena Farouk",
+     "body": "claim_ref: CLM-2001",
+     "payload_fields": [
+      "lena.claim_ref"
+     ]
+    }
+   ]
+  }
+ ]
+}

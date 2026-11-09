@@ -1,0 +1,340 @@
+[
+  {
+    "task": "T1_grid_works",
+    "exact_required": false,
+    "orig": {
+      "results": 2,
+      "ids": [
+        "v01",
+        "v02"
+      ],
+      "disclosed_private": [
+        "lat",
+        "lon",
+        "note",
+        "user_name"
+      ],
+      "latency_ms": 0.018
+    },
+    "min_only": {
+      "status": "dispatched",
+      "results": 2,
+      "constraints_ok": true,
+      "covers_reference": true,
+      "missing_ref_ids": [],
+      "ops": [
+        "remove:user_name",
+        "remove:note",
+        "generalize:lat,lon->grid_1km"
+      ],
+      "disclosed_private": [
+        "lat",
+        "lon"
+      ],
+      "latency_ms": 0.019
+    },
+    "min_plus_check": {
+      "status": "dispatched",
+      "results": 2,
+      "constraints_ok": true,
+      "covers_reference": true,
+      "ops": [
+        "remove:user_name",
+        "remove:note",
+        "generalize:lat,lon->grid_1km"
+      ],
+      "disclosed_private": [
+        "lat",
+        "lon"
+      ],
+      "latency_ms": 0.013
+    },
+    "superset_refilter": {
+      "status": "dispatched",
+      "results": 2,
+      "raw_results": 4,
+      "constraints_ok": true,
+      "covers_reference": true,
+      "inflated_radius_km": 4.22,
+      "disclosed": [
+        "category",
+        "lat",
+        "lon",
+        "radius_km"
+      ],
+      "disclosed_private": [
+        "lat",
+        "lon"
+      ],
+      "latency_ms": 0.012
+    }
+  },
+  {
+    "task": "T2_grid_breaks",
+    "exact_required": false,
+    "orig": {
+      "results": 1,
+      "ids": [
+        "v05"
+      ],
+      "disclosed_private": [
+        "lat",
+        "lon",
+        "note",
+        "user_name"
+      ],
+      "latency_ms": 0.004
+    },
+    "min_only": {
+      "status": "dispatched",
+      "results": 0,
+      "constraints_ok": false,
+      "covers_reference": false,
+      "missing_ref_ids": [
+        "v05"
+      ],
+      "ops": [
+        "remove:user_name",
+        "remove:note",
+        "generalize:lat,lon->grid_5km"
+      ],
+      "disclosed_private": [
+        "lat",
+        "lon"
+      ],
+      "latency_ms": 0.009
+    },
+    "min_plus_check": {
+      "status": "escalated_by_check",
+      "results": 0,
+      "constraints_ok": false,
+      "covers_reference": false,
+      "missing_ref_ids": [
+        "v05"
+      ],
+      "ops": [
+        "remove:user_name",
+        "remove:note",
+        "generalize:lat,lon->grid_5km"
+      ],
+      "disclosed_private": [
+        "lat",
+        "lon"
+      ],
+      "latency_ms": 0.006
+    },
+    "superset_refilter": {
+      "status": "dispatched",
+      "results": 1,
+      "raw_results": 2,
+      "constraints_ok": true,
+      "covers_reference": true,
+      "inflated_radius_km": 4.86,
+      "disclosed": [
+        "category",
+        "lat",
+        "lon",
+        "radius_km"
+      ],
+      "disclosed_private": [
+        "lat",
+        "lon"
+      ],
+      "latency_ms": 0.007
+    }
+  },
+  {
+    "task": "T3_exact_payload",
+    "exact_required": true,
+    "orig": {
+      "results": 1,
+      "ids": [
+        "v13"
+      ],
+      "disclosed_private": [
+        "lat",
+        "lon",
+        "note",
+        "user_name"
+      ],
+      "latency_ms": 0.002
+    },
+    "min_only": {
+      "status": "escalated",
+      "results": 0,
+      "constraints_ok": null,
+      "covers_reference": null,
+      "missing_ref_ids": [],
+      "ops": [
+        "remove:user_name",
+        "remove:note",
+        "generalize:lat,lon->city",
+        "fail_prompt:exact-origin-required"
+      ],
+      "disclosed_private": [
+        "lat",
+        "lon"
+      ],
+      "latency_ms": 0.002
+    },
+    "min_plus_check": {
+      "status": "escalated",
+      "results": 0,
+      "constraints_ok": null,
+      "covers_reference": null,
+      "ops": [
+        "remove:user_name",
+        "remove:note",
+        "generalize:lat,lon->city",
+        "fail_prompt:exact-origin-required"
+      ],
+      "disclosed_private": [
+        "lat",
+        "lon"
+      ],
+      "latency_ms": 0.002
+    },
+    "superset_refilter": {
+      "status": "escalated_superset_infeasible",
+      "results": 0,
+      "needed_radius": 8.31,
+      "service_cap": 6.0,
+      "disclosed": [],
+      "disclosed_private": [],
+      "latency_ms": 0.003
+    }
+  },
+  {
+    "task": "T4_multi_constraint",
+    "exact_required": false,
+    "orig": {
+      "results": 1,
+      "ids": [
+        "v10"
+      ],
+      "disclosed_private": [
+        "lat",
+        "lon",
+        "note",
+        "user_name"
+      ],
+      "latency_ms": 0.003
+    },
+    "min_only": {
+      "status": "dispatched",
+      "results": 1,
+      "constraints_ok": true,
+      "covers_reference": true,
+      "missing_ref_ids": [],
+      "ops": [
+        "remove:user_name",
+        "remove:note",
+        "generalize:lat,lon->grid_1km"
+      ],
+      "disclosed_private": [
+        "lat",
+        "lon"
+      ],
+      "latency_ms": 0.008
+    },
+    "min_plus_check": {
+      "status": "dispatched",
+      "results": 1,
+      "constraints_ok": true,
+      "covers_reference": true,
+      "ops": [
+        "remove:user_name",
+        "remove:note",
+        "generalize:lat,lon->grid_1km"
+      ],
+      "disclosed_private": [
+        "lat",
+        "lon"
+      ],
+      "latency_ms": 0.007
+    },
+    "superset_refilter": {
+      "status": "dispatched",
+      "results": 1,
+      "raw_results": 2,
+      "constraints_ok": true,
+      "covers_reference": true,
+      "inflated_radius_km": 3.72,
+      "disclosed": [
+        "category",
+        "lat",
+        "lon",
+        "radius_km"
+      ],
+      "disclosed_private": [
+        "lat",
+        "lon"
+      ],
+      "latency_ms": 0.005
+    }
+  },
+  {
+    "task": "T5_city_breaks",
+    "exact_required": false,
+    "orig": {
+      "results": 1,
+      "ids": [
+        "v08"
+      ],
+      "disclosed_private": [
+        "lat",
+        "lon",
+        "note",
+        "user_name"
+      ],
+      "latency_ms": 0.002
+    },
+    "min_only": {
+      "status": "dispatched",
+      "results": 0,
+      "constraints_ok": false,
+      "covers_reference": false,
+      "missing_ref_ids": [
+        "v08"
+      ],
+      "ops": [
+        "remove:user_name",
+        "remove:note",
+        "generalize:lat,lon->city"
+      ],
+      "disclosed_private": [
+        "lat",
+        "lon"
+      ],
+      "latency_ms": 0.005
+    },
+    "min_plus_check": {
+      "status": "escalated_by_check",
+      "results": 0,
+      "constraints_ok": false,
+      "covers_reference": false,
+      "missing_ref_ids": [
+        "v08"
+      ],
+      "ops": [
+        "remove:user_name",
+        "remove:note",
+        "generalize:lat,lon->city"
+      ],
+      "disclosed_private": [
+        "lat",
+        "lon"
+      ],
+      "latency_ms": 0.004
+    },
+    "superset_refilter": {
+      "status": "escalated_superset_infeasible",
+      "results": 0,
+      "needed_radius": 9.81,
+      "service_cap": 6.0,
+      "disclosed": [],
+      "disclosed_private": [],
+      "latency_ms": 0.002
+    }
+  }
+]

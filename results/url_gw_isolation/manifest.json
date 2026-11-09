@@ -1,0 +1,23 @@
+{
+  "module": "url-gw-1.0",
+  "policy": [
+    "F1 url_fetch calls are inspected before dispatch on the serialized URL.",
+    "F2 calls to hosts not in fetch_allowlist are denied (fetch-specific rule).",
+    "F3 allowlisted host alone does not authorize protected data: matched protected-class fields need R3-style authorization; deny-wins applies.",
+    "F4 matched values without metadata never default to safe (R7 analogue).",
+    "F5 unsupported encodings and uncertain matches are recorded; a payload that cannot be fully accounted for is denied."
+  ],
+  "hashes": {
+    "url_fetch_gateway.py": "87598dfb53222f9dedef7be375c92ee6c622128c1a8e60e1ab19150ca94dfbb6",
+    "runner": "88896471f1d20801aaf70b6d5286cc3188a6e6930b89a63d30080bbf99fb7460",
+    "inputs": "43c150afcb7e5d05754597a42821a3882dd81d55e21ee5cf6bdc43c7238dd44e"
+  },
+  "assumptions": [
+    "field_metadata owner/class/provenance is application-supplied (trusted metadata) \u2014 disclosed assumption, not evaluator labels",
+    "loopback mapping: fictional recipients served by 127.0.0.1; directory principals fictional",
+    "decode limits: bounded URL + strict base64(+urlsafe) only; exact matching; no fuzzy matching, no other encodings",
+    "U1-U3 are synthetic engineering controls, not public incidents"
+  ],
+  "timestamp": "2026-10-20T22:05:05.704289+00:00",
+  "reproduce": ".venv/bin/python scripts/run_url_fetch_isolation.py"
+}

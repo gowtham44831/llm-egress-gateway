@@ -1,0 +1,9 @@
+fixture=src/tool_routing/argverify/fixtures/disclosure_cases_mnd_eval_v1.json
+sha256(fixture)=eb0da0d5317f6085fad355d5bf8aa43fd798f06a78b454781b5d83cc5dd364be
+labels=src/tool_routing/argverify/fixtures/disclosure_mnd_eval_labels_v1.json
+sha256(labels)=d334f1313207c19a8bf7850672a6d8ff7d168959de03302c7262ff9acd32859a
+sha256(disclosure.py)=3009615105e92d4878cd45c3c14c1333475fbdd48c12a69a9387f4bf52e0cf17
+sha256(min_disclosure.py)=96881599ec2ff655f21c603041f36b63b012372b427aaf0282bd6aee45aefae0
+methods=('block_only', 'recovery', 'ref_conservative', 'ref_optimistic', 'mnd')
+python=3.12.15
+git=9ce515dd79bcad38f898015187c6520905d1d424

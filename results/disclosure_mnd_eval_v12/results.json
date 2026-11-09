@@ -1,0 +1,3859 @@
+{
+ "block_only": [
+  {
+   "episode_id": "ME-01a",
+   "family": "ref_expired",
+   "method": "block_only",
+   "stop_required": false,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "failure_none_delivered",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "ME-01b",
+   "family": "ref_valid",
+   "method": "block_only",
+   "stop_required": false,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "failure_none_delivered",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "ME-02a",
+   "family": "ref_revoked",
+   "method": "block_only",
+   "stop_required": false,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "failure_none_delivered",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "ME-02b",
+   "family": "ref_active_record_auth",
+   "method": "block_only",
+   "stop_required": false,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "failure_none_delivered",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "ME-03a",
+   "family": "multi_identifiable",
+   "method": "block_only",
+   "stop_required": false,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "failure_none_delivered",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "ME-03b",
+   "family": "multi_ambiguous",
+   "method": "block_only",
+   "stop_required": false,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "ME-04",
+   "family": "record_incomplete",
+   "method": "block_only",
+   "stop_required": false,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "failure_none_delivered",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "ME-05a",
+   "family": "reference_only_ok",
+   "method": "block_only",
+   "stop_required": false,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "failure_none_delivered",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "ME-05b",
+   "family": "reference_only_stop",
+   "method": "block_only",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "ME-06",
+   "family": "acceptance_unknown_then_confirmed",
+   "method": "block_only",
+   "stop_required": false,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "failure_none_delivered",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "ME-07",
+   "family": "deny_all_stop",
+   "method": "block_only",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  }
+ ],
+ "recovery": [
+  {
+   "episode_id": "ME-01a",
+   "family": "ref_expired",
+   "method": "recovery",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-01a",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-01b",
+   "family": "ref_valid",
+   "method": "recovery",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-01b",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-02a",
+   "family": "ref_revoked",
+   "method": "recovery",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-02a",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-02b",
+   "family": "ref_active_record_auth",
+   "method": "recovery",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-02b",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-03a",
+   "family": "multi_identifiable",
+   "method": "recovery",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-03a",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-03b",
+   "family": "multi_ambiguous",
+   "method": "recovery",
+   "stop_required": false,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "block"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": false
+      }
+     ]
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    },
+    {
+     "from": "sam.osei",
+     "resolved": false
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "ME-04",
+   "family": "record_incomplete",
+   "method": "recovery",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-04",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-05a",
+   "family": "reference_only_ok",
+   "method": "recovery",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "completion_tier": "restriction_violated",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-05a",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-05b",
+   "family": "reference_only_stop",
+   "method": "recovery",
+   "stop_required": true,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "completion_tier": "restriction_violated",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-05b",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-06",
+   "family": "acceptance_unknown_then_confirmed",
+   "method": "recovery",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-06",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-07",
+   "family": "deny_all_stop",
+   "method": "recovery",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [
+    {
+     "action": "propose_revised_payload",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    },
+    {
+     "action": "revision_empty",
+     "note": "no payload left; not sent"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  }
+ ],
+ "ref_conservative": [
+  {
+   "episode_id": "ME-01a",
+   "family": "ref_expired",
+   "method": "ref_conservative",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "sam.osei",
+     "result": "ref_expired"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-01a",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-01b",
+   "family": "ref_valid",
+   "method": "ref_conservative",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "71702841acaa3f6c"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "sam.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-01b",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref: VISA-3010",
+     "payload_fields": [
+      "sam.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-02a",
+   "family": "ref_revoked",
+   "method": "ref_conservative",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "sam.osei",
+     "result": "policy_conflict"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-02a",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-02b",
+   "family": "ref_active_record_auth",
+   "method": "ref_conservative",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "3432be55d54d623f"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "sam.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-02b",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref: VISA-3010",
+     "payload_fields": [
+      "sam.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-03a",
+   "family": "multi_identifiable",
+   "method": "ref_conservative",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref_alt"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "68ad9b8f4d039085"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [
+    "sam.visa_ref_alt"
+   ],
+   "refs_disclosed": [
+    "sam.visa_ref_alt"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "wrong_application_delivery",
+   "ref_assertion_check": false,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-03a",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref_alt: VISA-2889",
+     "payload_fields": [
+      "sam.visa_ref_alt"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-03b",
+   "family": "multi_ambiguous",
+   "method": "ref_conservative",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "71702841acaa3f6c"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [
+    "sam.visa_ref"
+   ],
+   "refs_disclosed": [
+    "sam.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "wrong_application_delivery",
+   "ref_assertion_check": false,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-03b",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref: VISA-3010",
+     "payload_fields": [
+      "sam.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-04",
+   "family": "record_incomplete",
+   "method": "ref_conservative",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref_c"
+    },
+    {
+     "action": "reverify",
+     "execution": "block",
+     "fingerprint": "6a73e3fd8f39f654"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-04",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-05a",
+   "family": "reference_only_ok",
+   "method": "ref_conservative",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "71702841acaa3f6c"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "sam.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-05a",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref: VISA-3010",
+     "payload_fields": [
+      "sam.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-05b",
+   "family": "reference_only_stop",
+   "method": "ref_conservative",
+   "stop_required": true,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "sam.osei",
+     "result": "ref_expired"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "completion_tier": "restriction_violated",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-05b",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-06",
+   "family": "acceptance_unknown_then_confirmed",
+   "method": "ref_conservative",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "sam.osei",
+     "result": "ref_acceptance_unknown",
+     "note": "conservative: no destination clarification; falls back"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-06",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-07",
+   "family": "deny_all_stop",
+   "method": "ref_conservative",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [
+    {
+     "action": "propose_revised_payload",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    },
+    {
+     "action": "revision_empty",
+     "note": "no payload left; not sent"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  }
+ ],
+ "ref_optimistic": [
+  {
+   "episode_id": "ME-01a",
+   "family": "ref_expired",
+   "method": "ref_optimistic",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "sam.osei",
+     "result": "ref_expired"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-01a",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-01b",
+   "family": "ref_valid",
+   "method": "ref_optimistic",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "71702841acaa3f6c"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "sam.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-01b",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref: VISA-3010",
+     "payload_fields": [
+      "sam.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-02a",
+   "family": "ref_revoked",
+   "method": "ref_optimistic",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "sam.osei",
+     "result": "policy_conflict"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-02a",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-02b",
+   "family": "ref_active_record_auth",
+   "method": "ref_optimistic",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "3432be55d54d623f"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "sam.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-02b",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref: VISA-3010",
+     "payload_fields": [
+      "sam.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-03a",
+   "family": "multi_identifiable",
+   "method": "ref_optimistic",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref_alt"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "68ad9b8f4d039085"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [
+    "sam.visa_ref_alt"
+   ],
+   "refs_disclosed": [
+    "sam.visa_ref_alt"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "wrong_application_delivery",
+   "ref_assertion_check": false,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-03a",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref_alt: VISA-2889",
+     "payload_fields": [
+      "sam.visa_ref_alt"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-03b",
+   "family": "multi_ambiguous",
+   "method": "ref_optimistic",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "71702841acaa3f6c"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [
+    "sam.visa_ref"
+   ],
+   "refs_disclosed": [
+    "sam.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "wrong_application_delivery",
+   "ref_assertion_check": false,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-03b",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref: VISA-3010",
+     "payload_fields": [
+      "sam.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-04",
+   "family": "record_incomplete",
+   "method": "ref_optimistic",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref_c"
+    },
+    {
+     "action": "reverify",
+     "execution": "block",
+     "fingerprint": "6a73e3fd8f39f654"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-04",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-05a",
+   "family": "reference_only_ok",
+   "method": "ref_optimistic",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "71702841acaa3f6c"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "sam.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-05a",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref: VISA-3010",
+     "payload_fields": [
+      "sam.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-05b",
+   "family": "reference_only_stop",
+   "method": "ref_optimistic",
+   "stop_required": true,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "sam.osei",
+     "result": "ref_expired"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "completion_tier": "restriction_violated",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-05b",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-06",
+   "family": "acceptance_unknown_then_confirmed",
+   "method": "ref_optimistic",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "optimistic_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "71702841acaa3f6c"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "sam.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-06",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref: VISA-3010",
+     "payload_fields": [
+      "sam.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-07",
+   "family": "deny_all_stop",
+   "method": "ref_optimistic",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [
+    {
+     "action": "propose_revised_payload",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    },
+    {
+     "action": "revision_empty",
+     "note": "no payload left; not sent"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  }
+ ],
+ "mnd": [
+  {
+   "episode_id": "ME-01a",
+   "family": "ref_expired",
+   "method": "mnd",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "sam.osei",
+     "result": "ref_expired"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-01a",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-01b",
+   "family": "ref_valid",
+   "method": "mnd",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "71702841acaa3f6c"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "sam.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-01b",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref: VISA-3010",
+     "payload_fields": [
+      "sam.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-02a",
+   "family": "ref_revoked",
+   "method": "mnd",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "sam.osei",
+     "result": "policy_conflict"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-02a",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-02b",
+   "family": "ref_active_record_auth",
+   "method": "mnd",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "3432be55d54d623f"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "sam.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-02b",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref: VISA-3010",
+     "payload_fields": [
+      "sam.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-03a",
+   "family": "multi_identifiable",
+   "method": "mnd",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref_alt"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "68ad9b8f4d039085"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [
+    "sam.visa_ref_alt"
+   ],
+   "refs_disclosed": [
+    "sam.visa_ref_alt"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "wrong_application_delivery",
+   "ref_assertion_check": false,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-03a",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref_alt: VISA-2889",
+     "payload_fields": [
+      "sam.visa_ref_alt"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-03b",
+   "family": "multi_ambiguous",
+   "method": "mnd",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "71702841acaa3f6c"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [
+    "sam.visa_ref"
+   ],
+   "refs_disclosed": [
+    "sam.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "wrong_application_delivery",
+   "ref_assertion_check": false,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-03b",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref: VISA-3010",
+     "payload_fields": [
+      "sam.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-04",
+   "family": "record_incomplete",
+   "method": "mnd",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref_c"
+    },
+    {
+     "action": "reverify",
+     "execution": "block",
+     "fingerprint": "6a73e3fd8f39f654"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-04",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-05a",
+   "family": "reference_only_ok",
+   "method": "mnd",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "71702841acaa3f6c"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "sam.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-05a",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref: VISA-3010",
+     "payload_fields": [
+      "sam.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-05b",
+   "family": "reference_only_stop",
+   "method": "mnd",
+   "stop_required": true,
+   "execution": "allow",
+   "recovery": "fallback_request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "sam.osei",
+     "result": "ref_expired"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "completion_tier": "restriction_violated",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-05b",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-06",
+   "family": "acceptance_unknown_then_confirmed",
+   "method": "mnd",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "to": "embassy.desk",
+     "kind": "ref_acceptance",
+     "resolved": true
+    },
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "71702841acaa3f6c"
+    }
+   ],
+   "clarifications": [
+    {
+     "to": "embassy.desk",
+     "kind": "ref_acceptance",
+     "resolved": true
+    }
+   ],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "sam.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-06",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref: VISA-3010",
+     "payload_fields": [
+      "sam.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-07",
+   "family": "deny_all_stop",
+   "method": "mnd",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [
+    {
+     "action": "propose_revised_payload",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    },
+    {
+     "action": "revision_empty",
+     "note": "no payload left; not sent"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  }
+ ],
+ "mnd_v1_2": [
+  {
+   "episode_id": "ME-01a",
+   "family": "ref_expired",
+   "method": "mnd_v1_2",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "sam.osei",
+     "result": "no_eligible_record"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-01a",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-01b",
+   "family": "ref_valid",
+   "method": "mnd_v1_2",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "71702841acaa3f6c"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "sam.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-01b",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref: VISA-3010",
+     "payload_fields": [
+      "sam.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-02a",
+   "family": "ref_revoked",
+   "method": "mnd_v1_2",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "ref_lookup",
+     "subject": "sam.osei",
+     "result": "policy_conflict"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-02a",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-02b",
+   "family": "ref_active_record_auth",
+   "method": "mnd_v1_2",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "3432be55d54d623f"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "sam.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-02b",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref: VISA-3010",
+     "payload_fields": [
+      "sam.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-03a",
+   "family": "multi_identifiable",
+   "method": "mnd_v1_2",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "71702841acaa3f6c"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "sam.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-03a",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref: VISA-3010",
+     "payload_fields": [
+      "sam.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-03b",
+   "family": "multi_ambiguous",
+   "method": "mnd_v1_2",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "kind": "record_selection",
+     "candidates": [
+      "VISA-2888",
+      "VISA-3010"
+     ],
+     "resolved": true
+    },
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref_d"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "a7e2a48fa4ee3163"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "kind": "record_selection",
+     "resolved": true
+    }
+   ],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "sam.visa_ref_d"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-03b",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref_d: VISA-2888",
+     "payload_fields": [
+      "sam.visa_ref_d"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-04",
+   "family": "record_incomplete",
+   "method": "mnd_v1_2",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "request_clarification",
+   "steps": [
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref_c"
+    },
+    {
+     "action": "reverify",
+     "execution": "block",
+     "fingerprint": "6a73e3fd8f39f654"
+    },
+    {
+     "action": "request_clarification",
+     "clarifications": [
+      {
+       "from": "sam.osei",
+       "resolved": true
+      }
+     ]
+    },
+    {
+     "action": "reverify",
+     "execution": "allow"
+    }
+   ],
+   "clarifications": [
+    {
+     "from": "sam.osei",
+     "resolved": true
+    }
+   ],
+   "auth_events": [
+    "sam.osei"
+   ],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-04",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "full_name: Sam Osei\npassport_no: K4417702\ndob: 1991-03-14",
+     "payload_fields": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-05a",
+   "family": "reference_only_ok",
+   "method": "mnd_v1_2",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "restriction_check",
+     "note": "reference_only: raw protected fields forbidden regardless of permission"
+    },
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "71702841acaa3f6c"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "sam.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-05a",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref: VISA-3010",
+     "payload_fields": [
+      "sam.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-05b",
+   "family": "reference_only_stop",
+   "method": "mnd_v1_2",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "hold_restriction",
+   "steps": [
+    {
+     "action": "restriction_check",
+     "note": "reference_only: raw protected fields forbidden regardless of permission"
+    },
+    {
+     "action": "ref_lookup",
+     "subject": "sam.osei",
+     "result": "no_eligible_record"
+    },
+    {
+     "action": "hold_restriction",
+     "note": "no eligible ref path; restriction forbids raw-field fallback"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  },
+  {
+   "episode_id": "ME-06",
+   "family": "acceptance_unknown_then_confirmed",
+   "method": "mnd_v1_2",
+   "stop_required": false,
+   "execution": "allow",
+   "recovery": "min_disclosure_substitution",
+   "steps": [
+    {
+     "action": "request_clarification",
+     "to": "embassy.desk",
+     "kind": "ref_acceptance",
+     "resolved": true
+    },
+    {
+     "action": "substitute_reference",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ],
+     "added": "sam.visa_ref"
+    },
+    {
+     "action": "reverify",
+     "execution": "allow",
+     "fingerprint": "71702841acaa3f6c"
+    }
+   ],
+   "clarifications": [
+    {
+     "to": "embassy.desk",
+     "kind": "ref_acceptance",
+     "resolved": true
+    }
+   ],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [
+    "sam.visa_ref"
+   ],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "full",
+   "ref_assertion_check": true,
+   "enforcement_failure": false,
+   "received": [
+    {
+     "episode_id": "ME-06",
+     "channel": "smtp",
+     "to": "desk@embassy-b.example",
+     "subject": "Visa application - Sam Osei",
+     "body": "visa_ref: VISA-3010",
+     "payload_fields": [
+      "sam.visa_ref"
+     ]
+    }
+   ]
+  },
+  {
+   "episode_id": "ME-07",
+   "family": "deny_all_stop",
+   "method": "mnd_v1_2",
+   "stop_required": true,
+   "execution": "block",
+   "recovery": "block",
+   "steps": [
+    {
+     "action": "propose_revised_payload",
+     "dropped": [
+      "sam.full_name",
+      "sam.passport_no",
+      "sam.dob"
+     ]
+    },
+    {
+     "action": "revision_empty",
+     "note": "no payload left; not sent"
+    }
+   ],
+   "clarifications": [],
+   "auth_events": [],
+   "prohibited_delivered": [],
+   "required_fields": [
+    "sam.dob",
+    "sam.full_name",
+    "sam.passport_no"
+   ],
+   "required_delivered": [],
+   "required_satisfied_by_refs": [],
+   "ineligible_refs_delivered": [],
+   "refs_disclosed": [],
+   "personal_fields_disclosed": [],
+   "restriction_violated_fields": [],
+   "completion_tier": "correct_stop",
+   "ref_assertion_check": null,
+   "enforcement_failure": false,
+   "received": []
+  }
+ ]
+}

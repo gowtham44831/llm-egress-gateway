@@ -1,0 +1,58 @@
+{
+  "data_manifest": {
+    "downloaded_at_utc": "2026-10-19T17:44:35.575736+00:00",
+    "queries_repo": "mangopy/ToolRet-Queries",
+    "queries_revision": "b8c76ad3349ff17497b6bdb28bb5b8f61a0f6445",
+    "queries_subsets": [
+      "apibank",
+      "apigen",
+      "gorilla-huggingface",
+      "toolalpaca",
+      "metatool"
+    ],
+    "tools_repo": "mangopy/ToolRet-Tools",
+    "tools_revision": "e06c38c75612b6536bd959e08cdd345894aba6a7",
+    "tools_subsets": [
+      "code",
+      "customized",
+      "web"
+    ]
+  },
+  "configured_embedding_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "configured_revision_is_immutable_sha": true,
+  "embedding_cache_metadata": [
+    {
+      "path": "data/cache/embeddings/sentence-transformers__all-MiniLM-L6-v2/1110a243fdf4/tool_embedding_cache.meta.json",
+      "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+      "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "n_tools_cached": 8014,
+      "model_revision_is_immutable_sha": true,
+      "settings": {
+        "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+        "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+        "doc_prefix": "",
+        "normalize_embeddings": true,
+        "max_seq_length": 256,
+        "sentence_transformers_version": "3.3.1"
+      },
+      "settings_fingerprint": "22399246b5ad9dd6a089af37a25c3213d642fd5787e5717c7fd8b6dcbf5a383b"
+    }
+  ],
+  "pilot_run_config_embedding": {
+    "device": "cpu",
+    "model_name": "sentence-transformers/all-MiniLM-L6-v2"
+  },
+  "pilot_git_commit": "9ce515dd79bcad38f898015187c6520905d1d424",
+  "pilot_artifact_sha256": {
+    "REPORT.md": "58397aeba65b3d39e5c321595b496d8218bcb086c64b8e2484fb8af5be68ad85",
+    "catalog_manifests.jsonl": "967e65d88fd7b1b64bdcc0d192eeea16a7548d0ed249c3faf57b49b309288e18",
+    "metrics.json": "cd70a17d3598c02a2e8379d45aae5f7c89ce084df429fa3df4f144d2751c57e9",
+    "predictions.jsonl": "f764818563e152859eb90554619366f2272268d44c3ae7982867ea22db75a9e8",
+    "review.csv": "4143bad4236fd7ba66a34455ec3e256293395007590f4381cee43060916949b1",
+    "risk_coverage.png": "ea05520c6bc0650de3074ac1d2f09ca0543dddd031b1388e5d7d54351ed02aec",
+    "run_metadata.json": "22d015c96c8fff55a9a79254da8c8d3bb2711b152902ead07e14157fdf543e53",
+    "splits.json": "e591eecf30e1829f9b9e3a0caed3f0504a7d872bbb900e7d6e95a54ab8c98b86",
+    "thresholds.json": "0a230a23a8146a426e1f028fa064378ffc2023e8a1e22354e0245778b0e0f37b",
+    "validation_report.txt": "3e4614a2cdf3b6a7f312c25419b27b61736dade23da98dddb1582cc4b9ab8537"
+  }
+}

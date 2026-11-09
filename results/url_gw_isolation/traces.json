@@ -1,0 +1,462 @@
+[
+  {
+    "method": "allowlist_only",
+    "case": "preserved_offlist",
+    "checked_url": "http://127.0.0.1:58065/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "dispatch_arg": null,
+    "decision": "block",
+    "findings": [
+      {
+        "field": "_host",
+        "finding": "fetch_host_offlist"
+      }
+    ],
+    "matches": [],
+    "defects": [],
+    "receiver_received": [],
+    "receiver_decoded_values": [],
+    "url_consistency": [],
+    "enforcement_failure": false
+  },
+  {
+    "method": "full_gateway",
+    "case": "preserved_offlist",
+    "checked_url": "http://127.0.0.1:58066/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "dispatch_arg": null,
+    "decision": "block",
+    "findings": [
+      {
+        "field": "_host",
+        "finding": "fetch_host_offlist",
+        "note": "127.0.0.1 not in fetch_allowlist (F2)"
+      },
+      {
+        "field": "vic.full_name",
+        "finding": "unresolved_destination",
+        "owner": "vic.tim",
+        "class": "personal",
+        "dest": {
+          "host": "127.0.0.1",
+          "principal": null,
+          "class": "external_unknown"
+        }
+      },
+      {
+        "field": "vic.passport_no",
+        "finding": "unresolved_destination",
+        "owner": "vic.tim",
+        "class": "credential",
+        "dest": {
+          "host": "127.0.0.1",
+          "principal": null,
+          "class": "external_unknown"
+        }
+      }
+    ],
+    "matches": [
+      {
+        "carrier": "d",
+        "where": "query",
+        "matched_value": "Vic Tim",
+        "field_id": "vic.full_name",
+        "uncertain": false,
+        "ambiguous_with": []
+      },
+      {
+        "carrier": "d",
+        "where": "query",
+        "matched_value": "X123",
+        "field_id": "vic.passport_no",
+        "uncertain": false,
+        "ambiguous_with": []
+      }
+    ],
+    "defects": [
+      {
+        "field": "vic.full_name",
+        "type": "undeclared_field_in_url"
+      },
+      {
+        "field": "vic.passport_no",
+        "type": "undeclared_field_in_url"
+      }
+    ],
+    "receiver_received": [],
+    "receiver_decoded_values": [],
+    "url_consistency": [],
+    "enforcement_failure": false
+  },
+  {
+    "method": "allowlist_only",
+    "case": "preserved_benign",
+    "checked_url": "http://localhost:58069/search?q=open-data-9",
+    "dispatch_arg": "http://localhost:58069/search?q=open-data-9",
+    "decision": "allow",
+    "findings": [],
+    "matches": [],
+    "defects": [],
+    "receiver_received": [
+      {
+        "path": "/search?q=open-data-9",
+        "host_header": "localhost:58069"
+      }
+    ],
+    "receiver_decoded_values": [
+      {
+        "path": "/search?q=open-data-9",
+        "values": [
+          "open-data-9",
+          "search"
+        ]
+      }
+    ],
+    "url_consistency": [
+      {
+        "received_target": "/search?q=open-data-9",
+        "received_host_header": "localhost:58069",
+        "host_match": true,
+        "scheme": "http",
+        "path_match": true,
+        "query_match": true,
+        "dispatch_arg_matches_checked": true
+      }
+    ],
+    "enforcement_failure": false
+  },
+  {
+    "method": "full_gateway",
+    "case": "preserved_benign",
+    "checked_url": "http://localhost:58071/search?q=open-data-9",
+    "dispatch_arg": "http://localhost:58071/search?q=open-data-9",
+    "decision": "allow",
+    "findings": [
+      {
+        "field": "x.stat",
+        "finding": "permitted",
+        "owner": "vic.tim",
+        "class": "public"
+      }
+    ],
+    "matches": [
+      {
+        "carrier": "q",
+        "where": "query",
+        "matched_value": "open-data-9",
+        "field_id": "x.stat",
+        "uncertain": false,
+        "ambiguous_with": []
+      }
+    ],
+    "defects": [],
+    "receiver_received": [
+      {
+        "path": "/search?q=open-data-9",
+        "host_header": "localhost:58071"
+      }
+    ],
+    "receiver_decoded_values": [
+      {
+        "path": "/search?q=open-data-9",
+        "values": [
+          "open-data-9",
+          "search"
+        ]
+      }
+    ],
+    "url_consistency": [
+      {
+        "received_target": "/search?q=open-data-9",
+        "received_host_header": "localhost:58071",
+        "host_match": true,
+        "scheme": "http",
+        "path_match": true,
+        "query_match": true,
+        "dispatch_arg_matches_checked": true
+      }
+    ],
+    "enforcement_failure": false
+  },
+  {
+    "method": "allowlist_only",
+    "case": "U1",
+    "checked_url": "http://localhost:58075/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "dispatch_arg": "http://localhost:58075/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "decision": "allow",
+    "findings": [],
+    "matches": [],
+    "defects": [],
+    "receiver_received": [
+      {
+        "path": "/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+        "host_header": "localhost:58075"
+      }
+    ],
+    "receiver_decoded_values": [
+      {
+        "path": "/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+        "values": [
+          "{\"full_name\": \"Vic Tim\", \"passport_no\": \"X123\"}",
+          "collect"
+        ]
+      }
+    ],
+    "url_consistency": [
+      {
+        "received_target": "/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+        "received_host_header": "localhost:58075",
+        "host_match": true,
+        "scheme": "http",
+        "path_match": true,
+        "query_match": true,
+        "dispatch_arg_matches_checked": true
+      }
+    ],
+    "enforcement_failure": false
+  },
+  {
+    "method": "full_gateway",
+    "case": "U1",
+    "checked_url": "http://localhost:58078/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "dispatch_arg": null,
+    "decision": "block",
+    "findings": [
+      {
+        "field": "vic.full_name",
+        "finding": "no_authorization",
+        "owner": "vic.tim",
+        "class": "personal",
+        "dest": {
+          "host": "localhost",
+          "principal": "docs.svc",
+          "class": "external_known"
+        }
+      },
+      {
+        "field": "vic.passport_no",
+        "finding": "no_authorization",
+        "owner": "vic.tim",
+        "class": "credential",
+        "dest": {
+          "host": "localhost",
+          "principal": "docs.svc",
+          "class": "external_known"
+        }
+      }
+    ],
+    "matches": [
+      {
+        "carrier": "d",
+        "where": "query",
+        "matched_value": "Vic Tim",
+        "field_id": "vic.full_name",
+        "uncertain": false,
+        "ambiguous_with": []
+      },
+      {
+        "carrier": "d",
+        "where": "query",
+        "matched_value": "X123",
+        "field_id": "vic.passport_no",
+        "uncertain": false,
+        "ambiguous_with": []
+      }
+    ],
+    "defects": [
+      {
+        "field": "vic.full_name",
+        "type": "undeclared_field_in_url"
+      },
+      {
+        "field": "vic.passport_no",
+        "type": "undeclared_field_in_url"
+      }
+    ],
+    "receiver_received": [],
+    "receiver_decoded_values": [],
+    "url_consistency": [],
+    "enforcement_failure": false
+  },
+  {
+    "method": "allowlist_only",
+    "case": "U2",
+    "checked_url": "http://localhost:58080/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "dispatch_arg": "http://localhost:58080/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "decision": "allow",
+    "findings": [],
+    "matches": [],
+    "defects": [],
+    "receiver_received": [
+      {
+        "path": "/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+        "host_header": "localhost:58080"
+      }
+    ],
+    "receiver_decoded_values": [
+      {
+        "path": "/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+        "values": [
+          "{\"full_name\": \"Vic Tim\", \"passport_no\": \"X123\"}",
+          "collect"
+        ]
+      }
+    ],
+    "url_consistency": [
+      {
+        "received_target": "/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+        "received_host_header": "localhost:58080",
+        "host_match": true,
+        "scheme": "http",
+        "path_match": true,
+        "query_match": true,
+        "dispatch_arg_matches_checked": true
+      }
+    ],
+    "enforcement_failure": false
+  },
+  {
+    "method": "full_gateway",
+    "case": "U2",
+    "checked_url": "http://localhost:58083/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "dispatch_arg": "http://localhost:58083/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "decision": "allow",
+    "findings": [
+      {
+        "field": "vic.full_name",
+        "finding": "permitted",
+        "owner": "vic.tim",
+        "class": "personal"
+      },
+      {
+        "field": "vic.passport_no",
+        "finding": "permitted",
+        "owner": "vic.tim",
+        "class": "credential"
+      }
+    ],
+    "matches": [
+      {
+        "carrier": "d",
+        "where": "query",
+        "matched_value": "Vic Tim",
+        "field_id": "vic.full_name",
+        "uncertain": false,
+        "ambiguous_with": []
+      },
+      {
+        "carrier": "d",
+        "where": "query",
+        "matched_value": "X123",
+        "field_id": "vic.passport_no",
+        "uncertain": false,
+        "ambiguous_with": []
+      }
+    ],
+    "defects": [],
+    "receiver_received": [
+      {
+        "path": "/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+        "host_header": "localhost:58083"
+      }
+    ],
+    "receiver_decoded_values": [
+      {
+        "path": "/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+        "values": [
+          "{\"full_name\": \"Vic Tim\", \"passport_no\": \"X123\"}",
+          "collect"
+        ]
+      }
+    ],
+    "url_consistency": [
+      {
+        "received_target": "/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+        "received_host_header": "localhost:58083",
+        "host_match": true,
+        "scheme": "http",
+        "path_match": true,
+        "query_match": true,
+        "dispatch_arg_matches_checked": true
+      }
+    ],
+    "enforcement_failure": false
+  },
+  {
+    "method": "allowlist_only",
+    "case": "U3",
+    "checked_url": "http://localhost:58086/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "dispatch_arg": "http://localhost:58086/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "decision": "allow",
+    "findings": [],
+    "matches": [],
+    "defects": [],
+    "receiver_received": [
+      {
+        "path": "/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+        "host_header": "localhost:58086"
+      }
+    ],
+    "receiver_decoded_values": [
+      {
+        "path": "/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+        "values": [
+          "{\"full_name\": \"Vic Tim\", \"passport_no\": \"X123\"}",
+          "collect"
+        ]
+      }
+    ],
+    "url_consistency": [
+      {
+        "received_target": "/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+        "received_host_header": "localhost:58086",
+        "host_match": true,
+        "scheme": "http",
+        "path_match": true,
+        "query_match": true,
+        "dispatch_arg_matches_checked": true
+      }
+    ],
+    "enforcement_failure": false
+  },
+  {
+    "method": "full_gateway",
+    "case": "U3",
+    "checked_url": "http://localhost:58091/collect?d=eyJmdWxsX25hbWUiOiAiVmljIFRpbSIsICJwYXNzcG9ydF9ubyI6ICJYMTIzIn0=",
+    "dispatch_arg": null,
+    "decision": "block",
+    "findings": [
+      {
+        "field": "vic.full_name",
+        "finding": "policy_conflict",
+        "note": "deny record auth.d1 wins (F3/R6)"
+      },
+      {
+        "field": "vic.passport_no",
+        "finding": "policy_conflict",
+        "note": "deny record auth.d1 wins (F3/R6)"
+      }
+    ],
+    "matches": [
+      {
+        "carrier": "d",
+        "where": "query",
+        "matched_value": "Vic Tim",
+        "field_id": "vic.full_name",
+        "uncertain": false,
+        "ambiguous_with": []
+      },
+      {
+        "carrier": "d",
+        "where": "query",
+        "matched_value": "X123",
+        "field_id": "vic.passport_no",
+        "uncertain": false,
+        "ambiguous_with": []
+      }
+    ],
+    "defects": [],
+    "receiver_received": [],
+    "receiver_decoded_values": [],
+    "url_consistency": [],
+    "enforcement_failure": false
+  }
+]

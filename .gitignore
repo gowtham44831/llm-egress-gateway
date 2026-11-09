@@ -13,10 +13,18 @@ data/.hf_cache/
 !data/fixtures/
 !data/fixtures/**
 
-# Large outputs
-results/
-!results/.gitkeep
-runs/
+# Large outputs — tracked as the paper's frozen evidence base, except:
+# - catalog_manifests.jsonl (96 MB input manifest; skipped by the table
+#   generators, not needed to reproduce)
+# - results/attribution_notes.md (stale generated stray; the canonical
+#   generated copy is docs/attribution_notes.md)
+results/toolret_pilot/catalog_manifests.jsonl
+results/attribution_notes.md
+
+# runs/: only the second-planner runs are evidence artifacts
+runs/*
+!runs/second_planner/
+!runs/second_planner_failed/
 
 .DS_Store
 

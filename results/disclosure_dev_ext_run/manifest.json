@@ -1,0 +1,19 @@
+{
+ "fixture": "src/tool_routing/argverify/fixtures/disclosure_cases_dev_ext_v1.json",
+ "fixture_sha256": "7f67d3787ac4eae68cf3b595ac715ac04e21963e30d781bb0b94d85cfb22e1a4",
+ "labels": "src/tool_routing/argverify/fixtures/disclosure_recovery_labels_ext_v1.json",
+ "labels_sha256": "16941a091af339e574d967386966257e13a8cc8926ed58dcd30d34d6d12506e2",
+ "labels_scope": "evaluator-only; never reached any method",
+ "checker_sha256": "f26949982f35c782fca8de5ee05aaf44f15782c3ea76657e87b42b3bdff7ea33",
+ "runner_sha256": "c1345e5b249fd02811b30501969f34cf6cda967b5ce89e753f3b86f944a8d0a5",
+ "methods": [
+  "block_only",
+  "recovery",
+  "field_filter"
+ ],
+ "policy_version": "disc-pol-1.0",
+ "fixture_review_status": "unspecified",
+ "git_commit": "9ce515dd79bcad38f898015187c6520905d1d424",
+ "git_dirty": true,
+ "python": "3.12.15"
+}

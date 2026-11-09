@@ -1,0 +1,15 @@
+{
+ "run_id": "disclosure_dev_run2_recovery",
+ "method": "deterministic_checker + rec-pol-1.0 recovery arm",
+ "fixture_sha256": "b7970750a5ae5c76868c9226a5b149575acfa6f3b420a7cb6e529513953dfd54",
+ "labels_sha256": "7400cd63590bd2eb5d64da19b6421733e85c94bfa977881ca783b7d897b8e5b1",
+ "labels_scope": "evaluator-only; never reached checker/recovery",
+ "checker_sha256": "f26949982f35c782fca8de5ee05aaf44f15782c3ea76657e87b42b3bdff7ea33",
+ "runner_sha256": "91c8db48989cbe0c710908349a58b6589e1171507ad71fbf90c8efa5c93f1fdc",
+ "recovery_policy": "rec-pol-1.0 (docs/security_recovery_policy.md)",
+ "policy_version": "disc-pol-1.0",
+ "run1_results_sha256": "c1948c44773d737fbe5797c27e56f1773e28322c8882033c1e95e584fb8bb40f",
+ "git_commit": "9ce515dd79bcad38f898015187c6520905d1d424",
+ "git_dirty": true,
+ "python": "3.12.15"
+}

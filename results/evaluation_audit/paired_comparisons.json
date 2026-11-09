@@ -1,0 +1,90 @@
+{
+  "val::bm25::original_minus_distractors_added": {
+    "n_paired_queries": 100,
+    "a_correct": 47,
+    "b_correct": 27,
+    "a_only_correct": 20,
+    "b_only_correct": 0,
+    "diff": 0.2,
+    "ci95_low": 0.12,
+    "ci95_high": 0.28,
+    "n_resamples": 2000
+  },
+  "val::embedding::original_minus_distractors_added": {
+    "n_paired_queries": 100,
+    "a_correct": 54,
+    "b_correct": 37,
+    "a_only_correct": 17,
+    "b_only_correct": 0,
+    "diff": 0.17,
+    "ci95_low": 0.1,
+    "ci95_high": 0.25,
+    "n_resamples": 2000
+  },
+  "val::original::bm25_minus_embedding": {
+    "n_paired_queries": 100,
+    "a_correct": 47,
+    "b_correct": 54,
+    "a_only_correct": 9,
+    "b_only_correct": 16,
+    "diff": -0.07,
+    "ci95_low": -0.16,
+    "ci95_high": 0.03,
+    "n_resamples": 2000
+  },
+  "val::distractors_added::bm25_minus_embedding": {
+    "n_paired_queries": 100,
+    "a_correct": 27,
+    "b_correct": 37,
+    "a_only_correct": 9,
+    "b_only_correct": 19,
+    "diff": -0.1,
+    "ci95_low": -0.2,
+    "ci95_high": 0.01,
+    "n_resamples": 2000
+  },
+  "test::bm25::original_minus_distractors_added": {
+    "n_paired_queries": 100,
+    "a_correct": 48,
+    "b_correct": 26,
+    "a_only_correct": 22,
+    "b_only_correct": 0,
+    "diff": 0.22,
+    "ci95_low": 0.14,
+    "ci95_high": 0.31,
+    "n_resamples": 2000
+  },
+  "test::embedding::original_minus_distractors_added": {
+    "n_paired_queries": 100,
+    "a_correct": 43,
+    "b_correct": 32,
+    "a_only_correct": 11,
+    "b_only_correct": 0,
+    "diff": 0.11,
+    "ci95_low": 0.05,
+    "ci95_high": 0.18,
+    "n_resamples": 2000
+  },
+  "test::original::bm25_minus_embedding": {
+    "n_paired_queries": 100,
+    "a_correct": 48,
+    "b_correct": 43,
+    "a_only_correct": 15,
+    "b_only_correct": 10,
+    "diff": 0.05,
+    "ci95_low": -0.05,
+    "ci95_high": 0.14,
+    "n_resamples": 2000
+  },
+  "test::distractors_added::bm25_minus_embedding": {
+    "n_paired_queries": 100,
+    "a_correct": 26,
+    "b_correct": 32,
+    "a_only_correct": 9,
+    "b_only_correct": 15,
+    "diff": -0.06,
+    "ci95_low": -0.15,
+    "ci95_high": 0.03,
+    "n_resamples": 2000
+  }
+}
