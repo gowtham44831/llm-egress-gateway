@@ -83,8 +83,8 @@ def main() -> None:
     a("## Runs included")
     a("")
     a("| run dir | harness | planner spec | planner identity | f5 | "
-      "gateway | cells/episodes |")
-    a("|---|---|---|---|---|---|---|")
+      "gateway | cells/episodes | params sent (deviations) |")
+    a("|---|---|---|---|---|---|---|---|")
     sp_meta = {}
     for tp in sp_runs:
         top = _load(tp)
@@ -108,12 +108,22 @@ def main() -> None:
                     pass
             ident = ("mock(replay of "
                      f"{str(ident).removeprefix('replay of ')})")
+        # params actually sent — first call record, plus its
+        # deviation notes (Amendment 1 runs only)
+        calls = ([c.get("call") for c in top.get("cells", [])]
+                 + [a_.get("call") for e in top.get("episodes", [])
+                    for a_ in e.get("attempts", [])])
+        call0 = next((c for c in calls if c), {})
+        ps = call0.get("params_sent") or {}
+        dev = call0.get("deviations") or []
+        sent = (", ".join(f"{k}={v}" for k, v in ps.items())
+                + ("; " + "; ".join(dev[:2]) if dev else ""))
         n = len(top.get("cells") or top.get("episodes") or [])
         sp_meta[run] = {"harness": top.get("harness"), "ident": ident,
                         "top": top}
         a(f"| {run} | {top.get('harness')} | `{pl.get('spec')}` | "
           f"{ident} | {top.get('f5_mode')} | "
-          f"{top.get('gateway_version')} | {n} |")
+          f"{top.get('gateway_version')} | {n} | {sent or '—'} |")
     if not sp_meta:
         a("| (none found) | | | | | | |")
     a("")
@@ -130,11 +140,18 @@ def main() -> None:
             r.get(k) == v for k, v in kw.items())]
 
     # ------------- 1. unauthorized receipt at M3 -------------
-    a("## 1. Unauthorized receipt at M3_full_gateway")
-    a("")
     bad = [r for r in rows
            if r["run"] in sp_meta and r["arm"] == "M3_full_gateway"
            and r["receiver_receipt"] == "unauthorized"]
+    if bad:
+        a("## **FAILURE: unauthorized receipt at M3_full_gateway "
+          "recorded**")
+    else:
+        a("**Verdict: no unauthorized receipt at M3_full_gateway in "
+          "any second-planner run.**")
+    a("")
+    a("## 1. Unauthorized receipt at M3_full_gateway")
+    a("")
     if bad:
         a("**FAILURE — unauthorized receipts recorded "
           "(preserved):**")

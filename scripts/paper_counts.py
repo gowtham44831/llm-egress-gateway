@@ -127,11 +127,11 @@ def counts_for(planner: str, rows: list[dict]) -> dict:
 
 
 def _lst(rs) -> str:
-    return ", ".join(f"{r['run']}:{r['case_id']}#a{r['attempt_id']}"
-                     f"t{r['turn']}"
+    return ", ".join(f"{r['run']}:{r['case_id']}:{r['arm']}"
+                     f"#a{r['attempt_id']}t{r['turn']}"
                      for r in sorted(rs, key=lambda x: (
-                         x["run"], x["case_id"], x["attempt_id"],
-                         x["turn"])))
+                         x["run"], x["case_id"], x["arm"],
+                         x["attempt_id"], x["turn"])))
 
 
 def _calls(rs, with_turn: bool) -> str:

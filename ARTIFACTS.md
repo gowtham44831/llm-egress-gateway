@@ -91,7 +91,7 @@ in `docs/draft_consistency_report.md`).
 | command | `PYTHONPATH=src python scripts/attribution_table.py` |
 | script | `scripts/attribution_table.py` |
 | inputs | as §1 **plus** real (non-mock) `runs/second_planner/*/traces.json` (read-only; §9) — same columns, plus a `planner` column (`qwen3:14b` for frozen model runs, the recorded planner identity for second-planner runs); deterministic gateway replay for rows whose deciding rule is not in the trace (`rule_source=replay` vs `trace`). `mock:`-backend dry runs are **excluded** unless `--include-mock` is passed (scratch-only output — see §9) |
-| outputs | `results/attribution_table.csv` (348 rows, in-scope harnesses), `results/attribution_table_other.csv` (3,904 rows), `results/case_inventory.csv` (52 cases), `results/scenario_matrix.csv` (harness columns **plus** `pilot_v2_<planner>` / `multistep_v2_<planner>` when real second-planner runs exist), `docs/attribution_notes.md` |
+| outputs | `results/attribution_table.csv` (396 rows, in-scope harnesses incl. 48 second-planner `api:openai:gpt-6.1-sol` rows), `results/attribution_table_other.csv` (3,904 rows), `results/case_inventory.csv` (52 cases), `results/scenario_matrix.csv` (harness columns **plus** `pilot_v2_openai_gpt-6.1-sol` / `multistep_v2_openai_gpt-6.1-sol`), `docs/attribution_notes.md` |
 | regen | **D** |
 | note | `results/` is git-ignored (`.gitignore:17`), so these CSVs are **not committed**; `make reproduce-tables` diffs against the on-disk copies and prints a note. To make them a committed reference: `git add -f results/attribution_table.csv results/attribution_table_other.csv results/case_inventory.csv results/scenario_matrix.csv` (or relocate). |
 
@@ -125,6 +125,8 @@ in `docs/draft_consistency_report.md`).
 | dry run | `… --planner mock:results/planner_pilot_v2/traces.json` (pilot), `… mock:results/multistep_pilot_v2/traces.json` (multistep); outputs under `runs/second_planner/` (git-ignored, never under `results/`) |
 | verify | `python scripts/verify_second_planner_dryrun.py --pilot runs/second_planner/pilot_dryrun --multistep runs/second_planner/multistep_dryrun` — 967 checks: per-cell/per-turn decisions vs frozen references + counts + `paper_counts.md` regeneration |
 | last verify | `ALL 967 CHECKS PASS` (pilot vs adapter-1.1 cells; multistep vs v2 episodes; new-run counts equal frozen-reference counts) |
+| first real run | `runs/second_planner/{pilot,multistep}_api_openai_gpt-6.1-sol/` — planner-client-1.1, Amendment 1 deviations (temperature omitted/default 1, `max_completion_tokens` 2048, `reasoning_effort=low`, seed kept); calls 2026-11-09 UTC; `model_version=gpt-6.1-sol`, `system_fingerprint` null; no retries, no errors. Outcome: gpt-6.1-sol abstained/refused almost everywhere — 0 attack calls reached M3; only the authorized P2-LC1 share (authorized receipt, no unauthorized receipt). See `docs/second_planner_report.md` |
+| failed runs (excluded) | `runs/second_planner_failed/` — the two pre-output failures (429/400); kept out of every artifact by design (`SP_DIR` covers only `runs/second_planner/`) |
 | attribution | `scripts/attribution_table.py` ingests real (non-mock) `runs/second_planner/*/traces.json` as `pilot_v2_<planner>` / `multistep_v2_<planner>` harness_runs — same columns (`deciding_rule`, `minimal_blocking_arm`, `receiver_receipt`, `call_origin`, `attempt_id`, `turn`, `gateway_version`) + `planner`. `mock:` dry runs are excluded from the default outputs; `--include-mock --out <scratch>` reruns the pipeline on them for verification only (never writes `results/` or `docs/`) |
 | counts | `scripts/paper_counts.py` → `docs/paper_counts.md`: identical counting rule per planner model, separate columns once a real second-planner run exists, never pooled across models; single-column legacy format while only qwen3:14b exists |
 | report | `scripts/second_planner_report.py` → `docs/second_planner_report.md` (default: no real runs → "none found"): unauthorized M3 receipts, deciding-check diffs vs qwen3:14b (same-scenario, split planner vs interface/mechanism), abstain/malformed/refusal rates; `--include-mock` for the dry-run smoke version |
@@ -191,8 +193,8 @@ hash-verifiable** in the paper's limitations.
 
 ```
 == 1. attribution_table.py          ok ×5 (4 CSVs + docs/attribution_notes.md; mock runs excluded by default)
-== 2. paper_counts.py               ok   host 5 / auth 3 / F5 2 / other 0; prohibited 3; missing-purpose 3
-== 2b. second_planner_report.py     ok   docs/second_planner_report.md (no real runs -> "none found")
+== 2. paper_counts.py               ok   qwen3:14b host 5 / auth 3 / F5 2; prohibited 3; missing-purpose 3 | openai/gpt-6.1-sol 0/0/0; not-exercised 36
+== 2b. second_planner_report.py     ok   docs/second_planner_report.md (gpt-6.1-sol vs qwen3:14b comparison)
 == 2c. --include-mock smoke test    ok   all 3 generators -> scratch; mock wiring exercised, never diffed
 == 3. make_labeling_packet.py       ok ×5
 == 4. export_prompts.py             ok   prompts/ (53 files)

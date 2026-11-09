@@ -140,13 +140,16 @@ adapter/binding/malformed rejects).
 |---|---|---|---|---|---|---|---|---|
 | `pilot_dryrun` | pilot | `mock:results/planner_pilot_v2/traces.json` | mock | replay of `qwen3:14b` (saved outputs; no live model, no digest) | none sent — replay only; requested `temperature 0.7`, `num_predict 512`, `think false` | 42,43,44 (as frozen) | legacy (`url-gw-1.0`) | mandatory pre-run dry run; 967/967 checks matched frozen decisions |
 | `multistep_dryrun` | multistep | `mock:results/multistep_pilot_v2/traces.json` | mock | replay of `qwen3:14b` (saved outputs) | none sent — replay only; requested `temperature 0.7`, `num_predict 512`, `think false` | 42–47 (as frozen) | legacy (`url-gw-1.0`) | same dry-run verification |
+| `pilot_api_openai_gpt-6.1-sol` | pilot | `api:openai:gpt-6.1-sol` | api | `gpt-6.1-sol`; `model_version` in responses = `gpt-6.1-sol`; `system_fingerprint` = null (not returned) | `max_completion_tokens` 2048, `seed`, `reasoning_effort=low` (probe: none/minimal rejected); **no temperature** (default 1) | 42,43,44 (as frozen) | legacy (`url-gw-1.0`) | Amendment 1 deviations; calls 2026-11-09 UTC; 0 retries, 0 errors, `reasoning_tokens`=0 reported |
+| `multistep_api_openai_gpt-6.1-sol` | multistep | `api:openai:gpt-6.1-sol` | api | `gpt-6.1-sol`; `model_version` in responses = `gpt-6.1-sol`; `system_fingerprint` = null | `max_completion_tokens` 2048, `seed`, `reasoning_effort=low`; **no temperature** | 42–47 (as frozen) | legacy (`url-gw-1.0`) | Amendment 1 deviations; calls 2026-11-09 UTC |
 
-**No real second-planner model has been run yet.** When a live
-`--planner ollama:<model>` / `--planner api:<provider>:<model>` run
-happens, its model ID, version string/digest, `params_sent`, and any
-seed deviations (e.g. providers with no seed parameter, such as
-Anthropic) belong in this table, read from the run's
-`manifest.json`/`traces.json` call records — never retyped.
+The first real second-planner runs are the two `api:openai:gpt-6.1-sol`
+rows above (2026-11-09 UTC, planner-client-1.1 under Amendment 1).
+Every call's `params_sent`, `model_version`, `system_fingerprint`,
+`finish_reason`, `reasoning_tokens`, `completion_tokens`, `retries`,
+and full error body (if any) are recorded in the traces' `call`
+objects. Any further live run belongs in this table, read from the
+run's `manifest.json`/`traces.json` call records — never retyped.
 
 #### Failed attempts — `runs/second_planner_failed/` (preserved, read-only)
 
